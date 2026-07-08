@@ -24,3 +24,51 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@keyframes hero-zoom-pan {
+  from {
+    transform: scale(1) translateX(0);
+  }
+  to {
+    transform: scale(1.15) translateX(-4%);
+  }
+}
+
+.animate-hero-zoom-pan {
+  animation: hero-zoom-pan 6s ease-out forwards;
+}
+
+@keyframes hero-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-hero-fade-up {
+  animation: hero-fade-up 0.8s ease-out both;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+.home-contact-form-card {
+  width: 800px;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
