@@ -101,9 +101,9 @@ const tabs: ProjectTab[] = [
     content: (
       <>
         <h2 className="text-2xl font-bold text-gray-900">DISCOVER THE SPACE - HARYANA INDUSTRIAL PLOTS</h2>
-        <div className="mt-6 overflow-hidden rounded shadow">
+        <div className="mt-6 h-[450px] w-full overflow-hidden rounded shadow">
           {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
-          <video controls className="w-full" src="/haryana-industral-plots/Video.mp4" />
+          <video controls className="h-full w-full object-cover" src="/haryana-industral-plots/Video.mp4" />
         </div>
       </>
     ),
