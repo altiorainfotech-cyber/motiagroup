@@ -1,7 +1,6 @@
-import Image from "next/image";
+import ClientsSection from "@/components/ClientsSection";
 import FaqAccordion, { type FaqItem } from "@/components/FaqAccordion";
 import PageBanner from "@/components/PageBanner";
-import { clientLogos } from "@/data/clientLogos";
 
 const leftFaqs: FaqItem[] = [
   {
@@ -112,8 +111,6 @@ const rightFaqs: FaqItem[] = [
 ];
 
 export default function Page() {
-  const track = [...clientLogos, ...clientLogos];
-
   return (
     <>
       <PageBanner
@@ -125,27 +122,20 @@ export default function Page() {
       />
 
       <section className="mx-auto max-w-7xl px-6 py-16 sm:py-20 lg:px-8">
-        <h2 className="text-center text-2xl font-bold text-gray-900 sm:text-3xl">Generally Asked questions</h2>
+        <span className="block text-center text-sm font-semibold uppercase tracking-widest text-[#377f45]">FAQ</span>
+        <h2 className="mt-2 text-center text-3xl font-bold text-gray-900 sm:text-4xl">Generally Asked Questions</h2>
+        <p className="mx-auto mt-4 max-w-2xl text-center text-gray-600">
+          Everything Indian citizens and property buyers need to know about purchasing with Motia Group &mdash; from
+          home loans and RERA to area terminology and tax considerations.
+        </p>
 
-        <div className="mt-10 grid gap-x-8 gap-y-0 sm:grid-cols-2">
+        <div className="mt-12 grid gap-8 lg:grid-cols-2">
           <FaqAccordion items={leftFaqs} />
           <FaqAccordion items={rightFaqs} />
         </div>
       </section>
 
-      <section className="pb-16 sm:pb-20">
-        <h2 className="text-center text-2xl font-bold underline text-gray-900 sm:text-3xl">Our Clients</h2>
-
-        <div className="mt-10 overflow-hidden py-12">
-          <div className="animate-marquee flex w-max items-center gap-16 sm:gap-20">
-            {track.map((logo, i) => (
-              <div key={`${logo.src}-${i}`} className="relative h-20 w-[150px] shrink-0">
-                <Image src={logo.src} alt={logo.alt} fill sizes="150px" className="object-contain" />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ClientsSection />
     </>
   );
 }

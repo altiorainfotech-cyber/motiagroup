@@ -22,7 +22,7 @@ export default function GetInTouchForm() {
   };
 
   return (
-    <div className="bg-[#e8f0e9] p-8 sm:p-10">
+    <div className="rounded-2xl bg-[#e8f0e9] p-8 shadow-xl sm:p-10">
       <h2 className="text-center text-2xl uppercase tracking-wide text-[#377f45] sm:text-3xl">Get in Touch</h2>
 
       {submitted ? (
