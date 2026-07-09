@@ -1,5 +1,6 @@
 import ClientsSection from "@/components/ClientsSection";
 import GetInTouchForm from "@/components/GetInTouchForm";
+import GoogleMap from "@/components/GoogleMap";
 import PageBanner from "@/components/PageBanner";
 
 export default function Page() {
@@ -70,18 +71,8 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 pb-16 sm:pb-20 lg:px-8">
-        <div className="relative h-[450px] w-full overflow-hidden rounded">
-          <iframe
-            src="https://www.google.com/maps?q=Motia%27z+Royal+Business+Park,+Corporate+Office,+Chandigarh-Ambala+Highway,+Zirakpur&z=15&output=embed"
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            title="Motia Group Head Office Location"
-            className="absolute inset-0 size-full border-0"
-          />
-        </div>
-      </section>
-
+      
+   <GoogleMap />
       <ClientsSection />
     </>
   );

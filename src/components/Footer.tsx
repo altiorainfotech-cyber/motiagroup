@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Mail, MapPin, Phone } from "lucide-react";
-import { FacebookIcon, InstagramIcon, LinkedinIcon, YoutubeIcon } from "@/components/icons/SocialIcons";
+import { FacebookIcon, InstagramIcon, LinkedinIcon, TwitterIcon, YoutubeIcon } from "@/components/icons/SocialIcons";
 import { isGroup, primaryNav, topBar, type NavGroup, type NavItem, type NavLeaf } from "@/data/navigation";
 
 function getGroup(...labels: string[]): NavGroup | undefined {
@@ -29,10 +29,11 @@ const quickLinks: NavLeaf[] = [
 ];
 
 const socialLinks = [
-  { icon: FacebookIcon, href: "https://facebook.com", label: "Facebook" },
-  { icon: InstagramIcon, href: "https://instagram.com", label: "Instagram" },
-  { icon: YoutubeIcon, href: "https://youtube.com", label: "YouTube" },
-  { icon: LinkedinIcon, href: "https://linkedin.com", label: "LinkedIn" },
+  { icon: FacebookIcon, href: "https://www.facebook.com/motiagroupzirakpur", label: "Facebook" },
+  { icon: InstagramIcon, href: "https://www.instagram.com/motiagroup/", label: "Instagram" },
+  { icon: TwitterIcon, href: "https://twitter.com/motiagroup", label: "Twitter" },
+  { icon: LinkedinIcon, href: "https://www.linkedin.com/company/motia-developers-pvt-ltd/", label: "LinkedIn" },
+  { icon: YoutubeIcon, href: "https://www.youtube.com/c/MotiaDevelopers", label: "YouTube" },
 ];
 
 export default function Footer() {

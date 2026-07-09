@@ -5,17 +5,8 @@ import ProjectHero from "@/components/ProjectHero";
 import ProjectTabsLayout, { type ProjectTab } from "@/components/ProjectTabsLayout";
 import SpecCarousel from "@/components/SpecCarousel";
 
-// Specifications & construction updates are reused from Harmony Greens as
-// placeholders until Motia Huys-specific ones are provided.
-const constructionUpdateImages = [
-  "/construction%20updates/c1.webp",
-  "/construction%20updates/c2.webp",
-  "/construction%20updates/c3.webp",
-  "/construction%20updates/c4.webp",
-  "/construction%20updates/c5.webp",
-  "/construction%20updates/c6.webp",
-];
-
+// Specifications are reused from Harmony Greens as placeholders until
+// Motia Huys-specific ones are provided.
 const specifications = [
   {
     icon: "/fireplace.png",
@@ -130,22 +121,6 @@ const tabs: ProjectTab[] = [
         <h2 className="text-2xl font-bold text-gray-900">SPECIFICATION</h2>
         <div className="mt-6">
           <SpecCarousel items={specifications} />
-        </div>
-      </>
-    ),
-  },
-  {
-    id: "construction-updates",
-    label: "Construction Updates",
-    content: (
-      <>
-        <h2 className="text-2xl font-bold text-gray-900">CONSTRUCTION UPDATES</h2>
-        <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2">
-          {constructionUpdateImages.map((src) => (
-            <div key={src} className="relative aspect-[3/2] overflow-hidden rounded shadow">
-              <Image src={src} alt="Construction update" fill sizes="(min-width: 640px) 50vw, 100vw" className="object-cover" />
-            </div>
-          ))}
         </div>
       </>
     ),
