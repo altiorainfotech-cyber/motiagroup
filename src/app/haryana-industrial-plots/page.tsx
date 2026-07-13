@@ -1,15 +1,40 @@
-import { CheckCircle, FileText } from "lucide-react";
+import { Car, FileText, MapPin, Route, Shield, Store, Train, TreePine, Truck } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import AmenityGroups, { type AmenityGroup } from "@/components/AmenityGroups";
 import ProjectHero from "@/components/ProjectHero";
 import ProjectTabsLayout, { type ProjectTab } from "@/components/ProjectTabsLayout";
+import QuickFacts, { type QuickFact } from "@/components/QuickFacts";
+import TabHeading from "@/components/TabHeading";
 
-const projectDetails = [
-  "Secure and controlled environment with 24/7 manned security, CCTV coverage, intercom system, gated access, and compound wall with fencing",
-  "Infrastructure supported by 60-ft interior roads, street lighting, interior electrical wiring, and a sewage treatment plant",
-  "Green parks constructed within the campus for a balanced environment",
-  "Dedicated small parking lots designed for specific vehicle types",
-  "A high street inside the campus with shops, showrooms, and booths to serve workforce needs and day-to-day operations",
+const quickFacts: QuickFact[] = [
+  { icon: MapPin, label: "Location", value: "NH-344, Saha" },
+  { icon: Store, label: "Type", value: "Industrial Plots" },
+  { icon: Truck, label: "Access", value: "Highway, Rail & Airport" },
+  { icon: Train, label: "Corridor", value: "Eastern Freight Railway" },
+];
+
+const projectDetailGroups: AmenityGroup[] = [
+  {
+    title: "Project Infrastructure",
+    icon: Shield,
+    items: [
+      {
+        icon: Shield,
+        text: "Secure and controlled environment with 24/7 manned security, CCTV coverage, intercom system, gated access, and compound wall with fencing",
+      },
+      {
+        icon: Route,
+        text: "Infrastructure supported by 60-ft interior roads, street lighting, interior electrical wiring, and a sewage treatment plant",
+      },
+      { icon: TreePine, text: "Green parks constructed within the campus for a balanced environment" },
+      { icon: Car, text: "Dedicated small parking lots designed for specific vehicle types" },
+      {
+        icon: Store,
+        text: "A high street inside the campus with shops, showrooms, and booths to serve workforce needs and day-to-day operations",
+      },
+    ],
+  },
 ];
 
 const locationText =
@@ -21,13 +46,13 @@ const tabs: ProjectTab[] = [
     label: "Introduction",
     content: (
       <>
-        <h2 className="text-2xl font-bold text-gray-900">INTRODUCTION</h2>
-        <p className="mt-4 text-gray-600">
+        <TabHeading eyebrow="Saha . Panchkula-Yamunanagar Highway" title="Introduction" />
+        <QuickFacts facts={quickFacts} />
+        <p className="mt-8 text-gray-600">
           <span className="font-bold text-[#c2185b]">Motia Group</span> offers fully developed industrial plots
           (NH-344) (Panchkula-Yamunanagar highway) at Saha, which is designed and intended to be used as a
-          manufacturing, warehousing and logistic location. The address offers real multimodal access, with
-          highway face and freight rail access, and airport access and as such you can establish faster and scale
-          with ease.
+          manufacturing, warehousing and logistic location. The address offers real multimodal access, with highway
+          face and freight rail access, and airport access and as such you can establish faster and scale with ease.
         </p>
       </>
     ),
@@ -37,15 +62,8 @@ const tabs: ProjectTab[] = [
     label: "Project Details",
     content: (
       <>
-        <h2 className="text-2xl font-bold text-gray-900">PROJECT DETAILS</h2>
-        <ul className="mt-4 space-y-3">
-          {projectDetails.map((item) => (
-            <li key={item} className="flex items-start gap-3 text-gray-600">
-              <CheckCircle className="mt-0.5 size-5 shrink-0 text-[#377f45]" />
-              {item}
-            </li>
-          ))}
-        </ul>
+        <TabHeading eyebrow="Infrastructure" title="Project Details" />
+        <AmenityGroups groups={projectDetailGroups} />
       </>
     ),
   },
@@ -54,9 +72,8 @@ const tabs: ProjectTab[] = [
     label: "Location & Connectivity",
     content: (
       <>
-        <h2 className="text-2xl font-bold text-gray-900">LOCATION &amp; CONNECTIVITY</h2>
-        <p className="mt-4 text-gray-600">{locationText}</p>
-        <div className="relative mt-6 h-[450px] w-full overflow-hidden rounded">
+        <TabHeading eyebrow="Find Us" title="Location & Connectivity" description={locationText} />
+        <div className="relative mt-6 h-[450px] w-full overflow-hidden rounded-2xl shadow-xl">
           <iframe
             src="https://www.google.com/maps?q=30.300750,77.000139&z=15&output=embed"
             loading="lazy"
@@ -73,8 +90,8 @@ const tabs: ProjectTab[] = [
     label: "Why Motia Group",
     content: (
       <>
-        <h2 className="text-2xl font-bold text-gray-900">WHY MOTIA GROUP</h2>
-        <div className="mt-4 space-y-4 text-gray-600">
+        <TabHeading eyebrow="Our Track Record" title="Why Motia Group" />
+        <div className="mt-8 space-y-4 text-gray-600">
           <p>
             At <span className="font-bold text-gray-900">Motia Group</span>, we believe in building more than just
             spaces &mdash; we build <span className="font-bold text-gray-900">trust, comfort, and lasting relationships</span>.
@@ -100,9 +117,8 @@ const tabs: ProjectTab[] = [
     label: "Discover the Space",
     content: (
       <>
-        <h2 className="text-2xl font-bold text-gray-900">DISCOVER THE SPACE - HARYANA INDUSTRIAL PLOTS</h2>
-        <div className="mt-6 h-[450px] w-full overflow-hidden rounded shadow">
-          {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
+        <TabHeading eyebrow="Take A Look Inside" title="Discover the Space" />
+        <div className="mt-6 h-[450px] w-full overflow-hidden rounded-2xl shadow-lg">
           <video controls className="h-full w-full object-cover" src="/haryana-industral-plots/Video.mp4" />
         </div>
       </>
@@ -113,16 +129,20 @@ const tabs: ProjectTab[] = [
     label: "Download",
     content: (
       <>
-        <h2 className="text-2xl font-bold text-gray-900">DOWNLOAD</h2>
-        <div className="mt-6">
-          <a
-            href="/haryana-industral-plots/Haryana-Industrial-Township-LAYOUT-11-06-2025-1.pdf"
-            download
-            className="inline-flex items-center gap-2 text-lg font-medium text-red-600 hover:text-red-700"
-          >
-            <FileText className="size-6" />
-            Download PDF
-          </a>
+        <TabHeading eyebrow="Take It With You" title="Download" />
+        <div className="mt-6 flex max-w-xl items-center gap-4 rounded-2xl bg-[#f4f8f5] p-6 ring-1 ring-black/5 sm:p-8">
+          <FileText className="size-10 shrink-0 text-[#377f45]" />
+          <div>
+            <h3 className="text-lg font-bold text-gray-900">Layout Plan</h3>
+            <a
+              href="/haryana-industral-plots/Haryana-Industrial-Township-LAYOUT-11-06-2025-1.pdf"
+              download
+              className="mt-3 inline-flex items-center gap-2 rounded bg-[#377f45] px-6 py-3 text-sm font-semibold text-white shadow-lg transition-colors hover:bg-[#2c6636]"
+            >
+              <FileText className="size-5" />
+              Download PDF
+            </a>
+          </div>
         </div>
       </>
     ),
@@ -132,7 +152,7 @@ const tabs: ProjectTab[] = [
 export default function Page() {
   return (
     <>
-      <ProjectHero image="/haryana-industral-plots/banner.jpg" title="Haryana Industrial Plots – Motia Group" />
+      <ProjectHero image="/haryana-industral-plots/banner.jpg" title="Haryana Industrial Plots – Motia Group" zoomBg />
 
       <ProjectTabsLayout tabs={tabs} />
 

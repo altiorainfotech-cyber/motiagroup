@@ -7,16 +7,25 @@ export default function ProjectHero({
   subtitle,
   ctaLabel = "Get in Touch",
   ctaHref = "/contact-us",
+  zoomBg = false,
 }: {
   image: string;
   title: string;
   subtitle?: string;
   ctaLabel?: string;
   ctaHref?: string;
+  zoomBg?: boolean;
 }) {
   return (
     <section className="relative h-[380px] w-full overflow-hidden bg-black sm:h-[460px] lg:h-[520px]">
-      <Image src={image} alt={title} fill priority sizes="100vw" className="object-cover" />
+      <Image
+        src={image}
+        alt={title}
+        fill
+        priority
+        sizes="100vw"
+        className={`object-cover ${zoomBg ? "animate-hero-zoom-pan" : ""}`}
+      />
 
       <div className="absolute inset-x-0 bottom-16 px-6 sm:bottom-20 sm:px-12 lg:px-20">
         <div className="inline-block w-fit max-w-2xl bg-black/55 px-6 py-5">

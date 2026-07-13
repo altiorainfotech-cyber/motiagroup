@@ -1,10 +1,103 @@
-import { CheckCircle, FileText } from "lucide-react";
-import Image from "next/image";
+import {
+  ArrowLeftRight,
+  Building2,
+  Car,
+  CloudRain,
+  Dumbbell,
+  Grid3x3,
+  KeyRound,
+  Layers,
+  Leaf,
+  Lightbulb,
+  MapPin,
+  Maximize2,
+  Navigation,
+  PartyPopper,
+  Phone,
+  PlayCircle,
+  Route,
+  Shield,
+  ShieldCheck,
+  Sparkles,
+  Store,
+  Tent,
+  TreePine,
+  Users,
+  Zap,
+  type LucideIcon,
+} from "lucide-react";
+import AmenityGroups, { type AmenityGroup } from "@/components/AmenityGroups";
+import DownloadCard from "@/components/DownloadCard";
 import ImageCarousel from "@/components/ImageCarousel";
+import PhotoCarousel from "@/components/PhotoCarousel";
 import ProjectHero from "@/components/ProjectHero";
 import ProjectTabsLayout, { type ProjectTab } from "@/components/ProjectTabsLayout";
-import SpecCarousel from "@/components/SpecCarousel";
+import QuickFacts, { type QuickFact } from "@/components/QuickFacts";
+import SpecCard from "@/components/SpecCard";
+import TabHeading from "@/components/TabHeading";
 import YouTubeThumbnail from "@/components/YouTubeThumbnail";
+
+const quickFacts: QuickFact[] = [
+  { icon: Layers, label: "Configuration", value: "3 / 3+1 / 5+1 BHK" },
+  { icon: Maximize2, label: "Plot Size", value: "195 – 337 Sq. Yd." },
+  { icon: MapPin, label: "Location", value: "Sanauli, Zirakpur" },
+  { icon: Navigation, label: "Connectivity", value: "PR-7 Airport Road" },
+];
+
+const amenityGroups: AmenityGroup[] = [
+  {
+    title: "Design & Structure",
+    icon: Building2,
+    items: [
+      { icon: Layers, text: "Low Rise - with S+4 concept" },
+      { icon: Building2, text: "1 Lift for 8 Flats" },
+      { icon: Car, text: "Well Covered Stilt Parking (Reserved Parking-1)" },
+      { icon: Grid3x3, text: "Matt Finish Tiles in Parking" },
+      { icon: ShieldCheck, text: "Earthquake Resistant RCC Frame Structure" },
+      { icon: ArrowLeftRight, text: "12' To 24' Gap Between Blocks" },
+    ],
+  },
+  {
+    title: "Connectivity & Roads",
+    icon: Route,
+    items: [
+      { icon: Navigation, text: "Proposed Connectivity To PR-7, Airport Road" },
+      { icon: Route, text: "Upto 64' Wide Internal Roads" },
+      { icon: Lightbulb, text: "Well Lit Internal Roads, with Pole Lights" },
+    ],
+  },
+  {
+    title: "Green & Sustainable Living",
+    icon: Leaf,
+    items: [
+      { icon: TreePine, text: "Adjoining 300 Acres of Forest Land" },
+      { icon: Leaf, text: "Lush Green Boundary" },
+      { icon: Leaf, text: "Green Dividers on Internal Roads" },
+      { icon: CloudRain, text: "Rain Water Harvesting" },
+    ],
+  },
+  {
+    title: "Lifestyle & Recreation",
+    icon: PartyPopper,
+    items: [
+      { icon: Sparkles, text: "Lifetime Free Meditation (B.K Meditation Centre)" },
+      { icon: Tent, text: "Sand Pit & Open Air Amphitheatre" },
+      { icon: Users, text: "Free Club House" },
+      { icon: Dumbbell, text: "Open Gymnasium & Gazebo" },
+      { icon: PlayCircle, text: "Kids Play Area & Jogging Track" },
+      { icon: Store, text: "Commercial Arcade within Premises" },
+    ],
+  },
+  {
+    title: "Safety & Convenience",
+    icon: Shield,
+    items: [
+      { icon: Zap, text: "Power Backup (24x7)" },
+      { icon: KeyRound, text: "Biometric Locks on Main Doors" },
+      { icon: Phone, text: "E-Intercom (Application Based Security)" },
+    ],
+  },
+];
 
 const constructionUpdateImages = [
   "/construction%20updates/c1.webp",
@@ -13,7 +106,7 @@ const constructionUpdateImages = [
   "/construction%20updates/c4.webp",
   "/construction%20updates/c5.webp",
   "/construction%20updates/c6.webp",
-];
+].map((src, i) => ({ src, alt: `Construction update ${i + 1}` }));
 
 const sampleFlatImages = [
   "/Sample%20Flat%20Pictures/01.webp",
@@ -24,7 +117,7 @@ const sampleFlatImages = [
   "/Sample%20Flat%20Pictures/05.webp",
   "/Sample%20Flat%20Pictures/06.webp",
   "/Sample%20Flat%20Pictures/07.webp",
-];
+].map((src, i) => ({ src, alt: `Sample flat ${i + 1}` }));
 
 const floorPlanImages = [
   { src: "/floreplan/Screenshot-2024-11-29-171727.jpg", alt: "Site Plan" },
@@ -36,62 +129,28 @@ const floorPlanImages = [
   { src: "/floreplan/Screenshot-2024-11-29-171935.jpg", alt: "5+1 BHK - 3034 Sq. Ft." },
 ];
 
-const specifications = [
-  {
-    icon: "/fireplace.png",
-    title: "Water Supply",
-    points: ["Tubewell with hydro pneumatic system", "Adequate storage for rain water harvesting"],
-  },
-];
-
-const amenities = [
-  "Low Rise - with S+4 concept",
-  "1 Lift for 8 Flats",
-  "Proposed Connectivity To PR-7, Airport Road",
-  "Adjoining 300 Acres of Forest Land",
-  "Lifetime Free Meditation (B.K Meditation Centre)",
-  "Upto 64' Wide Internal Roads",
-  "Well Covered Stilt Parking (Reserved Parking-1)",
-  "Sand Pit & Open Air Amphitheatre",
-  "Matt Finish Tiles in Parking",
-  "Power Backup (24x7)",
-  "Biometric Locks on Main Doors",
-  "Free Club House",
-  "E-Intercom (Application Based Security)",
-  "Open Gymnasium & Gazebo",
-  "Kids Play Area & Jogging Track",
-  "Lush Green Boundary",
-  "Green Dividers on Internal Roads",
-  "Well Lit Internal Roads, with Pole Lights",
-  "Commercial Arcade within Premises",
-  "Earthquake Resistant RCC Frame Structure",
-  "Rain Water Harvesting",
-  "12' To 24' Gap Between Blocks",
-];
-
 const tabs: ProjectTab[] = [
   {
     id: "overview",
     label: "Overview",
     content: (
       <>
-        <h2 className="text-2xl font-bold text-gray-900">OVERVIEW</h2>
-        <div className="mt-4 space-y-4 text-gray-600">
+        <TabHeading eyebrow="Zirakpur . Premium Residences" title="Overview" />
+        <QuickFacts facts={quickFacts} />
+        <div className="mt-8 space-y-4 text-gray-600">
           <p>
             Driven with the purpose to build a legacy of innovation, trust, and exceptional customer experience,{" "}
-            <span className="font-bold text-gray-900">Motia Group presents Harmony Greens – a </span>
-            <span className="font-bold text-[#c2185b]">Premium Residence</span>
-            <span className="font-bold text-gray-900"> project in Zirakpur</span>. Harmony Greens, a premium
-            residential community, brings you an upgraded lifestyle in the lap of nature, away from the fast-paced
-            tempo of city life, adjoining a forest cover of approx. 300 acres of land. An enchanting new way of life
-            awaits you amidst the lush greenery.
+            <span className="font-bold text-gray-900">Motia Group presents Harmony Greens</span> — a{" "}
+            <span className="font-bold text-[#c2185b]">premium residence</span>
+            <span className="font-bold text-gray-900"> project in Zirakpur</span>. A premium residential community
+            bringing you an upgraded lifestyle in the lap of nature, away from the fast-paced tempo of city life,
+            adjoining a forest cover of approx. 300 acres of land.
           </p>
           <p>
-            Beautifully spaced &amp; efficient 3/3+1/5+1 BHK (195 Sq. Yd. – 337 Sq. Yd.) options come with all modern
-            &amp; world-class amenities. These beautifully crafted homes, with lush green surroundings, offer all
-            major necessities in the vicinity along with high connectivity (double connectivity to 200 ft. PR7
-            Airport Road). Staying close to nature, observing the little significant elements, and appreciating them
-            from the very core is both therapeutic and self-healing.
+            Beautifully spaced &amp; efficient 3 / 3+1 / 5+1 BHK homes come with all modern &amp; world-class
+            amenities, offering all major necessities in the vicinity along with high connectivity — double
+            connectivity to the 200 ft. PR-7 Airport Road. Staying close to nature, observing the little significant
+            elements, and appreciating them from the very core is both therapeutic and self-healing.
           </p>
         </div>
       </>
@@ -102,15 +161,12 @@ const tabs: ProjectTab[] = [
     label: "Facilities",
     content: (
       <>
-        <h2 className="text-2xl font-bold text-gray-900">AMENITIES &amp; FACILITIES</h2>
-        <ul className="mt-4 space-y-3">
-          {amenities.map((item) => (
-            <li key={item} className="flex items-start gap-3 text-gray-600">
-              <CheckCircle className="mt-0.5 size-5 shrink-0 text-[#377f45]" />
-              {item}
-            </li>
-          ))}
-        </ul>
+        <TabHeading
+          eyebrow="Everyday Comforts"
+          title="Amenities & Facilities"
+          description="Every corner of Harmony Greens is designed around comfort, safety, and green living."
+        />
+        <AmenityGroups groups={amenityGroups} />
       </>
     ),
   },
@@ -119,16 +175,20 @@ const tabs: ProjectTab[] = [
     label: "Location Map",
     content: (
       <>
-        <h2 className="text-2xl font-bold text-gray-900">LOCATION MAP</h2>
-        <div className="relative mt-4 h-[450px] w-full overflow-hidden rounded">
-            <iframe
+        <TabHeading
+          eyebrow="Find Us"
+          title="Location Map"
+          description="Motiaz Harmony Greens, Sanauli, Zirakpur, Punjab."
+        />
+        <div className="relative mt-6 h-[450px] w-full overflow-hidden rounded-2xl shadow-xl">
+          <iframe
             src="https://www.google.com/maps?q=Motiaz+Harmony+Greens,+Sanauli,+Zirakpur,+Punjab&z=15&output=embed"
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
             title="Motiaz Harmony Greens Location"
             className="absolute inset-0 size-full border-0"
-            />
-          </div>
+          />
+        </div>
       </>
     ),
   },
@@ -137,7 +197,11 @@ const tabs: ProjectTab[] = [
     label: "Floor-Plan",
     content: (
       <>
-        <h2 className="text-2xl font-bold text-gray-900">FLOOR PLAN &amp; SITE PLAN</h2>
+        <TabHeading
+          eyebrow="Layouts"
+          title="Floor Plan & Site Plan"
+          description="Browse the site plan and unit layouts across configurations."
+        />
         <div className="mt-6">
           <ImageCarousel images={floorPlanImages} />
         </div>
@@ -149,10 +213,12 @@ const tabs: ProjectTab[] = [
     label: "Specifications",
     content: (
       <>
-        <h2 className="text-2xl font-bold text-gray-900">SPECIFICATION</h2>
-        <div className="mt-6">
-          <SpecCarousel items={specifications} />
-        </div>
+        <TabHeading eyebrow="Built To Last" title="Specifications" />
+        <SpecCard
+          icon="/fireplace.png"
+          title="Water Supply"
+          points={["Tubewell with hydro pneumatic system", "Adequate storage for rain water harvesting"]}
+        />
       </>
     ),
   },
@@ -161,13 +227,9 @@ const tabs: ProjectTab[] = [
     label: "Construction Updates",
     content: (
       <>
-        <h2 className="text-2xl font-bold text-gray-900">CONSTRUCTION UPDATES</h2>
-        <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2">
-          {constructionUpdateImages.map((src) => (
-            <div key={src} className="relative aspect-[3/2] overflow-hidden rounded shadow">
-              <Image src={src} alt="Construction update" fill sizes="(min-width: 640px) 50vw, 100vw" className="object-cover" />
-            </div>
-          ))}
+        <TabHeading eyebrow="Progress" title="Construction Updates" />
+        <div className="mt-6">
+          <PhotoCarousel images={constructionUpdateImages} />
         </div>
       </>
     ),
@@ -177,13 +239,9 @@ const tabs: ProjectTab[] = [
     label: "Sample Flat Pictures",
     content: (
       <>
-        <h2 className="text-2xl font-bold text-gray-900">SAMPLE FLAT PICTURES</h2>
-        <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2">
-          {sampleFlatImages.map((src) => (
-            <div key={src} className="relative aspect-[3/2] overflow-hidden rounded shadow">
-              <Image src={src} alt="Sample flat" fill sizes="(min-width: 640px) 50vw, 100vw" className="object-cover" />
-            </div>
-          ))}
+        <TabHeading eyebrow="Take A Look Inside" title="Sample Flat Pictures" />
+        <div className="mt-6">
+          <PhotoCarousel images={sampleFlatImages} />
         </div>
       </>
     ),
@@ -193,7 +251,7 @@ const tabs: ProjectTab[] = [
     label: "Walk Through",
     content: (
       <>
-        <h2 className="text-2xl font-bold text-gray-900">WALKTHROUGH</h2>
+        <TabHeading eyebrow="See It In Motion" title="Walkthrough" />
         <div className="mt-6 max-w-3xl">
           <YouTubeThumbnail
             youtubeId="mwSG69EsSZc"
@@ -208,26 +266,13 @@ const tabs: ProjectTab[] = [
     label: "Download",
     content: (
       <>
-        <h2 className="text-2xl font-bold text-gray-900">DOWNLOAD</h2>
-        <div className="mt-6 max-w-3xl">
-          <div className="relative aspect-[3/2] w-full overflow-hidden rounded">
-            <Image
-              src="/brochure-cover.webp"
-              alt="Motia'z Harmony Greens Brochure"
-              fill
-              sizes="(min-width: 1024px) 900px, 100vw"
-              className="object-cover"
-            />
-          </div>
-          <a
-            href="/brochure-harmonygreens.pdf"
-            download
-            className="mt-6 inline-flex items-center gap-2 text-lg font-medium text-red-600 hover:text-red-700"
-          >
-            <FileText className="size-6" />
-            Download PDF
-          </a>
-        </div>
+        <TabHeading eyebrow="Take It With You" title="Download" />
+        <DownloadCard
+          image="/brochure-cover.webp"
+          title="Project Brochure"
+          description="Get the full details on floor plans, specifications, and amenities in one PDF."
+          href="/brochure-harmonygreens.pdf"
+        />
       </>
     ),
   },
@@ -240,6 +285,7 @@ export default function Page() {
         image="/home-page-hero-section/harmonygreens-banner-01.webp"
         title="Motia'z Harmony Greens - Premium Residences"
         subtitle="We offers premium residences that blend modern design with natural beauty. With spacious layouts, lush landscapes, and world-class amenities, it's the perfect choice for families seeking luxury and tranquility in a vibrant community"
+        zoomBg
       />
       <ProjectTabsLayout tabs={tabs} />
     </>
