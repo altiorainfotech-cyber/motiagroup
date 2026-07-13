@@ -1,18 +1,41 @@
-import { CheckCircle, FileText } from "lucide-react";
+import { Building2, Car, Grid3x3, Layers, Leaf, MapPin, Navigation, PartyPopper, Route, Sparkles, Store } from "lucide-react";
 import Image from "next/image";
+import AmenityGroups, { type AmenityGroup } from "@/components/AmenityGroups";
+import DownloadCard from "@/components/DownloadCard";
 import ProjectHero from "@/components/ProjectHero";
 import ProjectTabsLayout, { type ProjectTab } from "@/components/ProjectTabsLayout";
+import QuickFacts, { type QuickFact } from "@/components/QuickFacts";
+import TabHeading from "@/components/TabHeading";
 
-const amenities = [
-  "Ideally located in the heart of Zirakpur on the VIP Road which connects the two main national highways- NH-22 and NH-64",
-  "Surrounded by dense high rise residential towers like Pearl City Nirmal Chaaya, Silver City, etc.",
-  "Huge parking space has been provided for a hassle free shopping experience. The whole parking area is paved with concrete pavers.",
-  "Huge area left in front of the complex can be a place for celebration handling open-air concerts, expositions, etc.",
-  "With no possible outdoor plaza or park nearby currently, the shopping complex comes up with landscaped area having fountains and plantation, enhancing the walkways and increased footfalls.",
-  "Wide Internal Corridors have been specially created to provide more circulation and clutter free spaces.",
-  "The Upper and Lower grounds floor shop concept is introduced, giving more frontage and accessible shopping area for customers. The Lower Ground floor, unlike the rest of the places, has huge frontage and access.",
-  "Paved outer pathway along the shops have been specially added to provide circulation spaces without vehicular interference.",
-  "The overall location and added paved area provided a unique experience of commercial plaza rather than just a shopping complex.",
+const quickFacts: QuickFact[] = [
+  { icon: MapPin, label: "Location", value: "VIP Road, Zirakpur" },
+  { icon: Store, label: "Type", value: "Commercial Space" },
+  { icon: Layers, label: "Concept", value: "Upper & Lower Ground Shops" },
+  { icon: PartyPopper, label: "Positioning", value: "Fun, Food & Fashion Hub" },
+];
+
+const amenityGroups: AmenityGroup[] = [
+  {
+    title: "Prime Location & Connectivity",
+    icon: Navigation,
+    items: [
+      { icon: Navigation, text: "Ideally located in the heart of Zirakpur on the VIP Road which connects the two main national highways- NH-22 and NH-64" },
+      { icon: Building2, text: "Surrounded by dense high rise residential towers like Pearl City Nirmal Chaaya, Silver City, etc." },
+      { icon: Sparkles, text: "The overall location and added paved area provided a unique experience of commercial plaza rather than just a shopping complex." },
+    ],
+  },
+  {
+    title: "Design & Shopper Experience",
+    icon: Store,
+    items: [
+      { icon: Car, text: "Huge parking space has been provided for a hassle free shopping experience. The whole parking area is paved with concrete pavers." },
+      { icon: PartyPopper, text: "Huge area left in front of the complex can be a place for celebration handling open-air concerts, expositions, etc." },
+      { icon: Leaf, text: "With no possible outdoor plaza or park nearby currently, the shopping complex comes up with landscaped area having fountains and plantation, enhancing the walkways and increased footfalls." },
+      { icon: Route, text: "Wide Internal Corridors have been specially created to provide more circulation and clutter free spaces." },
+      { icon: Layers, text: "The Upper and Lower grounds floor shop concept is introduced, giving more frontage and accessible shopping area for customers. The Lower Ground floor, unlike the rest of the places, has huge frontage and access." },
+      { icon: Grid3x3, text: "Paved outer pathway along the shops have been specially added to provide circulation spaces without vehicular interference." },
+    ],
+  },
 ];
 
 const tabs: ProjectTab[] = [
@@ -21,8 +44,9 @@ const tabs: ProjectTab[] = [
     label: "Overview",
     content: (
       <>
-        <h2 className="text-2xl font-bold text-gray-900">PREMIUM COMMERCIAL SPACE AT MOTIA HIGH STREET</h2>
-        <div className="mt-4 space-y-4 text-gray-600">
+        <TabHeading eyebrow="VIP Road . Zirakpur" title="Premium Commercial Space at Motia High Street" />
+        <QuickFacts facts={quickFacts} />
+        <div className="mt-8 space-y-4 text-gray-600">
           <p>
             High Street <span className="font-bold italic text-[#c2185b]">Commercial Space</span> by Motia Group: A
             Vibrant Hub on VIP Road, Zirakpur
@@ -58,15 +82,12 @@ const tabs: ProjectTab[] = [
     label: "Facilities",
     content: (
       <>
-        <h2 className="text-2xl font-bold text-gray-900">AMENITIES &amp; FACILITIES</h2>
-        <ul className="mt-4 space-y-3">
-          {amenities.map((item) => (
-            <li key={item} className="flex items-start gap-3 text-gray-600">
-              <CheckCircle className="mt-0.5 size-5 shrink-0 text-[#377f45]" />
-              {item}
-            </li>
-          ))}
-        </ul>
+        <TabHeading
+          eyebrow="Everyday Comforts"
+          title="Amenities & Facilities"
+          description="A commercial plaza designed around location, access, and shopper experience."
+        />
+        <AmenityGroups groups={amenityGroups} />
       </>
     ),
   },
@@ -75,8 +96,8 @@ const tabs: ProjectTab[] = [
     label: "Floor-Plan",
     content: (
       <>
-        <h2 className="text-2xl font-bold text-gray-900">FLOOR PLAN &amp; SITE PLAN</h2>
-        <div className="relative mt-6 aspect-[3/4] max-w-2xl overflow-hidden rounded shadow">
+        <TabHeading eyebrow="Layouts" title="Floor Plan & Site Plan" />
+        <div className="relative mt-6 aspect-[3/4] max-w-2xl overflow-hidden rounded-2xl bg-white p-4 shadow-lg ring-1 ring-black/5">
           <Image
             src="/high-street/floorplan.jpg"
             alt="Motia High Street Floor Plan & Site Plan"
@@ -93,26 +114,14 @@ const tabs: ProjectTab[] = [
     label: "Download",
     content: (
       <>
-        <h2 className="text-2xl font-bold text-gray-900">DOWNLOAD</h2>
-        <div className="mt-6 max-w-3xl">
-          <div className="relative aspect-[2/1] w-full overflow-hidden rounded">
-            <Image
-              src="/high-street/download.png"
-              alt="Motia High Street Brochure"
-              fill
-              sizes="(min-width: 1024px) 900px, 100vw"
-              className="object-contain"
-            />
-          </div>
-          <a
-            href="/high-street/royalpaam.pdf"
-            download
-            className="mt-6 inline-flex items-center gap-2 text-lg font-medium text-red-600 hover:text-red-700"
-          >
-            <FileText className="size-6" />
-            Download PDF
-          </a>
-        </div>
+        <TabHeading eyebrow="Take It With You" title="Download" />
+        <DownloadCard
+          image="/high-street/download.png"
+          title="Project Brochure"
+          description="Get the full details on floor plans, amenities, and pricing in one PDF."
+          href="/high-street/royalpaam.pdf"
+          imageClassName="object-contain"
+        />
       </>
     ),
   },
@@ -125,6 +134,7 @@ export default function Page() {
         image="/high-street/banner.jpg"
         title="Motia High Street - Commercial Space"
         subtitle="The only commercial place, in and around the huge residential area on VIP Road, Zirakpur"
+        zoomBg
       />
       <ProjectTabsLayout tabs={tabs} />
     </>

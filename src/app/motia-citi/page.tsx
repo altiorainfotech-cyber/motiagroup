@@ -1,7 +1,11 @@
+import { Home, MapPin, Maximize2, Route } from "lucide-react";
 import Image from "next/image";
+import ComingSoon from "@/components/ComingSoon";
 import ProjectHero from "@/components/ProjectHero";
 import ProjectTabsLayout, { type ProjectTab } from "@/components/ProjectTabsLayout";
-import SpecCarousel from "@/components/SpecCarousel";
+import QuickFacts, { type QuickFact } from "@/components/QuickFacts";
+import SpecCard from "@/components/SpecCard";
+import TabHeading from "@/components/TabHeading";
 
 // Specifications are reused from Harmony Greens as placeholders until
 // Motia Citi-specific ones are provided. Facilities, Walk Through, and
@@ -14,14 +18,12 @@ const specifications = [
   },
 ];
 
-function ComingSoon({ title }: { title: string }) {
-  return (
-    <>
-      <h2 className="text-2xl font-bold uppercase text-gray-900">{title}</h2>
-      <p className="mt-4 text-gray-500">Content coming soon.</p>
-    </>
-  );
-}
+const quickFacts: QuickFact[] = [
+  { icon: Home, label: "Plots", value: "215 Independent Plots" },
+  { icon: Maximize2, label: "Project Area", value: "11 Acres" },
+  { icon: MapPin, label: "Location", value: "Chandigarh-Ambala Highway" },
+  { icon: Route, label: "Road Width", value: "35 Ft. Wide Internal Roads" },
+];
 
 const tabs: ProjectTab[] = [
   {
@@ -29,8 +31,9 @@ const tabs: ProjectTab[] = [
     label: "Overview",
     content: (
       <>
-        <h2 className="text-2xl font-bold text-gray-900">OVERVIEW</h2>
-        <div className="mt-4 space-y-4 text-gray-600">
+        <TabHeading eyebrow="Zirakpur . Delivered Project" title="Overview" />
+        <QuickFacts facts={quickFacts} />
+        <div className="mt-8 space-y-4 text-gray-600">
           <p>
             <span className="font-bold text-[#c2185b]">Motia Citi</span> is a delivered project. With great
             reachability and accessibility, it&rsquo;s one of the best places to reside in Zirakpur. The project is
@@ -41,22 +44,22 @@ const tabs: ProjectTab[] = [
       </>
     ),
   },
-  { id: "facilities", label: "Facilities", content: <ComingSoon title="Amenities & Facilities" /> },
+  { id: "facilities", label: "Facilities", content: <ComingSoon eyebrow="Everyday Comforts" title="Amenities & Facilities" /> },
   {
     id: "location-map",
     label: "Location Map",
     content: (
       <>
-        <h2 className="text-2xl font-bold text-gray-900">LOCATION MAP</h2>
-        <div className="relative mt-4 h-[450px] w-full overflow-hidden rounded">
-            <iframe
+        <TabHeading eyebrow="Find Us" title="Location Map" />
+        <div className="relative mt-6 h-[450px] w-full overflow-hidden rounded-2xl shadow-xl">
+          <iframe
             src="https://www.google.com/maps?cid=1145837265482741397&output=embed"
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
             title="Motia Citi Location"
             className="absolute inset-0 size-full border-0"
-            />
-          </div>
+          />
+        </div>
       </>
     ),
   },
@@ -65,8 +68,8 @@ const tabs: ProjectTab[] = [
     label: "Floor-Plan",
     content: (
       <>
-        <h2 className="text-2xl font-bold text-gray-900">FLOOR PLAN &amp; SITE PLAN</h2>
-        <div className="mt-6 max-w-2xl overflow-hidden rounded border-2 border-[#377f45]/40 bg-white p-2">
+        <TabHeading eyebrow="Layouts" title="Floor Plan & Site Plan" />
+        <div className="mt-6 max-w-2xl overflow-hidden rounded-2xl bg-white p-4 shadow-lg ring-1 ring-black/5">
           <div className="relative aspect-[3/2] w-full">
             <Image
               src="/motia-citi/floor%20plan%20%26%20Site%20Plan.png"
@@ -85,15 +88,13 @@ const tabs: ProjectTab[] = [
     label: "Specifications",
     content: (
       <>
-        <h2 className="text-2xl font-bold text-gray-900">SPECIFICATION</h2>
-        <div className="mt-6">
-          <SpecCarousel items={specifications} />
-        </div>
+        <TabHeading eyebrow="Built To Last" title="Specification" />
+        <SpecCard icon={specifications[0].icon} title={specifications[0].title} points={specifications[0].points} />
       </>
     ),
   },
-  { id: "walk-through", label: "Walk Through", content: <ComingSoon title="Walkthrough" /> },
-  { id: "download", label: "Download", content: <ComingSoon title="Download" /> },
+  { id: "walk-through", label: "Walk Through", content: <ComingSoon eyebrow="See It In Motion" title="Walkthrough" /> },
+  { id: "download", label: "Download", content: <ComingSoon eyebrow="Take It With You" title="Download" /> },
 ];
 
 export default function Page() {
@@ -103,6 +104,7 @@ export default function Page() {
         image="/motia-citi/hero%20banner.png"
         title="Motia Citi"
         subtitle="Premium apartments and homes crafted with a sense to reconnect with nature."
+        zoomBg
       />
       <ProjectTabsLayout tabs={tabs} />
     </>

@@ -1,22 +1,27 @@
-import { CheckCircle, FileText } from "lucide-react";
+import {
+  Building2,
+  ConciergeBell,
+  Dumbbell,
+  Leaf,
+  MapPin,
+  Maximize2,
+  Route,
+  Shield,
+  Sofa,
+  Users,
+  Waves,
+  Wifi,
+  Wrench,
+} from "lucide-react";
 import Image from "next/image";
+import AmenityGroups, { type AmenityGroup } from "@/components/AmenityGroups";
+import DownloadCard from "@/components/DownloadCard";
 import ImageCarousel from "@/components/ImageCarousel";
 import ProjectHero from "@/components/ProjectHero";
 import ProjectTabsLayout, { type ProjectTab } from "@/components/ProjectTabsLayout";
+import QuickFacts, { type QuickFact } from "@/components/QuickFacts";
+import TabHeading from "@/components/TabHeading";
 import YouTubeThumbnail from "@/components/YouTubeThumbnail";
-
-const amenities = [
-  "Landscaped green areas and internal pathways",
-  "Options available (for fully furnished SOHO & service apartments)",
-  "Separate meeting & conference room",
-  "Wide corridors and a huge waiting area",
-  "Exquisite terrace",
-  "Swimming pool, gymnasium",
-  "Complete Wi-Fi enabled zone",
-  "High speed lifts in all blocks",
-  "Concierge services",
-  "Top facility management",
-];
 
 const floorPlanImages = [
   { src: "/motiaz-royal-business-park/floor%20plan%20%26%20Site%20Plan1.jpg", alt: "Floor Plan & Site Plan" },
@@ -29,14 +34,54 @@ const paymentPlanImages = [
   "/motiaz-royal-business-park/payment-rbp-2.jpeg",
 ];
 
+const quickFacts: QuickFact[] = [
+  { icon: MapPin, label: "Location", value: "Delhi-Chandigarh NH-22" },
+  { icon: Maximize2, label: "Project Area", value: "3 Acres" },
+  { icon: Building2, label: "Type", value: "Business Park / Co-working" },
+  { icon: Shield, label: "Security", value: "24×7 Security & Power Backup" },
+];
+
+const amenityGroups: AmenityGroup[] = [
+  {
+    title: "Business Facilities",
+    icon: Users,
+    items: [
+      { icon: Users, text: "Separate meeting & conference room" },
+      { icon: Route, text: "Wide corridors and a huge waiting area" },
+      { icon: Wifi, text: "Complete Wi-Fi enabled zone" },
+      { icon: Wrench, text: "Top facility management" },
+      { icon: ConciergeBell, text: "Concierge services" },
+    ],
+  },
+  {
+    title: "Building & Access",
+    icon: Building2,
+    items: [
+      { icon: Building2, text: "High speed lifts in all blocks" },
+      { icon: Sofa, text: "Options available (for fully furnished SOHO & service apartments)" },
+      { icon: Sofa, text: "Exquisite terrace" },
+    ],
+  },
+  {
+    title: "Lifestyle & Wellness",
+    icon: Waves,
+    items: [
+      { icon: Waves, text: "Swimming pool" },
+      { icon: Dumbbell, text: "Gymnasium" },
+      { icon: Leaf, text: "Landscaped green areas and internal pathways" },
+    ],
+  },
+];
+
 const tabs: ProjectTab[] = [
   {
     id: "overview",
     label: "Overview",
     content: (
       <>
-        <h2 className="text-2xl font-bold text-gray-900">OVERVIEW</h2>
-        <p className="mt-4 text-gray-600">
+        <TabHeading eyebrow="Zirakpur . NH-22" title="Overview" />
+        <QuickFacts facts={quickFacts} />
+        <p className="mt-8 text-gray-600">
           <span className="font-bold text-[#c2185b]">Motiaz Royal Business</span> Park is an ongoing project, a
           business hub with an integrated township located at Delhi-Chandigarh National Highway 22&mdash;one of
           Punjab&rsquo;s largest business parks. Spread over 3 acres of land, the business park is replete with
@@ -57,15 +102,12 @@ const tabs: ProjectTab[] = [
     label: "Facilities",
     content: (
       <>
-        <h2 className="text-2xl font-bold text-gray-900">AMENITIES &amp; FACILITIES</h2>
-        <ul className="mt-4 space-y-3">
-          {amenities.map((item) => (
-            <li key={item} className="flex items-start gap-3 text-gray-600">
-              <CheckCircle className="mt-0.5 size-5 shrink-0 text-[#377f45]" />
-              {item}
-            </li>
-          ))}
-        </ul>
+        <TabHeading
+          eyebrow="Everyday Comforts"
+          title="Amenities & Facilities"
+          description="Grade 'A' co-working infrastructure built for growing businesses."
+        />
+        <AmenityGroups groups={amenityGroups} />
       </>
     ),
   },
@@ -74,8 +116,8 @@ const tabs: ProjectTab[] = [
     label: "Location Map",
     content: (
       <>
-        <h2 className="text-2xl font-bold text-gray-900">LOCATION MAP</h2>
-        <div className="relative mt-4 h-[450px] w-full overflow-hidden rounded">
+        <TabHeading eyebrow="Find Us" title="Location Map" />
+        <div className="relative mt-6 h-[450px] w-full overflow-hidden rounded-2xl shadow-xl">
           <iframe
             src="https://www.google.com/maps?q=Motiaz+Royal+Business+Park,+Chandigarh-Ambala+Highway,+Zirakpur&z=15&output=embed"
             loading="lazy"
@@ -92,7 +134,7 @@ const tabs: ProjectTab[] = [
     label: "Floor-Plan",
     content: (
       <>
-        <h2 className="text-2xl font-bold text-gray-900">FLOOR PLAN &amp; SITE PLAN</h2>
+        <TabHeading eyebrow="Layouts" title="Floor Plan & Site Plan" />
         <div className="mt-6">
           <ImageCarousel images={floorPlanImages} />
         </div>
@@ -104,10 +146,10 @@ const tabs: ProjectTab[] = [
     label: "Specifications",
     content: (
       <>
-        <h2 className="text-2xl font-bold text-gray-900">PAYMENT PLANS</h2>
+        <TabHeading eyebrow="Investment" title="Payment Plans" />
         <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2">
           {paymentPlanImages.map((src) => (
-            <div key={src} className="relative aspect-[3/4] overflow-hidden rounded border border-gray-200 shadow">
+            <div key={src} className="relative aspect-[3/4] overflow-hidden rounded-2xl bg-white shadow-lg ring-1 ring-black/5">
               <Image src={src} alt="Payment plan" fill sizes="(min-width: 640px) 50vw, 100vw" className="object-contain" />
             </div>
           ))}
@@ -120,7 +162,7 @@ const tabs: ProjectTab[] = [
     label: "Walk Through",
     content: (
       <>
-        <h2 className="text-2xl font-bold text-gray-900">WALKTHROUGH</h2>
+        <TabHeading eyebrow="See It In Motion" title="Walkthrough" />
         <div className="mt-6 max-w-3xl">
           <YouTubeThumbnail
             youtubeId="RhOHRRGvn5M"
@@ -135,26 +177,13 @@ const tabs: ProjectTab[] = [
     label: "Download",
     content: (
       <>
-        <h2 className="text-2xl font-bold text-gray-900">DOWNLOAD</h2>
-        <div className="mt-6 max-w-3xl">
-          <div className="relative aspect-[3/2] w-full overflow-hidden rounded">
-            <Image
-              src="/motiaz-royal-business-park/download-rbp.jpg"
-              alt="Motiaz Royal Business Park Brochure"
-              fill
-              sizes="(min-width: 1024px) 900px, 100vw"
-              className="object-cover"
-            />
-          </div>
-          <a
-            href="/motiaz-royal-business-park/RBP-Brochure-1.pdf"
-            download
-            className="mt-6 inline-flex items-center gap-2 text-lg font-medium text-red-600 hover:text-red-700"
-          >
-            <FileText className="size-6" />
-            Download PDF
-          </a>
-        </div>
+        <TabHeading eyebrow="Take It With You" title="Download" />
+        <DownloadCard
+          image="/motiaz-royal-business-park/download-rbp.jpg"
+          title="Project Brochure"
+          description="Get the full details on office spaces, amenities, and pricing in one PDF."
+          href="/motiaz-royal-business-park/RBP-Brochure-1.pdf"
+        />
       </>
     ),
   },
@@ -167,6 +196,7 @@ export default function Page() {
         image="/motiaz-royal-business-park/banner.jpeg"
         title="Motiaz Royal Business Park"
         subtitle="A business landmark that your clients can find easily"
+        zoomBg
       />
       <ProjectTabsLayout tabs={tabs} />
     </>

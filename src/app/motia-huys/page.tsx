@@ -1,9 +1,28 @@
-import { CheckCircle, FileText } from "lucide-react";
-import Image from "next/image";
+import {
+  Car,
+  CloudRain,
+  DoorOpen,
+  Droplet,
+  Home,
+  MapPin,
+  Navigation,
+  PlayCircle,
+  Plug,
+  Route,
+  Shield,
+  ShieldCheck,
+  Store,
+} from "lucide-react";
+import AmenityGroups, { type AmenityGroup } from "@/components/AmenityGroups";
+import ComingSoon from "@/components/ComingSoon";
+import DownloadCard from "@/components/DownloadCard";
 import ImageCarousel from "@/components/ImageCarousel";
+import PhotoCarousel from "@/components/PhotoCarousel";
 import ProjectHero from "@/components/ProjectHero";
 import ProjectTabsLayout, { type ProjectTab } from "@/components/ProjectTabsLayout";
-import SpecCarousel from "@/components/SpecCarousel";
+import QuickFacts, { type QuickFact } from "@/components/QuickFacts";
+import SpecCard from "@/components/SpecCard";
+import TabHeading from "@/components/TabHeading";
 
 // Specifications are reused from Harmony Greens as placeholders until
 // Motia Huys-specific ones are provided.
@@ -22,24 +41,63 @@ const floorPlanImages = [
 ];
 
 const sampleFlatImages = [
-  { src: "/motiahuys/3%20BHK%20DINING%20%26%20LIVING%20AREA.png", caption: "3 BHK DINING & LIVING AREA" },
-  { src: "/motiahuys/2%20BHK%20DINING%20%26%20LIVING.png", caption: "2 BHK DINING & LIVING" },
+  {
+    src: "/motiahuys/3%20BHK%20DINING%20%26%20LIVING%20AREA.png",
+    alt: "3 BHK Dining & Living Area",
+    caption: "3 BHK DINING & LIVING AREA",
+  },
+  {
+    src: "/motiahuys/2%20BHK%20DINING%20%26%20LIVING.png",
+    alt: "2 BHK Dining & Living",
+    caption: "2 BHK DINING & LIVING",
+  },
 ];
 
-const amenities = [
-  "Boundary wall and gated community with one entry and exit gate",
-  "Commercial arcade in the campus",
-  "Underground electric lines",
-  "35' wide internal roads",
-  "Most of the city conveniences at 5 minutes distance",
-  "Stilt parking",
-  "Earthquake resistant RCC structure",
-  "Rain water drainage",
-  "Park for children",
-  "Visitor Parking",
-  "Prime location connected to Himalayan Expressway",
-  "CCTV monitoring",
-  "Purified water supply",
+const quickFacts: QuickFact[] = [
+  { icon: Home, label: "Configuration", value: "2 & 3 BHK Independent Floors" },
+  { icon: MapPin, label: "Location", value: "Peer Muchalla Road, Zirakpur" },
+  { icon: Navigation, label: "Distance", value: "6 km from Bus Stand" },
+  { icon: Store, label: "Nearby", value: "Shopping Mall" },
+];
+
+const amenityGroups: AmenityGroup[] = [
+  {
+    title: "Design & Structure",
+    icon: ShieldCheck,
+    items: [
+      { icon: ShieldCheck, text: "Earthquake resistant RCC structure" },
+      { icon: Plug, text: "Underground electric lines" },
+      { icon: Route, text: "35' wide internal roads" },
+    ],
+  },
+  {
+    title: "Safety & Security",
+    icon: Shield,
+    items: [
+      { icon: DoorOpen, text: "Boundary wall and gated community with one entry and exit gate" },
+      { icon: Shield, text: "CCTV monitoring" },
+    ],
+  },
+  {
+    title: "Green & Utilities",
+    icon: CloudRain,
+    items: [
+      { icon: CloudRain, text: "Rain water drainage" },
+      { icon: Droplet, text: "Purified water supply" },
+    ],
+  },
+  {
+    title: "Lifestyle & Convenience",
+    icon: Store,
+    items: [
+      { icon: Store, text: "Commercial arcade in the campus" },
+      { icon: MapPin, text: "Most of the city conveniences at 5 minutes distance" },
+      { icon: PlayCircle, text: "Park for children" },
+      { icon: Car, text: "Stilt parking" },
+      { icon: Car, text: "Visitor Parking" },
+      { icon: Navigation, text: "Prime location connected to Himalayan Expressway" },
+    ],
+  },
 ];
 
 const tabs: ProjectTab[] = [
@@ -48,8 +106,9 @@ const tabs: ProjectTab[] = [
     label: "Overview",
     content: (
       <>
-        <h2 className="text-2xl font-bold text-gray-900">OVERVIEW</h2>
-        <div className="mt-4 space-y-4 text-gray-600">
+        <TabHeading eyebrow="Zirakpur . Flagship Project" title="Overview" />
+        <QuickFacts facts={quickFacts} />
+        <div className="mt-8 space-y-4 text-gray-600">
           <p>
             Motia HUYS is the flagship project of the <span className="font-bold text-[#c2185b]">Motia Group</span>.
             This coveted residential property on Peer Muchalla Road is located just 6 km from the bus stand. The
@@ -71,15 +130,12 @@ const tabs: ProjectTab[] = [
     label: "Facilities",
     content: (
       <>
-        <h2 className="text-2xl font-bold text-gray-900">AMENITIES &amp; FACILITIES</h2>
-        <ul className="mt-4 space-y-3">
-          {amenities.map((item) => (
-            <li key={item} className="flex items-start gap-3 text-gray-600">
-              <CheckCircle className="mt-0.5 size-5 shrink-0 text-[#377f45]" />
-              {item}
-            </li>
-          ))}
-        </ul>
+        <TabHeading
+          eyebrow="Everyday Comforts"
+          title="Amenities & Facilities"
+          description="Independent floors designed around security, convenience, and everyday ease."
+        />
+        <AmenityGroups groups={amenityGroups} />
       </>
     ),
   },
@@ -88,16 +144,16 @@ const tabs: ProjectTab[] = [
     label: "Location Map",
     content: (
       <>
-        <h2 className="text-2xl font-bold text-gray-900">LOCATION MAP</h2>
-        <div className="relative mt-4 h-[450px] w-full overflow-hidden rounded">
-            <iframe
+        <TabHeading eyebrow="Find Us" title="Location Map" />
+        <div className="relative mt-6 h-[450px] w-full overflow-hidden rounded-2xl shadow-xl">
+          <iframe
             src="https://www.google.com/maps?q=Motia+Huys,+Peer+Muchalla+Road,+Dhakoli,+Zirakpur&z=15&output=embed"
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
             title="Motia Huys Location"
             className="absolute inset-0 size-full border-0"
-            />
-          </div>
+          />
+        </div>
       </>
     ),
   },
@@ -106,7 +162,7 @@ const tabs: ProjectTab[] = [
     label: "Floor-Plan",
     content: (
       <>
-        <h2 className="text-2xl font-bold text-gray-900">FLOOR PLAN &amp; SITE PLAN</h2>
+        <TabHeading eyebrow="Layouts" title="Floor Plan & Site Plan" />
         <div className="mt-6">
           <ImageCarousel images={floorPlanImages} />
         </div>
@@ -118,10 +174,8 @@ const tabs: ProjectTab[] = [
     label: "Specifications",
     content: (
       <>
-        <h2 className="text-2xl font-bold text-gray-900">SPECIFICATION</h2>
-        <div className="mt-6">
-          <SpecCarousel items={specifications} />
-        </div>
+        <TabHeading eyebrow="Built To Last" title="Specification" />
+        <SpecCard icon={specifications[0].icon} title={specifications[0].title} points={specifications[0].points} />
       </>
     ),
   },
@@ -130,16 +184,9 @@ const tabs: ProjectTab[] = [
     label: "Sample Flat Pictures",
     content: (
       <>
-        <h2 className="text-2xl font-bold text-gray-900">SAMPLE FLAT PICTURES</h2>
-        <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2">
-          {sampleFlatImages.map((img) => (
-            <figure key={img.src}>
-              <div className="relative aspect-[4/3] overflow-hidden rounded shadow">
-                <Image src={img.src} alt={img.caption} fill sizes="(min-width: 640px) 50vw, 100vw" className="object-cover" />
-              </div>
-              <figcaption className="mt-2 text-center text-sm italic text-gray-600">{img.caption}</figcaption>
-            </figure>
-          ))}
+        <TabHeading eyebrow="Take A Look Inside" title="Sample Flat Pictures" />
+        <div className="mt-6">
+          <PhotoCarousel images={sampleFlatImages} />
         </div>
       </>
     ),
@@ -147,37 +194,20 @@ const tabs: ProjectTab[] = [
   {
     id: "walk-through",
     label: "Walk Through",
-    content: (
-      <>
-        <h2 className="text-2xl font-bold text-gray-900">WALKTHROUGH</h2>
-        <p className="mt-4 text-gray-500">Walkthrough video coming soon.</p>
-      </>
-    ),
+    content: <ComingSoon eyebrow="See It In Motion" title="Walkthrough" />,
   },
   {
     id: "download",
     label: "Download",
     content: (
       <>
-        <h2 className="text-2xl font-bold text-gray-900">DOWNLOAD</h2>
-        <div className="mt-6 max-w-3xl">
-          <div className="relative aspect-[3/2] w-full overflow-hidden rounded">
-            <Image
-              src="/motiahuys/download.webp"
-              alt="Motia Huys Brochure"
-              fill
-              sizes="(min-width: 1024px) 900px, 100vw"
-              className="object-cover"
-            />
-          </div>
-          <a
-            href="#"
-            className="mt-6 inline-flex items-center gap-2 text-lg font-medium text-red-600 hover:text-red-700"
-          >
-            <FileText className="size-6" />
-            Download PDF
-          </a>
-        </div>
+        <TabHeading eyebrow="Take It With You" title="Download" />
+        <DownloadCard
+          image="/motiahuys/download.webp"
+          title="Project Brochure"
+          description="Get the full details on floor plans, specifications, and amenities in one PDF."
+          href="#"
+        />
       </>
     ),
   },
@@ -186,7 +216,7 @@ const tabs: ProjectTab[] = [
 export default function Page() {
   return (
     <>
-      <ProjectHero image="/motiahuys/banner.png" title="Motia Huys" subtitle="Affordable independent housing" />
+      <ProjectHero image="/motiahuys/banner.png" title="Motia Huys" subtitle="Affordable independent housing" zoomBg />
       <ProjectTabsLayout tabs={tabs} />
     </>
   );

@@ -1,8 +1,84 @@
-import { CheckCircle, FileText } from "lucide-react";
+import {
+  Bell,
+  Car,
+  CloudRain,
+  DoorOpen,
+  Droplet,
+  Droplets,
+  Grid3x3,
+  Layers,
+  Leaf,
+  Lightbulb,
+  Lock,
+  MapPin,
+  Maximize2,
+  Navigation,
+  Route,
+  School,
+  Shield,
+  Store,
+  TreePine,
+} from "lucide-react";
 import Image from "next/image";
+import AmenityGroups, { type AmenityGroup } from "@/components/AmenityGroups";
+import DownloadCard from "@/components/DownloadCard";
 import ProjectHero from "@/components/ProjectHero";
 import ProjectTabsLayout, { type ProjectTab } from "@/components/ProjectTabsLayout";
-import SpecCarousel from "@/components/SpecCarousel";
+import QuickFacts, { type QuickFact } from "@/components/QuickFacts";
+import SpecCard from "@/components/SpecCard";
+import TabHeading from "@/components/TabHeading";
+
+const quickFacts: QuickFact[] = [
+  { icon: Layers, label: "Plot Variants", value: "75 / 120 / 175 / 275 Sq. Yd." },
+  { icon: Maximize2, label: "Project Area", value: "21 Acres" },
+  { icon: MapPin, label: "Location", value: "Kurali, Mohali-Ropar Highway" },
+  { icon: Store, label: "Commercial Units", value: "42 Units" },
+];
+
+const amenityGroups: AmenityGroup[] = [
+  {
+    title: "Roads & Connectivity",
+    icon: Route,
+    items: [
+      { icon: Route, text: "On 200 Ft. wide Chandigarh - Kurali Highway" },
+      { icon: Navigation, text: "40 Ft. wide Internal Roads" },
+      { icon: Grid3x3, text: "Interlocking Tiles on internal Roads" },
+      { icon: Route, text: "EWS wide internal Roads" },
+      { icon: DoorOpen, text: "Main Entrance 60 feet wide" },
+      { icon: DoorOpen, text: "Second Entry 30 feet wide" },
+    ],
+  },
+  {
+    title: "Green & Open Spaces",
+    icon: Leaf,
+    items: [
+      { icon: TreePine, text: "Greens Parks" },
+      { icon: Maximize2, text: "Large Frontage" },
+      { icon: Leaf, text: "Multiple Green Parks" },
+    ],
+  },
+  {
+    title: "Safety & Utilities",
+    icon: Shield,
+    items: [
+      { icon: Shield, text: "Gated CCTV Monitored Entry" },
+      { icon: Lock, text: "24x7 Security" },
+      { icon: Droplets, text: "Sewerage Treatment Plant" },
+      { icon: Lightbulb, text: "Well Lit Streets" },
+      { icon: Droplet, text: "Water Storage Tank" },
+      { icon: Bell, text: "Door Bell" },
+      { icon: CloudRain, text: "Rain / Fluid Water Drainage" },
+    ],
+  },
+  {
+    title: "Community & Parking",
+    icon: Store,
+    items: [
+      { icon: School, text: "School Site" },
+      { icon: Car, text: "Approx. 17 feet wide Parking in Front of Commercial Units" },
+    ],
+  },
+];
 
 const specifications = [
   {
@@ -12,35 +88,15 @@ const specifications = [
   },
 ];
 
-const amenities = [
-  "On 200 Ft. wide Chandigarh - Kurali Highway",
-  "40 Ft. wide Internal Roads",
-  "Greens Parks",
-  "Large Frontage",
-  "Gated CCTV Monitored Entry",
-  "24x7 Security",
-  "Sewerage Treatment Plant",
-  "Well Lit Streets",
-  "Interlocking Tiles on internal Roads",
-  "Water Storage Tank",
-  "Door Bell",
-  "Rain / Fluid Water Drainage",
-  "EWS wide internal Roads",
-  "Multiple Green Parks",
-  "School Site",
-  "Main Entrance 60 feet wide",
-  "Second Entry 30 feet wide",
-  "Approx. 17 feet wide Parking in Front of Commercial Units",
-];
-
 const tabs: ProjectTab[] = [
   {
     id: "overview",
     label: "Overview",
     content: (
       <>
-        <h2 className="text-2xl font-bold text-gray-900">OVERVIEW - MOTIA&apos;Z GILL ESTATE</h2>
-        <div className="mt-4 space-y-4 text-gray-600">
+        <TabHeading eyebrow="Kurali . State of Art Township" title="Motia'z Gill Estate" />
+        <QuickFacts facts={quickFacts} />
+        <div className="mt-8 space-y-4 text-gray-600">
           <p>
             Visualize a dream luxury house to call your own, that too at an affordable price.{" "}
             <span className="font-bold text-[#c2185b]">Motia Group</span> launches the State of Art Township in
@@ -64,15 +120,12 @@ const tabs: ProjectTab[] = [
     label: "Facilities",
     content: (
       <>
-        <h2 className="text-2xl font-bold text-gray-900">AMENITIES &amp; FACILITIES</h2>
-        <ul className="mt-4 space-y-3">
-          {amenities.map((item) => (
-            <li key={item} className="flex items-start gap-3 text-gray-600">
-              <CheckCircle className="mt-0.5 size-5 shrink-0 text-[#377f45]" />
-              {item}
-            </li>
-          ))}
-        </ul>
+        <TabHeading
+          eyebrow="Everyday Comforts"
+          title="Amenities & Facilities"
+          description="Thoughtfully planned infrastructure, greenery, and security across the township."
+        />
+        <AmenityGroups groups={amenityGroups} />
       </>
     ),
   },
@@ -81,16 +134,16 @@ const tabs: ProjectTab[] = [
     label: "Location Map",
     content: (
       <>
-        <h2 className="text-2xl font-bold text-gray-900">LOCATION MAP</h2>
-        <div className="relative mt-4 h-[450px] w-full overflow-hidden rounded">
-            <iframe
+        <TabHeading eyebrow="Find Us" title="Location Map" />
+        <div className="relative mt-6 h-[450px] w-full overflow-hidden rounded-2xl shadow-xl">
+          <iframe
             src="https://www.google.com/maps?q=Motia%27z+Gill+Estate,+NH205,+Chandigarh+Road&z=15&output=embed"
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
             title="Motia'z Gill Estate Location"
             className="absolute inset-0 size-full border-0"
-            />
-          </div>
+          />
+        </div>
       </>
     ),
   },
@@ -99,8 +152,8 @@ const tabs: ProjectTab[] = [
     label: "Floor-Plan",
     content: (
       <>
-        <h2 className="text-2xl font-bold text-gray-900">FLOOR PLAN &amp; SITE PLAN</h2>
-        <div className="mt-6 max-w-2xl overflow-hidden rounded border-2 border-[#377f45]/40 bg-white p-2">
+        <TabHeading eyebrow="Layouts" title="Floor Plan & Site Plan" />
+        <div className="mt-6 max-w-2xl overflow-hidden rounded-2xl bg-white p-4 shadow-lg ring-1 ring-black/5">
           <div className="relative aspect-square w-full">
             <Image
               src="/motia-gill-estate/floreplan.png"
@@ -119,10 +172,8 @@ const tabs: ProjectTab[] = [
     label: "Specifications",
     content: (
       <>
-        <h2 className="text-2xl font-bold text-gray-900">SPECIFICATION</h2>
-        <div className="mt-6">
-          <SpecCarousel items={specifications} />
-        </div>
+        <TabHeading eyebrow="Built To Last" title="Specification" />
+        <SpecCard icon={specifications[0].icon} title={specifications[0].title} points={specifications[0].points} />
       </>
     ),
   },
@@ -131,8 +182,8 @@ const tabs: ProjectTab[] = [
     label: "Walk Through",
     content: (
       <>
-        <h2 className="text-2xl font-bold text-gray-900">WALKTHROUGH</h2>
-        <p className="mt-4 text-gray-500">Walkthrough video coming soon.</p>
+        <TabHeading eyebrow="See It In Motion" title="Walkthrough" />
+        <p className="mt-6 text-gray-500">Walkthrough video coming soon.</p>
       </>
     ),
   },
@@ -141,26 +192,13 @@ const tabs: ProjectTab[] = [
     label: "Download",
     content: (
       <>
-        <h2 className="text-2xl font-bold text-gray-900">DOWNLOAD</h2>
-        <div className="mt-6 max-w-3xl">
-          <div className="relative aspect-[1024/481] w-full overflow-hidden rounded">
-            <Image
-              src="/motia-gill-estate/download.png"
-              alt="Motia'z Gill Estate Brochure"
-              fill
-              sizes="(min-width: 1024px) 900px, 100vw"
-              className="object-cover"
-            />
-          </div>
-          <a
-            href="/motia-gill-estate/gillestate-bruchure-1.pdf"
-            download
-            className="mt-6 inline-flex items-center gap-2 text-lg font-medium text-red-600 hover:text-red-700"
-          >
-            <FileText className="size-6" />
-            Download PDF
-          </a>
-        </div>
+        <TabHeading eyebrow="Take It With You" title="Download" />
+        <DownloadCard
+          image="/motia-gill-estate/download.png"
+          title="Project Brochure"
+          description="Get the full details on plot variants, amenities, and pricing in one PDF."
+          href="/motia-gill-estate/gillestate-bruchure-1.pdf"
+        />
       </>
     ),
   },
@@ -173,6 +211,7 @@ export default function Page() {
         image="/motia-gill-estate/bannergillestate-1.webp"
         title="Motiaz Gill Estate"
         subtitle="Gill Estate offers a truly royal experience with round the clock amenities and exemplary services"
+        zoomBg
       />
       <ProjectTabsLayout tabs={tabs} />
     </>
