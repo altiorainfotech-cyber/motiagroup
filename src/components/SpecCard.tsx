@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function SpecCard({ icon, title, points }: { icon: string; title: string; points: string[] }) {
   return (
-    <div className="mt-6 flex max-w-xl items-start gap-4 rounded-2xl bg-[#f4f8f5] p-6 ring-1 ring-black/5 sm:p-8">
+    <div className="mt-6 flex max-w-xl items-start gap-4 rounded-2xl bg-[#f4f8f5] p-6 ring-1 ring-black/5 transition-all duration-300 hover:-translate-y-1 hover:bg-white hover:shadow-lg sm:p-8">
       <div className="relative size-12 shrink-0">
         <Image src={icon} alt="" fill sizes="48px" className="object-contain" />
       </div>

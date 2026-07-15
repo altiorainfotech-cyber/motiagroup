@@ -1,6 +1,7 @@
 import ClientsSection from "@/components/ClientsSection";
 import FaqAccordion, { type FaqItem } from "@/components/FaqAccordion";
 import PageBanner from "@/components/PageBanner";
+import Reveal from "@/components/Reveal";
 
 const leftFaqs: FaqItem[] = [
   {
@@ -130,12 +131,18 @@ export default function Page() {
         </p>
 
         <div className="mt-12 grid gap-8 lg:grid-cols-2">
-          <FaqAccordion items={leftFaqs} />
-          <FaqAccordion items={rightFaqs} />
+          <Reveal variant="left">
+            <FaqAccordion items={leftFaqs} />
+          </Reveal>
+          <Reveal variant="right">
+            <FaqAccordion items={rightFaqs} />
+          </Reveal>
         </div>
       </section>
 
-      <ClientsSection />
+      <Reveal variant="fade">
+        <ClientsSection />
+      </Reveal>
     </>
   );
 }

@@ -1,6 +1,9 @@
 "use client";
 
 import { useEffect, useRef, useState, type ReactNode } from "react";
+import Reveal from "@/components/Reveal";
+
+const REVEAL_VARIANTS = ["up", "left", "right"] as const;
 
 export type ProjectTab = {
   id: string;
@@ -46,8 +49,8 @@ export default function ProjectTabsLayout({ tabs }: { tabs: ProjectTab[] }) {
                 <button
                   type="button"
                   onClick={() => goTo(tab.id)}
-                  className={`w-full px-6 py-4 text-left text-sm font-medium text-white transition-colors ${
-                    active === tab.id ? "bg-[#377f45]" : "bg-[#1f2430] hover:bg-[#2a3040]"
+                  className={`w-full px-6 py-4 text-left text-sm font-medium text-white transition-all ${
+                    active === tab.id ? "bg-[#377f45]" : "bg-[#1f2430] hover:translate-x-1 hover:bg-[#2a3040]"
                   }`}
                 >
                   {tab.label}
@@ -58,7 +61,7 @@ export default function ProjectTabsLayout({ tabs }: { tabs: ProjectTab[] }) {
         </nav>
 
         <div className="space-y-16">
-          {tabs.map((tab) => (
+          {tabs.map((tab, i) => (
             <section
               key={tab.id}
               id={tab.id}
@@ -67,7 +70,7 @@ export default function ProjectTabsLayout({ tabs }: { tabs: ProjectTab[] }) {
               }}
               className="scroll-mt-32"
             >
-              {tab.content}
+              <Reveal variant={REVEAL_VARIANTS[i % REVEAL_VARIANTS.length]}>{tab.content}</Reveal>
             </section>
           ))}
         </div>

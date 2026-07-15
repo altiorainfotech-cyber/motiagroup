@@ -12,7 +12,13 @@ export default function ClientsSection() {
         <div className="animate-marquee flex w-max items-center gap-16 sm:gap-20">
           {track.map((logo, i) => (
             <div key={`${logo.src}-${i}`} className="relative h-20 w-[150px] shrink-0">
-              <Image src={logo.src} alt={logo.alt} fill sizes="150px" className="object-contain" />
+              <Image
+                src={logo.src}
+                alt={logo.alt}
+                fill
+                sizes="150px"
+                className="object-contain transition-transform duration-300 hover:scale-110"
+              />
             </div>
           ))}
         </div>

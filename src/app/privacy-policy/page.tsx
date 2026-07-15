@@ -1,4 +1,5 @@
 import PageBanner from "@/components/PageBanner";
+import Reveal from "@/components/Reveal";
 
 export default function Page() {
   return (
@@ -12,7 +13,7 @@ export default function Page() {
       />
 
       <section className="mx-auto max-w-5xl px-6 py-16 sm:py-20 lg:px-8">
-        <div className="space-y-6 text-gray-700">
+        <Reveal variant="up" className="space-y-6 text-gray-700">
           <h2 className="text-xl font-semibold text-[#377f45]">Privacy Policy of Motia Group</h2>
 
           <p>Motia Group operates the www.motiagroup.com website, which provides the SERVICE.</p>
@@ -122,7 +123,7 @@ export default function Page() {
           <p>
             If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us.
           </p>
-        </div>
+        </Reveal>
       </section>
     </>
   );

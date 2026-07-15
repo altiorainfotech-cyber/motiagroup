@@ -3,6 +3,7 @@ import ClientsSection from "@/components/ClientsSection";
 import GetInTouchForm from "@/components/GetInTouchForm";
 import GoogleMap from "@/components/GoogleMap";
 import PageBanner from "@/components/PageBanner";
+import Reveal from "@/components/Reveal";
 
 const contactInfo = [
   {
@@ -59,46 +60,54 @@ export default function Page() {
         </p>
 
         <div className="mt-12 grid gap-12 lg:grid-cols-2 lg:gap-16">
-          <GetInTouchForm />
+          <Reveal variant="left" className="h-full">
+            <GetInTouchForm />
+          </Reveal>
 
-          <div className="rounded-2xl bg-[#f4f8f5] p-8 shadow-xl sm:p-10">
-            <h3 className="text-2xl font-bold text-gray-900">Contact Information</h3>
-            <p className="mt-2 text-gray-600">
-              Interested in investing in commercial or residential property? Fill in the form and we&rsquo;ll reach
-              you soon.
-            </p>
+          <Reveal variant="right" className="h-full">
+            <div className="flex h-full flex-col rounded-2xl bg-[#f4f8f5] p-8 shadow-xl sm:p-10">
+              <h3 className="text-2xl font-bold text-gray-900">Contact Information</h3>
+              <p className="mt-2 text-gray-600">
+                Interested in investing in commercial or residential property? Fill in the form and we&rsquo;ll reach
+                you soon.
+              </p>
 
-            <div className="mt-8 space-y-6">
-              {contactInfo.map(({ icon: Icon, label, value, href }) => (
-                <div key={label} className="flex items-start gap-4">
-                  <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-[#377f45]/10 text-[#377f45]">
-                    <Icon className="size-5" />
-                  </span>
-                  <div>
-                    <p className="text-xs font-semibold uppercase tracking-wide text-[#377f45]">{label}</p>
-                    {href ? (
-                      <a href={href} className="mt-1 block text-gray-700 transition-colors hover:text-[#377f45]">
-                        {value}
-                      </a>
-                    ) : (
-                      <p className="mt-1 text-gray-700">{value}</p>
-                    )}
+              <div className="mt-8 space-y-6">
+                {contactInfo.map(({ icon: Icon, label, value, href }) => (
+                  <div key={label} className="flex items-start gap-4">
+                    <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-[#377f45]/10 text-[#377f45]">
+                      <Icon className="size-5" />
+                    </span>
+                    <div>
+                      <p className="text-xs font-semibold uppercase tracking-wide text-[#377f45]">{label}</p>
+                      {href ? (
+                        <a href={href} className="mt-1 block text-gray-700 transition-colors hover:text-[#377f45]">
+                          {value}
+                        </a>
+                      ) : (
+                        <p className="mt-1 text-gray-700">{value}</p>
+                      )}
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
+          </Reveal>
+        </div>
+      </section>
+
+      <Reveal variant="zoom">
+        <section className="">
+          <h3 className="text-center text-2xl font-bold text-gray-900">Find Us Here</h3>
+          <div className="mt-8 overflow-hidden rounded-2xl shadow-xl">
+            <GoogleMap />
           </div>
-        </div>
-      </section>
+        </section>
+      </Reveal>
 
-      <section className="">
-        <h3 className="text-center text-2xl font-bold text-gray-900">Find Us Here</h3>
-        <div className="mt-8 overflow-hidden rounded-2xl shadow-xl">
-          <GoogleMap />
-        </div>
-      </section>
-
-      <ClientsSection />
+      <Reveal variant="fade">
+        <ClientsSection />
+      </Reveal>
     </>
   );
 }

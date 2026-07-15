@@ -37,7 +37,7 @@ export default function ProjectHero({
       <div className="absolute bottom-6 right-6 sm:bottom-10 sm:right-12">
         <Link
           href={ctaHref}
-          className="inline-block rounded bg-[#377f45] px-6 py-3 text-sm font-semibold text-white shadow-lg transition-colors hover:bg-[#2c6636] sm:text-base"
+          className="inline-block rounded bg-[#377f45] px-6 py-3 text-sm font-semibold text-white shadow-lg transition-all hover:scale-105 hover:bg-[#2c6636] active:scale-95 sm:text-base"
         >
           {ctaLabel}
         </Link>

@@ -20,10 +20,10 @@ export default function YouTubeThumbnail({ youtubeId, title }: { youtubeId: stri
           alt={title}
           fill
           sizes="(min-width: 1024px) 900px, 100vw"
-          className="object-cover"
+          className="object-cover transition-transform duration-500 group-hover:scale-110"
         />
         <span className="absolute inset-0 flex items-center justify-center bg-black/10 transition-colors group-hover:bg-black/20">
-          <span className="flex size-16 items-center justify-center rounded-full bg-red-600 text-white shadow-lg sm:size-20">
+          <span className="flex size-16 items-center justify-center rounded-full bg-red-600 text-white shadow-lg transition-transform duration-300 group-hover:scale-110 sm:size-20">
             <Play className="size-7 translate-x-0.5 fill-white sm:size-8" />
           </span>
         </span>
@@ -39,7 +39,7 @@ export default function YouTubeThumbnail({ youtubeId, title }: { youtubeId: stri
               type="button"
               onClick={() => setPlaying(false)}
               aria-label="Close video"
-              className="absolute -top-10 right-0 text-white transition-colors hover:text-gray-300 sm:-top-12"
+              className="absolute -top-10 right-0 text-white transition-all hover:scale-110 hover:text-gray-300 sm:-top-12"
             >
               <X className="size-7 sm:size-8" />
             </button>

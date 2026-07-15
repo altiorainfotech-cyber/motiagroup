@@ -17,7 +17,10 @@ export default function AmenityGroups({ groups }: { groups: AmenityGroup[] }) {
           </div>
           <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
             {group.items.map((item) => (
-              <div key={item.text} className="flex items-start gap-3 rounded-xl bg-[#f4f8f5] p-4 ring-1 ring-black/5">
+              <div
+                key={item.text}
+                className="flex items-start gap-3 rounded-xl bg-[#f4f8f5] p-4 ring-1 ring-black/5 transition-all duration-300 hover:-translate-y-0.5 hover:bg-white hover:shadow-md"
+              >
                 <item.icon className="mt-0.5 size-5 shrink-0 text-[#377f45]" />
                 <span className="text-sm text-gray-700">{item.text}</span>
               </div>
