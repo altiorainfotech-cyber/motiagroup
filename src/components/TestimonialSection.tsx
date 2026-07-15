@@ -33,7 +33,7 @@ export default function TestimonialSection() {
             type="button"
             onClick={() => goTo(index - 1)}
             aria-label="Previous testimonial"
-            className="absolute left-0 top-1/2 z-10 hidden -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#377f45] p-3 text-white shadow-lg transition-colors hover:bg-[#2c6636] sm:flex"
+            className="absolute left-0 top-1/2 z-10 hidden -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#377f45] p-3 text-white shadow-lg transition-all hover:scale-110 hover:bg-[#2c6636] sm:flex"
           >
             <ChevronLeft className="size-5" />
           </button>
@@ -41,7 +41,7 @@ export default function TestimonialSection() {
             type="button"
             onClick={() => goTo(index + 1)}
             aria-label="Next testimonial"
-            className="absolute right-0 top-1/2 z-10 hidden -translate-y-1/2 translate-x-1/2 rounded-full bg-[#377f45] p-3 text-white shadow-lg transition-colors hover:bg-[#2c6636] sm:flex"
+            className="absolute right-0 top-1/2 z-10 hidden -translate-y-1/2 translate-x-1/2 rounded-full bg-[#377f45] p-3 text-white shadow-lg transition-all hover:scale-110 hover:bg-[#2c6636] sm:flex"
           >
             <ChevronRight className="size-5" />
           </button>

@@ -78,7 +78,7 @@ export default function HomeContactForm() {
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="rounded-full bg-[#2f6b3a] py-4 text-sm font-medium text-white transition-colors hover:bg-[#245529] disabled:cursor-not-allowed disabled:opacity-60 sm:col-span-2"
+                  className="rounded-full bg-[#2f6b3a] py-4 text-sm font-medium text-white transition-all hover:scale-[1.02] hover:bg-[#245529] active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:scale-100 sm:col-span-2"
                 >
                   {submitting ? "Sending..." : "Submit"}
                 </button>

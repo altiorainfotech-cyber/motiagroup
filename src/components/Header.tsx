@@ -15,7 +15,7 @@ export default function Header() {
     <header className="sticky top-0 z-50 bg-white">
       <div className="bg-black text-white text-xs sm:text-sm">
         <div className="mx-auto flex max-w-7xl flex-col gap-1 px-4 py-2 sm:flex-row sm:items-center sm:justify-between sm:gap-4 sm:px-6">
-          <a href={`tel:${topBar.phone.replace(/\s+/g, "")}`} className="flex items-center gap-2 hover:text-emerald-400">
+          <a href={`tel:${topBar.phone.replace(/\s+/g, "")}`} className="flex items-center gap-2 transition-colors hover:text-emerald-400">
             <Phone className="size-3.5 shrink-0" />
             {topBar.phone}
           </a>
@@ -23,7 +23,7 @@ export default function Header() {
             <MapPin className="size-3.5 shrink-0" />
             <span>{topBar.address}</span>
           </p>
-          <a href={`mailto:${topBar.email}`} className="flex items-center gap-2 hover:text-emerald-400">
+          <a href={`mailto:${topBar.email}`} className="flex items-center gap-2 transition-colors hover:text-emerald-400">
             <Mail className="size-3.5 shrink-0" />
             {topBar.email}
           </a>
@@ -32,8 +32,15 @@ export default function Header() {
 
       <div className="border-b border-gray-200">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6">
-          <Link href="/" className="flex shrink-0 items-center py-2">
-            <Image src="/logo-3.png" alt="Motia Group" width={600} height={483} priority className="h-16 w-auto sm:h-20" />
+          <Link href="/" className="group flex shrink-0 items-center py-2">
+            <Image
+              src="/logo-3.png"
+              alt="Motia Group"
+              width={600}
+              height={483}
+              priority
+              className="h-16 w-auto transition-transform duration-300 group-hover:scale-105 sm:h-20"
+            />
           </Link>
 
           <nav className="hidden lg:block">
@@ -48,7 +55,7 @@ export default function Header() {
 
           <button
             type="button"
-            className="inline-flex items-center justify-center rounded p-2 text-gray-700 hover:bg-gray-100 lg:hidden"
+            className="inline-flex items-center justify-center rounded p-2 text-gray-700 transition-all hover:bg-gray-100 active:scale-90 lg:hidden"
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
             onClick={() => setMobileOpen((open) => !open)}
           >

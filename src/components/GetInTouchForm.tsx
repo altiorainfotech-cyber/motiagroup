@@ -49,7 +49,7 @@ export default function GetInTouchForm() {
   };
 
   return (
-    <div className="rounded-2xl bg-[#e8f0e9] p-8 shadow-xl sm:p-10">
+    <div className="flex h-full flex-col rounded-2xl bg-[#e8f0e9] p-8 shadow-xl sm:p-10">
       <h2 className="text-center text-2xl uppercase tracking-wide text-[#377f45] sm:text-3xl">Get in Touch</h2>
 
       {submitted ? (
@@ -79,7 +79,7 @@ export default function GetInTouchForm() {
           <button
             type="submit"
             disabled={submitting}
-            className="w-full rounded-full bg-[#2f6b3a] py-4 text-sm font-medium text-white transition-colors hover:bg-[#245529] disabled:cursor-not-allowed disabled:opacity-60"
+            className="w-full rounded-full bg-[#2f6b3a] py-4 text-sm font-medium text-white transition-all hover:scale-[1.02] hover:bg-[#245529] active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:scale-100"
           >
             {submitting ? "Sending..." : "Submit"}
           </button>

@@ -43,8 +43,14 @@ export default function Footer() {
 
       <div className="relative mx-auto max-w-7xl px-6 py-12 sm:py-16 lg:px-8">
         <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between">
-          <Link href="/" className="shrink-0">
-            <Image src="/footerlogo.png" alt="Motia Group" width={300} height={300} className="h-16 w-auto" />
+          <Link href="/" className="group shrink-0">
+            <Image
+              src="/footerlogo.png"
+              alt="Motia Group"
+              width={300}
+              height={300}
+              className="h-16 w-auto transition-transform duration-300 group-hover:scale-105"
+            />
           </Link>
 
           <div className="grid grid-cols-2 gap-x-8 gap-y-10 sm:grid-cols-3 lg:grid-cols-5 lg:gap-x-12">
@@ -58,7 +64,7 @@ export default function Footer() {
 
         <div className="mt-12 flex flex-col gap-6 border-t border-white/20 pt-8 lg:flex-row lg:items-center lg:justify-between lg:gap-8">
           <div className="flex flex-col gap-4 text-sm sm:flex-row sm:flex-wrap sm:items-center sm:gap-6">
-            <a href={`tel:${topBar.phone.replace(/\s+/g, "")}`} className="flex items-center gap-2 hover:text-gray-300">
+            <a href={`tel:${topBar.phone.replace(/\s+/g, "")}`} className="flex items-center gap-2 transition-colors hover:text-gray-300">
               <Phone className="size-4 shrink-0" />
               {topBar.phone}
             </a>
@@ -68,7 +74,7 @@ export default function Footer() {
             </p>
             <a
               href={`mailto:${topBar.email}`}
-              className="flex items-center gap-2 hover:text-gray-300 sm:border-l sm:border-white/20 sm:pl-6"
+              className="flex items-center gap-2 transition-colors hover:text-gray-300 sm:border-l sm:border-white/20 sm:pl-6"
             >
               <Mail className="size-4 shrink-0" />
               Email: {topBar.email}
@@ -83,7 +89,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={label}
-                className="flex size-9 items-center justify-center rounded bg-white/10 transition-colors hover:bg-white/20"
+                className="flex size-9 items-center justify-center rounded bg-white/10 transition-all hover:scale-110 hover:bg-white/20"
               >
                 <Icon className="size-4" />
               </a>
@@ -110,7 +116,10 @@ function FooterColumn({ title, subheading, links }: { title?: string; subheading
         {links.map((link) =>
           isGroup(link) ? null : (
             <li key={link.href}>
-              <Link href={link.href} className="text-sm text-gray-300 hover:text-white">
+              <Link
+                href={link.href}
+                className="inline-block text-sm text-gray-300 transition-all duration-200 hover:translate-x-1 hover:text-white"
+              >
                 {link.label}
               </Link>
             </li>

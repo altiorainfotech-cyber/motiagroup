@@ -52,7 +52,7 @@ export default function HeroSlider() {
       <div key={`btn-${index}`} className="animate-hero-fade-up absolute bottom-6 right-6 z-20 sm:bottom-10 sm:right-12">
         <Link
           href="/contact-us"
-          className="inline-block rounded bg-[#377f45] px-6 py-3 text-sm font-semibold text-white shadow-lg transition-colors hover:bg-[#2c6636] sm:text-base"
+          className="inline-block rounded bg-[#377f45] px-6 py-3 text-sm font-semibold text-white shadow-lg transition-all hover:scale-105 hover:bg-[#2c6636] active:scale-95 sm:text-base"
         >
           {current.cta}
         </Link>
@@ -62,7 +62,7 @@ export default function HeroSlider() {
         type="button"
         onClick={() => goTo(index - 1)}
         aria-label="Previous slide"
-        className="absolute left-3 top-1/2 z-20 hidden -translate-y-1/2 rounded-full bg-white/20 p-2 text-white transition-colors hover:bg-white/40 sm:block"
+        className="absolute left-3 top-1/2 z-20 hidden -translate-y-1/2 rounded-full bg-white/20 p-2 text-white transition-all hover:scale-110 hover:bg-white/40 sm:block"
       >
         <ChevronLeft className="size-5" />
       </button>
@@ -70,7 +70,7 @@ export default function HeroSlider() {
         type="button"
         onClick={() => goTo(index + 1)}
         aria-label="Next slide"
-        className="absolute right-3 top-1/2 z-20 hidden -translate-y-1/2 rounded-full bg-white/20 p-2 text-white transition-colors hover:bg-white/40 sm:block"
+        className="absolute right-3 top-1/2 z-20 hidden -translate-y-1/2 rounded-full bg-white/20 p-2 text-white transition-all hover:scale-110 hover:bg-white/40 sm:block"
       >
         <ChevronRight className="size-5" />
       </button>
