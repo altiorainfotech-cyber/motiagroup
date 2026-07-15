@@ -8,10 +8,36 @@ const inputClasses =
 
 export default function HomeContactForm() {
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSubmitted(true);
+    setError(null);
+    setSubmitting(true);
+
+    const formData = new FormData(e.currentTarget);
+    const payload = {
+      name: `${formData.get("firstName")} ${formData.get("lastName")}`.trim(),
+      phone: formData.get("phone"),
+      email: formData.get("email"),
+      message: formData.get("message"),
+    };
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      if (!res.ok) throw new Error("Request failed");
+      setSubmitted(true);
+    } catch {
+      setError("Something went wrong. Please try again.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -46,11 +72,15 @@ export default function HomeContactForm() {
                   required
                   className="w-full rounded-2xl border border-[#377f45]/40 bg-white px-6 py-4 text-sm text-gray-700 placeholder:text-gray-400 focus:border-[#377f45] focus:outline-none sm:col-span-2"
                 />
+                {error && (
+                  <p className="text-center text-sm text-red-600 sm:col-span-2">{error}</p>
+                )}
                 <button
                   type="submit"
-                  className="rounded-full bg-[#2f6b3a] py-4 text-sm font-medium text-white transition-colors hover:bg-[#245529] sm:col-span-2"
+                  disabled={submitting}
+                  className="rounded-full bg-[#2f6b3a] py-4 text-sm font-medium text-white transition-colors hover:bg-[#245529] disabled:cursor-not-allowed disabled:opacity-60 sm:col-span-2"
                 >
-                  Submit
+                  {submitting ? "Sending..." : "Submit"}
                 </button>
               </form>
             )}
