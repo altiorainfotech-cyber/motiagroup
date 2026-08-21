@@ -31,3 +31,4 @@ export default function AmenityGroups({ groups }: { groups: AmenityGroup[] }) {
     </div>
   );
 }
+// page end 
