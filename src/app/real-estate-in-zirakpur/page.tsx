@@ -4,8 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 import ClientsSection from "@/components/ClientsSection";
 import FaqAccordion, { type FaqItem } from "@/components/FaqAccordion";
+import JsonLd from "@/components/JsonLd";
 import ProjectHero from "@/components/ProjectHero";
 import Reveal from "@/components/Reveal";
+import { faqPageJsonLd } from "@/lib/structuredData";
 
 export const metadata: Metadata = {
   title: "Real Estate in Zirakpur | Residential & Commercial Properties",
@@ -107,12 +109,37 @@ const faqs: FaqItem[] = [
   },
 ];
 
+const faqSchema = faqPageJsonLd([
+  {
+    question: "What makes Zirakpur a good real estate investment location?",
+    answer:
+      "Zirakpur combines highway and airport connectivity with rapidly growing retail, commercial and residential infrastructure, making it one of the most active property markets on the edge of the Chandigarh Tricity region.",
+  },
+  {
+    question: "How is Zirakpur connected to Chandigarh and the airport?",
+    answer:
+      "Zirakpur lies on the Chandigarh-Ambala Highway, giving it direct road access to Chandigarh, Panchkula and Mohali, and it sits a short drive from Chandigarh International Airport.",
+  },
+  {
+    question: "What types of properties are available in Zirakpur?",
+    answer:
+      "Zirakpur offers a wide mix, from apartments and independent floors to plotted developments, office space and high-street retail shops, giving both end-users and investors multiple entry points.",
+  },
+  {
+    question: "Is Zirakpur part of Punjab or the Chandigarh Tricity?",
+    answer:
+      "Zirakpur is a town in Punjab that forms part of the wider Chandigarh Tricity region, bordering Chandigarh and Panchkula and well connected to Mohali.",
+  },
+]);
+
 export default function Page() {
   return (
     <>
+      <JsonLd data={faqSchema} />
       <ProjectHero
         image="/home-page-hero-section/harmonygreens-banner-01.webp"
         title="Zirakpur: A Fast-Growing Address on the Chandigarh Tricity Map"
+        breadcrumbs={[{ name: "Home", url: "/" }, { name: "Real Estate in Zirakpur" }]}
         ctaLabel="View Properties"
         ctaHref="/residential-projects"
         zoomBg

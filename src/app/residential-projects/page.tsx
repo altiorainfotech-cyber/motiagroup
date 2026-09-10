@@ -123,6 +123,10 @@ export default function Page() {
       <ProjectHero
         image="/home-page-hero-section/harmonygreens-banner-01.webp"
         title="Residential Projects in Zirakpur & the Tricity"
+        breadcrumbs={[
+          { name: "Home", url: "/" },
+          { name: "Residential Projects" },
+        ]}
         ctaLabel="Talk to Our Team"
         ctaHref="/contact-us"
         zoomBg

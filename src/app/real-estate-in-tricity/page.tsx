@@ -4,8 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 import ClientsSection from "@/components/ClientsSection";
 import FaqAccordion, { type FaqItem } from "@/components/FaqAccordion";
+import JsonLd from "@/components/JsonLd";
 import ProjectHero from "@/components/ProjectHero";
 import Reveal from "@/components/Reveal";
+import { faqPageJsonLd } from "@/lib/structuredData";
 
 export const metadata: Metadata = {
   title: "Real Estate in Tricity | Chandigarh, Mohali & Panchkula",
@@ -86,12 +88,37 @@ const faqs: FaqItem[] = [
   },
 ];
 
+const faqSchema = faqPageJsonLd([
+  {
+    question: "What areas make up the Chandigarh Tricity region?",
+    answer:
+      "The Chandigarh Tricity refers to Chandigarh, Mohali and Panchkula, together with the fast-growing town of Zirakpur that borders both Chandigarh and Panchkula.",
+  },
+  {
+    question: "Which types of real estate does Motia Group offer across the Tricity?",
+    answer:
+      "Motia Group's portfolio spans residential apartments and plots, commercial office space and retail high streets, plus industrial plots, built up over 20+ years and 15 completed projects.",
+  },
+  {
+    question: "Where are Motia Group's residential and commercial projects located within the Tricity?",
+    answer:
+      "Most residential and commercial developments, including Motia'z Royal Citi, Motia'z Harmony Greens, Motia Heights, Motia Citi, Motia HUYS, Motia High Street and Motia'z Royal Business Park, are in and around Zirakpur, with Motia'z Gill Estate located in Kurali, near Mohali. You can browse the full list on our residential projects and commercial projects pages.",
+  },
+  {
+    question: "Is industrial real estate available in the Tricity growth corridor?",
+    answer:
+      "Yes. Motia Group's Haryana Industrial Plots in Saha, on NH-344 along the Panchkula-Yamunanagar corridor and adjacent to Ambala, extend our presence into industrial real estate just beyond the core Tricity.",
+  },
+]);
+
 export default function Page() {
   return (
     <>
+      <JsonLd data={faqSchema} />
       <ProjectHero
         image="/motiaz-royal-citi/citi-banner-1.webp"
         title="Real Estate Across the Chandigarh Tricity Region"
+        breadcrumbs={[{ name: "Home", url: "/" }, { name: "Real Estate in Tricity" }]}
         ctaLabel="View All Projects"
         ctaHref="/residential-projects"
         zoomBg

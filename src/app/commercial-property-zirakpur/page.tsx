@@ -4,8 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 import ClientsSection from "@/components/ClientsSection";
 import FaqAccordion, { type FaqItem } from "@/components/FaqAccordion";
+import JsonLd from "@/components/JsonLd";
 import ProjectHero from "@/components/ProjectHero";
 import Reveal from "@/components/Reveal";
+import { faqPageJsonLd } from "@/lib/structuredData";
 
 export const metadata: Metadata = {
   title: "Commercial Property in Zirakpur | Shops, Offices & Business Spaces",
@@ -116,12 +118,37 @@ const contactInfo: { icon: typeof Phone; label: string; value: string; href?: st
   { icon: MapPin, label: "Corporate Office", value: "Motia'z Royal Business Park, Zirakpur" },
 ];
 
+const faqSchema = faqPageJsonLd([
+  {
+    question: "What types of commercial property are available in Zirakpur?",
+    answer:
+      "Zirakpur's commercial market spans office spaces, retail shops and SCO (shop-cum-office) plots. Motia Group offers both delivered office space at Royal Business Park and retail shops at Motia High Street.",
+  },
+  {
+    question: "Is commercial property a good investment in Zirakpur?",
+    answer:
+      "Zirakpur's position on the Chandigarh-Ambala Highway and NH-22, combined with rapid residential growth in the surrounding catchment, has supported steady commercial demand for both office and retail formats.",
+  },
+  {
+    question: "What is the difference between office space and an SCO plot?",
+    answer:
+      "Office space is a ready, built floor or suite within a business park that you can lease out or occupy immediately. An SCO plot is undeveloped commercial land where the owner constructs and brands their own structure within the approved layout.",
+  },
+  {
+    question: "Does Motia Group offer both office and retail commercial property?",
+    answer:
+      "Yes. Office space is available at Motia'z Royal Business Park on NH-22, and retail shops are available at Motia High Street on VIP Road.",
+  },
+]);
+
 export default function Page() {
   return (
     <>
+      <JsonLd data={faqSchema} />
       <ProjectHero
         image="/motiaz-royal-business-park/banner.jpeg"
         title="Commercial Property in Zirakpur: Offices, Retail & Business Space"
+        breadcrumbs={[{ name: "Home", url: "/" }, { name: "Commercial Property in Zirakpur" }]}
         ctaLabel="Talk to an Expert"
         ctaHref="/contact-us"
         zoomBg

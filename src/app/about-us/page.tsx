@@ -68,6 +68,10 @@ export default function Page() {
         image="/aboutus.jpg"
         title="About Motia Group — Real Estate Developer in Zirakpur & Tricity"
         subtitle="20+ years of building homes, workspaces, and industrial land across North India"
+        breadcrumbs={[
+          { name: "Home", url: "/" },
+          { name: "About Us" },
+        ]}
         ctaLabel="Contact Us"
         ctaHref="/contact-us"
         zoomBg

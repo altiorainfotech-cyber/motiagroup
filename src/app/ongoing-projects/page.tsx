@@ -86,6 +86,10 @@ export default function Page() {
       <ProjectHero
         image="/home-page-hero-section/harmonygreens-banner-01.webp"
         title="Ongoing Real Estate Projects in Zirakpur"
+        breadcrumbs={[
+          { name: "Home", url: "/" },
+          { name: "Ongoing Projects" },
+        ]}
         ctaLabel="Invest Early"
         ctaHref="/contact-us"
         zoomBg

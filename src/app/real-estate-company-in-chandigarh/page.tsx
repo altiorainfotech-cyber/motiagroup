@@ -4,8 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 import ClientsSection from "@/components/ClientsSection";
 import FaqAccordion, { type FaqItem } from "@/components/FaqAccordion";
+import JsonLd from "@/components/JsonLd";
 import ProjectHero from "@/components/ProjectHero";
 import Reveal from "@/components/Reveal";
+import { faqPageJsonLd } from "@/lib/structuredData";
 
 export const metadata: Metadata = {
   title: "Real Estate Company in Chandigarh | Motia Group",
@@ -93,12 +95,27 @@ const contactInfo: { icon: typeof Phone; label: string; value: string; href?: st
   { icon: Mail, label: "Email", value: "info@motiagroup.com", href: "mailto:info@motiagroup.com" },
 ];
 
+const faqSchema = faqPageJsonLd([
+  {
+    question: "Why invest in the real estate market in and around Chandigarh?",
+    answer:
+      "Chandigarh and its surrounding hubs (Mohali, Zirakpur) offer top-tier infrastructure, expanding IT sectors, excellent road and air connectivity, and steady property value appreciation.",
+  },
+  {
+    question: "Does Motia Group assist buyers with home loan approvals?",
+    answer:
+      "Yes, our projects are pre-approved by leading banks and financial institutions, making the loan sanction process quick and straightforward.",
+  },
+]);
+
 export default function Page() {
   return (
     <>
+      <JsonLd data={faqSchema} />
       <ProjectHero
         image="/motiaz-royal-business-park/banner.jpeg"
         title="Your Trusted Partner: Leading Real Estate Company in Chandigarh"
+        breadcrumbs={[{ name: "Home", url: "/" }, { name: "Real Estate Company in Chandigarh" }]}
         ctaLabel="Talk to an Expert"
         ctaHref="/contact-us"
         zoomBg

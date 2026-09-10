@@ -4,8 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 import ClientsSection from "@/components/ClientsSection";
 import FaqAccordion, { type FaqItem } from "@/components/FaqAccordion";
+import JsonLd from "@/components/JsonLd";
 import ProjectHero from "@/components/ProjectHero";
 import Reveal from "@/components/Reveal";
+import { faqPageJsonLd } from "@/lib/structuredData";
 
 export const metadata: Metadata = {
   title: "Residential Plots in Zirakpur | Premium Plots & Township Projects",
@@ -104,12 +106,37 @@ const contactInfo: { icon: typeof Phone; label: string; value: string; href?: st
   { icon: MapPin, label: "Corporate Office", value: "Motia'z Royal Business Park, Zirakpur" },
 ];
 
+const faqSchema = faqPageJsonLd([
+  {
+    question: "What documents should I check before buying a residential plot in Zirakpur?",
+    answer:
+      "Ask for the RERA registration certificate, the approved layout plan, the title deed or chain of ownership documents, and the No Objection Certificates from relevant local authorities before making any booking payment.",
+  },
+  {
+    question: "Can I get a bank loan against a residential plot?",
+    answer:
+      "Yes, most nationalized and private banks offer plot loans for RERA-registered, clear-title developments, though terms differ from home loans. Our sales team can guide you toward banks that have already appraised Motia Group projects.",
+  },
+  {
+    question: "How many plots are available at Motia Citi?",
+    answer:
+      "Motia Citi is a delivered development of 215 residential plots on the Chandigarh-Ambala Highway in Zirakpur. Visit the Motia Citi project page for size options and availability.",
+  },
+  {
+    question: "Is registry immediate after booking a plot?",
+    answer:
+      "Registry timelines depend on the specific project and payment plan chosen. Our team walks every buyer through the registry and possession process in detail before booking so there are no surprises later.",
+  },
+]);
+
 export default function Page() {
   return (
     <>
+      <JsonLd data={faqSchema} />
       <ProjectHero
         image="/motia-citi/hero%20banner.png"
         title="Residential Plots in Zirakpur: A Buyer's Guide"
+        breadcrumbs={[{ name: "Home", url: "/" }, { name: "Residential Plots in Zirakpur" }]}
         ctaLabel="Enquire About Plots"
         ctaHref="/contact-us"
         zoomBg

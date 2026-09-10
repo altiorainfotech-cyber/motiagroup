@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import ClientsSection from "@/components/ClientsSection";
 import FaqAccordion, { type FaqItem } from "@/components/FaqAccordion";
+import JsonLd from "@/components/JsonLd";
 import PageBanner from "@/components/PageBanner";
 import Reveal from "@/components/Reveal";
+import { faqPageJsonLd } from "@/lib/structuredData";
 
 export const metadata: Metadata = {
   title: "NRI Property Investment in India | NRI Property FAQ | Motia Group",
@@ -157,6 +159,72 @@ const rightFaqs: FaqItem[] = [
   },
 ];
 
+const faqSchema = faqPageJsonLd([
+  {
+    question: "Who is an NRI?",
+    answer:
+      "An Indian Citizen who holds a legitimate Indian international ID and remains abroad for work/carrying on business or employment outside India or remains abroad under conditions showing an aim for a questionable span of remain abroad is a non-inhabitant Indian (NRI). Non-occupant outside natives of Indian Origin are treated at standard with non-inhabitant Indians (NRI).",
+  },
+  {
+    question: "Can an NRI buy property in India?",
+    answer:
+      "The Reserve Bank of India (RBI) has conceded general consent to NRIs, PIOs and outside natives to put resources into land for their private purpose. The general authorization covers just residential and commercial property. Moreover, NRIs can buy commercial, just as residential property in India (apart from agricultural land, farm house and plantation property) gave the buy thought is met either out of internal settlements in outside trade through ordinary financial channels or out of assets from the buyer's NRE/FCNR accounts kept up with banks in India. For this, a declaration must be submitted to the Central Office of Reserve Bank in structure IPI 7 inside a time of 90 days from the date of procurement of the property/last installment.",
+  },
+  {
+    question: "Are there Any Tax Benefits for NRIs purchasing properties?",
+    answer:
+      "No tax benefits are available for except if you file your returns and in this manner become qualified to benefit the tax cuts as referenced under Home Loan FAQ's.",
+  },
+  {
+    question: "What are the documents mandatory for obtaining NRI Home Loans?",
+    answer:
+      "Apart from the documents needed for a regular home loan, NRIs need to submit the following documents to the bank: copy of relevant pages of passport; copy of visa/work permit; the power of attorney (POA), required because the borrower is not based in India; utility bills (electricity, telephone, gas connection, etc.); driving license issued abroad; government-issued national identity card or labour card or social card at the country of residence; original copy of the latest overseas bank account showing overseas address; employment contract/appointment letter/offer letter or any other document/agreement showing current terms of employment; salary certificate/slip for the last three months; bank account statement showing salary credit for the last 6 months; and a duly acknowledged copy of the last year's individual tax return (NRIs/PIOs located in the West Asian countries are not required to submit this document).",
+  },
+  {
+    question: "What is the repayment period for the home loan for NRIs?",
+    answer:
+      "Home loan offered to NRIs do not exceed 5 years in major cases. However, some financial institutions offer loans for a term of 7 years as well.",
+  },
+  {
+    question: "Do NRIs require permission of the Reserve Bank of India (RBI) to buy immovable property in India?",
+    answer: "No, NRIs don't require consent from the RBI to buy an immovable property (residential or commercial) in India.",
+  },
+  {
+    question: "What is the eligibility criteria for obtaining NRI Home Loans?",
+    answer:
+      "The eligibility is calculated in the same way as it is done for resident Indians, with special emphasis on qualifications (graduate minimum), current job profile and work experience, chances of continuing abroad for the loan tenure, and chances of servicing the loan with an extended tenure in case the applicant needs to return to India.",
+  },
+  {
+    question: "Is there any limit on the number of residential properties that an NRI can buy?",
+    answer: "No. There is no limit placed on the number of residential properties an NRI can purchase in India.",
+  },
+  {
+    question: "Can proceeds of the sale of such properties be suspended out of India?",
+    answer:
+      "In case of residential properties, the repatriation of sale proceeds is limited to not more than 2 such properties.",
+  },
+  {
+    question:
+      "Can a person resident outside India hold any immovable property in India acquired by way of inheritance from a person resident in India?",
+    answer:
+      "Yes. A person resident outside India can hold such a kind of property as per the provisions of Section 6(5) of the Foreign Exchange Management Act, 1999.",
+  },
+  {
+    question: "What is the mode of payment for purchase of residential/commercial property in India by an NRI/PIO?",
+    answer:
+      "Under the general authorizations accessible, an NRI/PIO may buy residential/business property in India out of funds remitted to India through regular financial channels or through funds held in his NRE/FCNR (B)/NRO account. No consideration will be paid outside of India.",
+  },
+  {
+    question: "Can an NRI/PIO acquire residential/commercial property by way of gift under the general permission available?",
+    answer:
+      "Yes. Under the general RBI guidelines, an NRI/PIO may acquire residential/commercial property by way of gift from a person resident in India or an NRI or a PIO.",
+  },
+  {
+    question: "Can an NRI or PIO buy property in India jointly with a foreign citizen?",
+    answer: "No, an NRI or a PIO cannot purchase a property in India jointly with a foreign citizen.",
+  },
+]);
+
 export default function Page() {
   return (
     <>
@@ -167,6 +235,7 @@ export default function Page() {
         overlayColor="#377F45"
         overlayOpacity={0.82}
       />
+      <JsonLd data={faqSchema} />
 
       <section className="mx-auto max-w-7xl px-6 py-16 sm:py-20 lg:px-8">
         <span className="block text-center text-sm font-semibold uppercase tracking-widest text-[#377f45]">FAQ</span>

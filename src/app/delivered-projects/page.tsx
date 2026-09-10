@@ -129,6 +129,10 @@ export default function Page() {
       <ProjectHero
         image="/motiaz-royal-citi/citi-banner-1.webp"
         title="Delivered Real Estate Projects by Motia Group"
+        breadcrumbs={[
+          { name: "Home", url: "/" },
+          { name: "Delivered Projects" },
+        ]}
         ctaLabel="Schedule a Site Visit"
         ctaHref="/contact-us"
         zoomBg

@@ -174,6 +174,11 @@ export default function Page() {
         image="/motia-heights/hero%20banner.png"
         title="Motia Heights – 3 BHK Apartments in Dhakoli, Zirakpur"
         subtitle="Surround yourself in comfort and enjoy lavish style whilst soaking up in the panoramic view"
+        breadcrumbs={[
+          { name: "Home", url: "/" },
+          { name: "Residential Projects", url: "/residential-projects" },
+          { name: "Motia Heights" },
+        ]}
         zoomBg
       />
       <ProjectTabsLayout tabs={tabs} />

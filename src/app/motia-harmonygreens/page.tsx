@@ -292,6 +292,11 @@ export default function Page() {
         image="/home-page-hero-section/harmonygreens-banner-01.webp"
         title="Motia'z Harmony Greens – Premium Homes in Zirakpur"
         subtitle="We offers premium residences that blend modern design with natural beauty. With spacious layouts, lush landscapes, and world-class amenities, it's the perfect choice for families seeking luxury and tranquility in a vibrant community"
+        breadcrumbs={[
+          { name: "Home", url: "/" },
+          { name: "Residential Projects", url: "/residential-projects" },
+          { name: "Motia'z Harmony Greens" },
+        ]}
         zoomBg
       />
       <ProjectTabsLayout tabs={tabs} />

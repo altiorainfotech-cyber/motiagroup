@@ -4,8 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 import ClientsSection from "@/components/ClientsSection";
 import FaqAccordion, { type FaqItem } from "@/components/FaqAccordion";
+import JsonLd from "@/components/JsonLd";
 import ProjectHero from "@/components/ProjectHero";
 import Reveal from "@/components/Reveal";
+import { faqPageJsonLd } from "@/lib/structuredData";
 
 export const metadata: Metadata = {
   title: "3 BHK Flats in Zirakpur | Premium Apartments & Homes",
@@ -97,12 +99,32 @@ const contactInfo: { icon: typeof Phone; label: string; value: string; href?: st
   },
 ];
 
+const faqSchema = faqPageJsonLd([
+  {
+    question: "Where in Zirakpur can I find 3 BHK flats by Motia Group?",
+    answer:
+      "Motia Heights in Dhakoli, Zirakpur offers premium 3 BHK apartments, while Motia HUYS on Peer Muchalla Road, Zirakpur offers 3 BHK independent floors for buyers who prefer a low-density, more private living format.",
+  },
+  {
+    question: "What amenities do Motia Group's 3 BHK homes include?",
+    answer:
+      "Our 3 BHK residences are built with modern amenities including landscaped common areas, dedicated parking, secure gated access and quality construction finishes throughout.",
+  },
+  {
+    question: "Is Motia Heights ready to move into?",
+    answer:
+      "Yes, Motia Heights is a delivered project in Dhakoli, Zirakpur, meaning 3 BHK homes there are ready for immediate possession.",
+  },
+]);
+
 export default function Page() {
   return (
     <>
+      <JsonLd data={faqSchema} />
       <ProjectHero
         image="/motia-heights/hero%20banner.png"
         title="3 BHK Flats in Zirakpur — Premium Apartments by Motia Group"
+        breadcrumbs={[{ name: "Home", url: "/" }, { name: "3 BHK Flats in Zirakpur" }]}
         ctaLabel="Book a Site Visit"
         ctaHref="/contact-us"
         zoomBg

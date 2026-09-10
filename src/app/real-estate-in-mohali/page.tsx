@@ -4,8 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 import ClientsSection from "@/components/ClientsSection";
 import FaqAccordion, { type FaqItem } from "@/components/FaqAccordion";
+import JsonLd from "@/components/JsonLd";
 import ProjectHero from "@/components/ProjectHero";
 import Reveal from "@/components/Reveal";
+import { faqPageJsonLd } from "@/lib/structuredData";
 
 export const metadata: Metadata = {
   title: "Real Estate in Mohali | Residential & Commercial Properties",
@@ -76,12 +78,37 @@ const faqs: FaqItem[] = [
   },
 ];
 
+const faqSchema = faqPageJsonLd([
+  {
+    question: "Is Chandigarh International Airport located near Mohali?",
+    answer:
+      "Yes, Chandigarh International Airport falls within Mohali district, which keeps the wider Mohali growth corridor well connected for both residents and businesses.",
+  },
+  {
+    question: "What is the Mohali growth corridor known for?",
+    answer:
+      "Beyond Mohali's own sectors, the belt stretching toward Kharar, New Chandigarh and Kurali along the Mohali-Ropar Highway has become an active zone for plotted developments and new housing.",
+  },
+  {
+    question: "Does Motia Group have a project inside Mohali city itself?",
+    answer:
+      "Motia'z Gill Estate is located in Kurali on the Mohali-Ropar Highway, in the broader Mohali growth corridor, rather than within Mohali's city sectors. It remains one of the closest Motia Group developments to Mohali.",
+  },
+  {
+    question: "What kind of property does Motia'z Gill Estate offer near Mohali?",
+    answer:
+      "Spread across 21 acres in Kurali, Motia'z Gill Estate offers residential plots along with commercial units, wide roads and township-style infrastructure.",
+  },
+]);
+
 export default function Page() {
   return (
     <>
+      <JsonLd data={faqSchema} />
       <ProjectHero
         image="/motia-gill-estate/bannergillestate-1.webp"
         title="Mohali: IT City Connectivity Meets Growing Real Estate Demand"
+        breadcrumbs={[{ name: "Home", url: "/" }, { name: "Real Estate in Mohali" }]}
         ctaLabel="Explore Gill Estate"
         ctaHref="/motia-gill-estate"
         zoomBg

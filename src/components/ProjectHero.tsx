@@ -1,5 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbJsonLd, type BreadcrumbItem } from "@/lib/structuredData";
 
 export default function ProjectHero({
   image,
@@ -8,6 +10,7 @@ export default function ProjectHero({
   ctaLabel = "Get in Touch",
   ctaHref = "/contact-us",
   zoomBg = false,
+  breadcrumbs,
 }: {
   image: string;
   title: string;
@@ -15,9 +18,11 @@ export default function ProjectHero({
   ctaLabel?: string;
   ctaHref?: string;
   zoomBg?: boolean;
+  breadcrumbs?: BreadcrumbItem[];
 }) {
   return (
     <section className="relative h-[380px] w-full overflow-hidden bg-black sm:h-[460px] lg:h-[520px]">
+      {breadcrumbs && <JsonLd data={breadcrumbJsonLd(breadcrumbs)} />}
       <Image
         src={image}
         alt={title}

@@ -4,8 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 import ClientsSection from "@/components/ClientsSection";
 import FaqAccordion, { type FaqItem } from "@/components/FaqAccordion";
+import JsonLd from "@/components/JsonLd";
 import ProjectHero from "@/components/ProjectHero";
 import Reveal from "@/components/Reveal";
+import { faqPageJsonLd } from "@/lib/structuredData";
 
 export const metadata: Metadata = {
   title: "Best Builders in Mohali | Motia Group",
@@ -94,12 +96,27 @@ const contactInfo: { icon: typeof Phone; label: string; value: string; href?: st
   { icon: MapPin, label: "Visit", value: "Motia Group Sales Gallery, Mohali / Tricity" },
 ];
 
+const faqSchema = faqPageJsonLd([
+  {
+    question: "Why is Mohali considered a prime location for property investment?",
+    answer:
+      "Mohali benefits from proximity to the Chandigarh International Airport, rapidly expanding IT City campuses, world-class medical institutions, and planned wide-road infrastructure.",
+  },
+  {
+    question: "What safety features are included in Motia Group residential communities in Mohali?",
+    answer:
+      "Our gated communities feature 24/7 security personnel, CCTV coverage, automated barrier gates, fire safety systems, and intercom facilities.",
+  },
+]);
+
 export default function Page() {
   return (
     <>
+      <JsonLd data={faqSchema} />
       <ProjectHero
         image="/motiahuys/banner.png"
         title="Crafting Excellence: Premier Choice Among the Best Builders in Mohali"
+        breadcrumbs={[{ name: "Home", url: "/" }, { name: "Best Builders in Mohali" }]}
         ctaLabel="Book a Site Visit"
         ctaHref="/contact-us"
         zoomBg

@@ -4,8 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 import ClientsSection from "@/components/ClientsSection";
 import FaqAccordion, { type FaqItem } from "@/components/FaqAccordion";
+import JsonLd from "@/components/JsonLd";
 import ProjectHero from "@/components/ProjectHero";
 import Reveal from "@/components/Reveal";
+import { faqPageJsonLd } from "@/lib/structuredData";
 
 export const metadata: Metadata = {
   title: "NRI Property in Punjab | Buy Property in Punjab from Abroad",
@@ -114,12 +116,37 @@ const contactInfo: { icon: typeof Phone; label: string; value: string; href?: st
   },
 ];
 
+const faqSchema = faqPageJsonLd([
+  {
+    question: "Can I buy a home in Punjab entirely from abroad, without visiting India?",
+    answer:
+      "Yes. Most of the process, from shortlisting a unit to signing documents, can be handled remotely through digital copies, video-call site walkthroughs and a Power of Attorney. Our team keeps you updated at every step so a trip to India is not required until you choose to visit in person.",
+  },
+  {
+    question: "How do I set up a Power of Attorney (POA) to buy Punjab property from overseas?",
+    answer:
+      "A POA is typically drafted, signed before the Indian Embassy or Consulate in your country of residence (or a notary, depending on local rules), and then sent to India for stamping and registration. Once registered, your POA holder can sign purchase and registration documents on your behalf.",
+  },
+  {
+    question: "Will Motia Group help manage or rent out my property in Punjab while I live abroad?",
+    answer:
+      "Our team can connect NRI owners with local property management and rental support so your home or commercial unit is looked after even when you are not in the country.",
+  },
+  {
+    question: "What should I keep in mind about repatriating funds from a Punjab property in the future?",
+    answer:
+      "Sale proceeds are generally routed back through an authorised dealer bank in India, subject to RBI/FEMA guidelines and applicable tax clearances. It is advisable to keep your NRE/NRO account details and purchase records in order from day one to keep this process smooth.",
+  },
+]);
+
 export default function Page() {
   return (
     <>
+      <JsonLd data={faqSchema} />
       <ProjectHero
         image="/motiaz-royal-citi/citi-banner-1.webp"
         title="NRI Property in Punjab: Invest in Your Roots from Anywhere"
+        breadcrumbs={[{ name: "Home", url: "/" }, { name: "NRI Property in Punjab" }]}
         ctaLabel="Enquire Now"
         ctaHref="/contact-us"
         zoomBg

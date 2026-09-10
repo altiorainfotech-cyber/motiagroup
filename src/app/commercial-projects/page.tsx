@@ -81,6 +81,10 @@ export default function Page() {
       <ProjectHero
         image="/motiaz-royal-business-park/banner.jpeg"
         title="Commercial Property in Zirakpur & the Tricity"
+        breadcrumbs={[
+          { name: "Home", url: "/" },
+          { name: "Commercial Projects" },
+        ]}
         ctaLabel="Enquire Now"
         ctaHref="/contact-us"
         zoomBg

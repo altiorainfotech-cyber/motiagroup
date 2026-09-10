@@ -4,8 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 import ClientsSection from "@/components/ClientsSection";
 import FaqAccordion, { type FaqItem } from "@/components/FaqAccordion";
+import JsonLd from "@/components/JsonLd";
 import ProjectHero from "@/components/ProjectHero";
 import Reveal from "@/components/Reveal";
+import { faqPageJsonLd } from "@/lib/structuredData";
 
 export const metadata: Metadata = {
   title: "Real Estate Developer in Tricity | Chandigarh, Mohali & Panchkula",
@@ -114,12 +116,32 @@ const contactInfo: { icon: typeof Phone; label: string; value: string; href?: st
   },
 ];
 
+const faqSchema = faqPageJsonLd([
+  {
+    question: "Which parts of the Tricity region does Motia Group operate in?",
+    answer:
+      "Motia Group is headquartered in Zirakpur and has delivered residential and commercial projects across Zirakpur and the Kurali belt near Mohali. Its industrial development at Saha, Haryana sits directly on the Panchkula-Yamunanagar highway corridor, giving it strong connectivity into Panchkula and the wider Tricity growth region.",
+  },
+  {
+    question: "Does Motia Group build both residential and commercial projects?",
+    answer:
+      "Yes. The portfolio spans residential apartments, independent floors and plots, commercial high-street shops and office space, and industrial plots, allowing homebuyers and investors to work with one trusted developer across categories.",
+  },
+  {
+    question: "How experienced is Motia Group as a Tricity real estate developer?",
+    answer:
+      "Motia Group has been developing real estate since 2005, completing 15 projects and delivering more than 4,500 homes and offices across the region.",
+  },
+]);
+
 export default function Page() {
   return (
     <>
+      <JsonLd data={faqSchema} />
       <ProjectHero
         image="/motiaz-royal-citi/citi-banner-1.webp"
         title="A Real Estate Developer Building Across the Chandigarh Tricity Region"
+        breadcrumbs={[{ name: "Home", url: "/" }, { name: "Real Estate Developer in Tricity" }]}
         ctaLabel="Book a Site Visit"
         ctaHref="/contact-us"
         zoomBg

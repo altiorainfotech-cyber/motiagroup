@@ -141,6 +141,11 @@ export default function Page() {
         image="/high-street/banner.jpg"
         title="Motia High Street – Commercial Shops & Property in Zirakpur"
         subtitle="The only commercial place, in and around the huge residential area on VIP Road, Zirakpur"
+        breadcrumbs={[
+          { name: "Home", url: "/" },
+          { name: "Commercial Projects", url: "/commercial-projects" },
+          { name: "Motia High Street" },
+        ]}
         zoomBg
       />
       <ProjectTabsLayout tabs={tabs} />

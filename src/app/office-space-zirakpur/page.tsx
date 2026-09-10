@@ -4,9 +4,11 @@ import Image from "next/image";
 import Link from "next/link";
 import ClientsSection from "@/components/ClientsSection";
 import FaqAccordion, { type FaqItem } from "@/components/FaqAccordion";
+import JsonLd from "@/components/JsonLd";
 import ProjectHero from "@/components/ProjectHero";
 import Reveal from "@/components/Reveal";
 import TestimonialSection from "@/components/TestimonialSection";
+import { faqPageJsonLd } from "@/lib/structuredData";
 
 export const metadata: Metadata = {
   title: "Office Space in Zirakpur | Commercial Offices & Business Spaces",
@@ -84,12 +86,37 @@ const contactInfo: { icon: typeof Phone; label: string; value: string; href?: st
   { icon: MapPin, label: "Corporate Office", value: "Motia'z Royal Business Park, Zirakpur" },
 ];
 
+const faqSchema = faqPageJsonLd([
+  {
+    question: "Why choose office space in Zirakpur over Chandigarh or Mohali?",
+    answer:
+      "Zirakpur sits directly on NH-22 with fast connectivity to Chandigarh, Mohali, Panchkula and the airport, while typically offering more competitive pricing than establishing an office within Chandigarh city itself.",
+  },
+  {
+    question: "What kind of businesses operate at Motia'z Royal Business Park?",
+    answer:
+      "Current tenants include engineering, construction and data-centre companies that specifically chose the location for its highway connectivity, 24x7 power back-up and security infrastructure.",
+  },
+  {
+    question: "Can I expand my office space later as my team grows?",
+    answer:
+      "Yes. Several existing tenants at Royal Business Park started with a smaller footprint and later added adjoining space as their team and operations grew.",
+  },
+  {
+    question: "Is Motia'z Royal Business Park suitable for a corporate head office?",
+    answer:
+      "Yes, the development is designed for both branch offices and full corporate operations, with the scale and infrastructure to support a formal registered business address.",
+  },
+]);
+
 export default function Page() {
   return (
     <>
+      <JsonLd data={faqSchema} />
       <ProjectHero
         image="/motiaz-royal-business-park/banner.jpeg"
         title="Office Space in Zirakpur, Built Around NH-22 Connectivity"
+        breadcrumbs={[{ name: "Home", url: "/" }, { name: "Office Space in Zirakpur" }]}
         ctaLabel="Enquire About Office Space"
         ctaHref="/contact-us"
         zoomBg

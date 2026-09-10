@@ -4,8 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 import ClientsSection from "@/components/ClientsSection";
 import FaqAccordion, { type FaqItem } from "@/components/FaqAccordion";
+import JsonLd from "@/components/JsonLd";
 import ProjectHero from "@/components/ProjectHero";
 import Reveal from "@/components/Reveal";
+import { faqPageJsonLd } from "@/lib/structuredData";
 
 export const metadata: Metadata = {
   title: "Industrial Plots in Panchkula | Industrial Property & Investment",
@@ -98,12 +100,32 @@ const contactInfo: { icon: typeof Phone; label: string; value: string; href?: st
   },
 ];
 
+const faqSchema = faqPageJsonLd([
+  {
+    question: "Does Motia Group have industrial plots located inside Panchkula?",
+    answer:
+      "Motia Group's industrial development is located at Saha, Haryana, on NH-344, which is the Panchkula-Yamunanagar highway. This gives Panchkula-based businesses fast, direct highway access to the development, though the plots themselves are situated at Saha rather than within Panchkula city.",
+  },
+  {
+    question: "What connectivity do these industrial plots offer from Panchkula?",
+    answer:
+      "The development sits on NH-344 with direct highway frontage toward Panchkula, along with freight rail access and proximity to Ambala local airport, supporting manufacturing, warehousing and logistics operations.",
+  },
+  {
+    question: "Where can I see the full details of these industrial plots?",
+    answer:
+      "Full project details, infrastructure specifications and location information are available on our Haryana Industrial Plots page, alongside our broader Industrial Plots overview.",
+  },
+]);
+
 export default function Page() {
   return (
     <>
+      <JsonLd data={faqSchema} />
       <ProjectHero
         image="/haryana-industral-plots/banner.jpg"
         title="Industrial Plots on the Panchkula-Yamunanagar Highway Corridor"
+        breadcrumbs={[{ name: "Home", url: "/" }, { name: "Industrial Plots in Panchkula" }]}
         ctaLabel="Enquire Now"
         ctaHref="/contact-us"
         zoomBg

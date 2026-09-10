@@ -4,8 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 import ClientsSection from "@/components/ClientsSection";
 import FaqAccordion, { type FaqItem } from "@/components/FaqAccordion";
+import JsonLd from "@/components/JsonLd";
 import ProjectHero from "@/components/ProjectHero";
 import Reveal from "@/components/Reveal";
+import { faqPageJsonLd } from "@/lib/structuredData";
 
 export const metadata: Metadata = {
   title: "Commercial Shops in Zirakpur | Retail Spaces for Sale",
@@ -87,12 +89,37 @@ const contactInfo: { icon: typeof Phone; label: string; value: string; href?: st
   { icon: MapPin, label: "Corporate Office", value: "Motia'z Royal Business Park, Zirakpur" },
 ];
 
+const faqSchema = faqPageJsonLd([
+  {
+    question: "What should I look for before buying a commercial shop in Zirakpur?",
+    answer:
+      "Prioritize road visibility, footfall around the location, and the planned tenant mix of the development. A shop surrounded by complementary businesses, rather than isolated, tends to perform better over time.",
+  },
+  {
+    question: "Where is Motia High Street located?",
+    answer:
+      "Motia High Street is located on VIP Road in Zirakpur, a well-travelled retail corridor designed for consistent footfall.",
+  },
+  {
+    question: "Is Motia High Street suitable for food and lifestyle businesses?",
+    answer:
+      "Yes, the development's ground-floor and multi-level shop formats are suited to food outlets, fashion, lifestyle brands and everyday retail businesses alike.",
+  },
+  {
+    question: "Can I rent out a shop instead of running a business myself?",
+    answer:
+      "Yes, most buyers at retail developments like Motia High Street purchase shops as an investment and lease them out to retail tenants rather than operating a business themselves.",
+  },
+]);
+
 export default function Page() {
   return (
     <>
+      <JsonLd data={faqSchema} />
       <ProjectHero
         image="/high-street/banner.jpg"
         title="Commercial Shops in Zirakpur: What Makes a Retail Unit Perform"
+        breadcrumbs={[{ name: "Home", url: "/" }, { name: "Commercial Shops in Zirakpur" }]}
         ctaLabel="Enquire About Shops"
         ctaHref="/contact-us"
         zoomBg

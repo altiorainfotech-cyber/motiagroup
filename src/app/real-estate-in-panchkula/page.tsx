@@ -4,8 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 import ClientsSection from "@/components/ClientsSection";
 import FaqAccordion, { type FaqItem } from "@/components/FaqAccordion";
+import JsonLd from "@/components/JsonLd";
 import ProjectHero from "@/components/ProjectHero";
 import Reveal from "@/components/Reveal";
+import { faqPageJsonLd } from "@/lib/structuredData";
 
 export const metadata: Metadata = {
   title: "Real Estate in Panchkula | Property & Investment Opportunities",
@@ -80,12 +82,37 @@ const faqs: FaqItem[] = [
   },
 ];
 
+const faqSchema = faqPageJsonLd([
+  {
+    question: "Does Motia Group have a residential or commercial project located in Panchkula?",
+    answer:
+      "Not directly within Panchkula itself. Motia Group's footprint spans the wider Chandigarh Tricity region, with residential and commercial developments in Zirakpur and a plotted township near Mohali. Our Haryana Industrial Plots at Saha sit on the Panchkula-Yamunanagar highway corridor, connecting our portfolio to the Panchkula side of the Tricity without being located inside Panchkula itself.",
+  },
+  {
+    question: "How is Panchkula connected to Motia Group's Haryana Industrial Plots at Saha?",
+    answer:
+      "The Haryana Industrial Plots are located in Saha on NH-344, the highway corridor that runs between Panchkula and Yamunanagar and sits adjacent to Ambala, giving investors based around Panchkula direct road access to the site.",
+  },
+  {
+    question: "What investment opportunities does Motia Group offer close to Panchkula?",
+    answer:
+      "Buyers connected to Panchkula can explore Motia Group's residential and commercial projects in nearby Zirakpur, a plotted development near Mohali, and industrial plots at Saha along the Panchkula-Yamunanagar corridor.",
+  },
+  {
+    question: "Is Zirakpur close to Panchkula?",
+    answer:
+      "Yes. Zirakpur, Panchkula and Chandigarh sit next to one another as part of the same Tricity region, connected by the Chandigarh-Ambala Highway, making Motia Group's Zirakpur projects easily accessible from Panchkula.",
+  },
+]);
+
 export default function Page() {
   return (
     <>
+      <JsonLd data={faqSchema} />
       <ProjectHero
         image="/haryana-industral-plots/banner.jpg"
         title="Panchkula & the Tricity: Connected Growth Along the Corridor"
+        breadcrumbs={[{ name: "Home", url: "/" }, { name: "Real Estate in Panchkula" }]}
         ctaLabel="Explore Investment Options"
         ctaHref="/contact-us"
         zoomBg

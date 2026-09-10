@@ -4,8 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 import ClientsSection from "@/components/ClientsSection";
 import FaqAccordion, { type FaqItem } from "@/components/FaqAccordion";
+import JsonLd from "@/components/JsonLd";
 import ProjectHero from "@/components/ProjectHero";
 import Reveal from "@/components/Reveal";
+import { faqPageJsonLd } from "@/lib/structuredData";
 
 export const metadata: Metadata = {
   title: "Real Estate Builder in Zirakpur | Residential & Commercial Properties",
@@ -107,12 +109,37 @@ const contactInfo: { icon: typeof Phone; label: string; value: string; href?: st
   { icon: MapPin, label: "Corporate Office", value: "Motia'z Royal Business Park, Zirakpur" },
 ];
 
+const faqSchema = faqPageJsonLd([
+  {
+    question: "What should I check before choosing a real estate builder in Zirakpur?",
+    answer:
+      "Look at how many years the builder has operated in Zirakpur specifically, whether their past projects were delivered on time, whether current and past developments are RERA-registered, and whether the builder maintains a genuine local office you can walk into rather than a regional sales desk.",
+  },
+  {
+    question: "Is Motia Group based in Zirakpur or just active here?",
+    answer:
+      "Motia Group is headquartered in Zirakpur, with our corporate office at Motia'z Royal Business Park on the Chandigarh-Ambala Highway. We have been building here since 2005.",
+  },
+  {
+    question: "Does Motia Group build both residential and commercial projects?",
+    answer:
+      "Yes. Our Zirakpur portfolio spans residential apartments, independent floors and plotted developments alongside commercial office space and retail high streets, giving buyers and investors a single trusted builder across property types.",
+  },
+  {
+    question: "How many projects has Motia Group delivered so far?",
+    answer:
+      "Motia Group has completed 15 projects, delivering more than 4,500 homes and offices across Zirakpur, Mohali and the wider Chandigarh Tricity region.",
+  },
+]);
+
 export default function Page() {
   return (
     <>
+      <JsonLd data={faqSchema} />
       <ProjectHero
         image="/motiaz-royal-business-park/banner.jpeg"
         title="A Real Estate Builder Headquartered in Zirakpur, Built for Zirakpur"
+        breadcrumbs={[{ name: "Home", url: "/" }, { name: "Real Estate Builder in Zirakpur" }]}
         ctaLabel="Book a Site Visit"
         ctaHref="/contact-us"
         zoomBg

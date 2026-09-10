@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbJsonLd } from "@/lib/structuredData";
 
 export type Breadcrumb = { label: string; href?: string };
 
@@ -19,6 +21,9 @@ export default function PageBanner({
 }) {
   return (
     <section className="relative h-[140px] w-full overflow-hidden sm:h-[180px]">
+      <JsonLd
+        data={breadcrumbJsonLd(breadcrumbs.map((crumb) => ({ name: crumb.label, url: crumb.href })))}
+      />
       <Image src={image} alt="" fill sizes="100vw" className="object-cover" />
       {overlayColor && (
         <div className="absolute inset-0" style={{ backgroundColor: overlayColor, opacity: overlayOpacity }} />

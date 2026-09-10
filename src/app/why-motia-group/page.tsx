@@ -3,9 +3,11 @@ import { Building2, HeartHandshake, MapPinned, ShieldCheck, Timer, Wrench } from
 import Image from "next/image";
 import Link from "next/link";
 import FaqAccordion, { type FaqItem } from "@/components/FaqAccordion";
+import JsonLd from "@/components/JsonLd";
 import PageBanner from "@/components/PageBanner";
 import Reveal from "@/components/Reveal";
 import TestimonialSection from "@/components/TestimonialSection";
+import { faqPageJsonLd } from "@/lib/structuredData";
 
 export const metadata: Metadata = {
   title: "Why Choose Motia Group | Trusted Real Estate Developer in Zirakpur",
@@ -87,6 +89,29 @@ const faqs: FaqItem[] = [
   },
 ];
 
+const faqSchema = faqPageJsonLd([
+  {
+    question: "Why should I choose Motia Group over other developers in Zirakpur?",
+    answer:
+      "Motia Group brings together a proven delivery record of 15 completed projects and 4,500+ homes and offices handed over, RERA-compliant transparent dealings, and quality construction across residential, commercial, and industrial developments, all backed by more than 20 years of experience in the region.",
+  },
+  {
+    question: "Are Motia Group projects RERA registered?",
+    answer:
+      "Yes. Our ongoing and delivered developments follow RERA guidelines, with clear land titles and transparent documentation shared with buyers throughout the purchase process.",
+  },
+  {
+    question: "What kind of support does Motia Group offer after possession?",
+    answer:
+      "Our relationship with buyers doesn't end at handover. Our team remains available to assist with post-possession queries, documentation, and service requests for every project we deliver.",
+  },
+  {
+    question: "What types of properties does Motia Group offer?",
+    answer:
+      "We build residential apartments and gated communities, commercial office and retail spaces, and industrial plots, giving buyers and investors a range of options across Zirakpur, Mohali, and the wider Tricity and North India region.",
+  },
+]);
+
 export default function Page() {
   return (
     <>
@@ -97,6 +122,7 @@ export default function Page() {
         overlayColor="#1c2230"
         overlayOpacity={0.75}
       />
+      <JsonLd data={faqSchema} />
 
       <section className="mx-auto max-w-7xl px-6 py-16 sm:py-20 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center lg:gap-16">

@@ -4,8 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 import ClientsSection from "@/components/ClientsSection";
 import FaqAccordion, { type FaqItem } from "@/components/FaqAccordion";
+import JsonLd from "@/components/JsonLd";
 import ProjectHero from "@/components/ProjectHero";
 import Reveal from "@/components/Reveal";
+import { faqPageJsonLd } from "@/lib/structuredData";
 
 export const metadata: Metadata = {
   title: "Property in Kurali | Residential Plots & Township Projects",
@@ -98,12 +100,32 @@ const contactInfo: { icon: typeof Phone; label: string; value: string; href?: st
   },
 ];
 
+const faqSchema = faqPageJsonLd([
+  {
+    question: "Why should I consider buying property in Kurali?",
+    answer:
+      "Kurali offers residential plots at a scale that is increasingly hard to find closer to central Mohali and Chandigarh, while still remaining well connected to both cities by road. This makes it appealing for buyers who want space, flexibility and long-term growth potential.",
+  },
+  {
+    question: "What does Motia'z Gill Estate in Kurali offer?",
+    answer:
+      "Motia'z Gill Estate is a delivered township in Kurali offering residential plots along with dedicated commercial space, allowing owners to build their own home while having everyday retail conveniences close by.",
+  },
+  {
+    question: "Is Kurali well connected to Mohali and Chandigarh?",
+    answer:
+      "Yes. Kurali is positioned along the road corridor connecting Mohali and Chandigarh, giving residents practical access to both cities for work, education and daily needs.",
+  },
+]);
+
 export default function Page() {
   return (
     <>
+      <JsonLd data={faqSchema} />
       <ProjectHero
         image="/motia-gill-estate/bannergillestate-1.webp"
         title="Property in Kurali — Residential Plots & Township Living Near Mohali"
+        breadcrumbs={[{ name: "Home", url: "/" }, { name: "Property in Kurali" }]}
         ctaLabel="Enquire About Kurali"
         ctaHref="/contact-us"
         zoomBg

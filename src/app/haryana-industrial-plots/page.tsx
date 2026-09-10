@@ -162,6 +162,11 @@ export default function Page() {
       <ProjectHero
         image="/haryana-industral-plots/banner.jpg"
         title="Industrial Plots in Haryana – NH-344 Industrial Property"
+        breadcrumbs={[
+          { name: "Home", url: "/" },
+          { name: "Industrial Plots", url: "/industrial-plots" },
+          { name: "Haryana Industrial Plots" },
+        ]}
         zoomBg
       />
 

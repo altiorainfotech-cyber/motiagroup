@@ -111,6 +111,11 @@ export default function Page() {
         image="/motia-citi/hero%20banner.png"
         title="Motia Citi – Residential Plots on Chandigarh-Ambala Highway"
         subtitle="Premium apartments and homes crafted with a sense to reconnect with nature."
+        breadcrumbs={[
+          { name: "Home", url: "/" },
+          { name: "Residential Projects", url: "/residential-projects" },
+          { name: "Motia Citi" },
+        ]}
         zoomBg
       />
       <ProjectTabsLayout tabs={tabs} />

@@ -203,6 +203,11 @@ export default function Page() {
         image="/motiaz-royal-business-park/banner.jpeg"
         title="Motia'z Royal Business Park – Office Space in Zirakpur"
         subtitle="A business landmark that your clients can find easily"
+        breadcrumbs={[
+          { name: "Home", url: "/" },
+          { name: "Commercial Projects", url: "/commercial-projects" },
+          { name: "Motia'z Royal Business Park" },
+        ]}
         zoomBg
       />
       <ProjectTabsLayout tabs={tabs} />

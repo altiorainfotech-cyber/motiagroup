@@ -4,8 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 import ClientsSection from "@/components/ClientsSection";
 import FaqAccordion, { type FaqItem } from "@/components/FaqAccordion";
+import JsonLd from "@/components/JsonLd";
 import ProjectHero from "@/components/ProjectHero";
 import Reveal from "@/components/Reveal";
+import { faqPageJsonLd } from "@/lib/structuredData";
 
 export const metadata: Metadata = {
   title: "Luxury Homes in Zirakpur | Premium Residential Projects",
@@ -97,12 +99,37 @@ const contactInfo: { icon: typeof Phone; label: string; value: string; href?: st
   { icon: MapPin, label: "Corporate Office", value: "Motia'z Royal Business Park, Zirakpur" },
 ];
 
+const faqSchema = faqPageJsonLd([
+  {
+    question: "What makes a home 'luxury' at Motia Group developments?",
+    answer:
+      "Beyond finishes, our luxury developments are defined by scale of planning, dedicated green and recreational space, clubhouse amenities, and gated security — the everyday lifestyle infrastructure that separates a premium address from a standard one.",
+  },
+  {
+    question: "Is Motia'z Royal Citi ready to move in?",
+    answer:
+      "Yes, Motia'z Royal Citi is a delivered 23-acre development in Zirakpur. Visit the Royal Citi project page for current availability.",
+  },
+  {
+    question: "What amenities does Motia'z Harmony Greens offer?",
+    answer:
+      "Harmony Greens is planned around a clubhouse and a dedicated meditation centre, along with green, nature-facing layouts, located on PR-7 Airport Road in Sanauli, Zirakpur.",
+  },
+  {
+    question: "Which luxury project should I consider if I want a ready home versus a new launch?",
+    answer:
+      "Motia'z Royal Citi is fully delivered for buyers who want to move in without waiting, while Motia'z Harmony Greens is an ongoing premium project for buyers who want to book early in a newer development.",
+  },
+]);
+
 export default function Page() {
   return (
     <>
+      <JsonLd data={faqSchema} />
       <ProjectHero
         image="/home-page-hero-section/harmonygreens-banner-01.webp"
         title="Luxury Homes in Zirakpur, Designed Around Lifestyle"
+        breadcrumbs={[{ name: "Home", url: "/" }, { name: "Luxury Homes in Zirakpur" }]}
         ctaLabel="Book a Site Visit"
         ctaHref="/contact-us"
         zoomBg

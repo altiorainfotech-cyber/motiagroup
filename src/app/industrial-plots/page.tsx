@@ -41,6 +41,10 @@ export default function Page() {
       <ProjectHero
         image="/haryana-industral-plots/banner.jpg"
         title="Industrial Plots in Haryana & North India"
+        breadcrumbs={[
+          { name: "Home", url: "/" },
+          { name: "Industrial Plots" },
+        ]}
         ctaLabel="Enquire About Plots"
         ctaHref="/contact-us"
         zoomBg

@@ -4,8 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 import ClientsSection from "@/components/ClientsSection";
 import FaqAccordion, { type FaqItem } from "@/components/FaqAccordion";
+import JsonLd from "@/components/JsonLd";
 import ProjectHero from "@/components/ProjectHero";
 import Reveal from "@/components/Reveal";
+import { faqPageJsonLd } from "@/lib/structuredData";
 
 export const metadata: Metadata = {
   title: "Property Investment in Zirakpur & Tricity | Motia Group",
@@ -89,12 +91,32 @@ const contactInfo: { icon: typeof Phone; label: string; value: string; href?: st
   },
 ];
 
+const faqSchema = faqPageJsonLd([
+  {
+    question: "Why invest in property in Zirakpur and the Tricity region?",
+    answer:
+      "Zirakpur sits at the heart of the Tricity growth corridor, connecting Chandigarh, Mohali and Panchkula. Motia Group has been developing here since 2005, delivering 15 projects and 4,500+ homes and offices, which gives investors a long track record to evaluate alongside the area's continuing growth.",
+  },
+  {
+    question: "What types of property investment does Motia Group offer?",
+    answer:
+      "Investors can choose from residential apartments and plots, commercial high-street retail and office space, and industrial plots, allowing a portfolio approach across capital appreciation, rental yield and logistics-driven demand.",
+  },
+  {
+    question: "Does Motia Group offer pre-leased commercial investment opportunities?",
+    answer:
+      "Motia Group's commercial developments, including Motia High Street and Motia'z Royal Business Park, are designed for retail and office tenancy, making them suited to investors seeking rental income alongside property ownership.",
+  },
+]);
+
 export default function Page() {
   return (
     <>
+      <JsonLd data={faqSchema} />
       <ProjectHero
         image="/motia-citi/hero%20banner.png"
         title="Property Investment in Zirakpur & the Tricity Region"
+        breadcrumbs={[{ name: "Home", url: "/" }, { name: "Property Investment" }]}
         ctaLabel="Talk to an Investment Advisor"
         ctaHref="/contact-us"
         zoomBg

@@ -260,6 +260,11 @@ export default function Page() {
         image="/motiaz-royal-citi/citi-banner-1.webp"
         title="Motia'z Royal Citi – Luxury Homes & Flats in Zirakpur"
         subtitle="We have the homes that you'll love to live in, with the luxury and comfort which makes life much easier"
+        breadcrumbs={[
+          { name: "Home", url: "/" },
+          { name: "Residential Projects", url: "/residential-projects" },
+          { name: "Motia'z Royal Citi" },
+        ]}
         zoomBg
       />
       <ProjectTabsLayout tabs={tabs} />

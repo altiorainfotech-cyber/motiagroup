@@ -227,6 +227,11 @@ export default function Page() {
         image="/motiahuys/banner.png"
         title="Motia HUYS – 2 & 3 BHK Independent Floors in Zirakpur"
         subtitle="Affordable independent housing"
+        breadcrumbs={[
+          { name: "Home", url: "/" },
+          { name: "Residential Projects", url: "/residential-projects" },
+          { name: "Motia HUYS" },
+        ]}
         zoomBg
       />
       <ProjectTabsLayout tabs={tabs} />

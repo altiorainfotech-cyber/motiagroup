@@ -4,8 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 import ClientsSection from "@/components/ClientsSection";
 import FaqAccordion, { type FaqItem } from "@/components/FaqAccordion";
+import JsonLd from "@/components/JsonLd";
 import ProjectHero from "@/components/ProjectHero";
 import Reveal from "@/components/Reveal";
+import { faqPageJsonLd } from "@/lib/structuredData";
 
 export const metadata: Metadata = {
   title: "Industrial Plots Near Ambala | NH-344 Industrial Property",
@@ -92,12 +94,32 @@ const contactInfo: { icon: typeof Phone; label: string; value: string; href?: st
   },
 ];
 
+const faqSchema = faqPageJsonLd([
+  {
+    question: "Are Motia Group's industrial plots located inside Ambala city?",
+    answer:
+      "No. The development is located at Saha, Haryana, on NH-344, directly adjacent to Ambala. This gives businesses close proximity to Ambala's markets, highway network and transport infrastructure, without the plots being situated inside Ambala city itself.",
+  },
+  {
+    question: "What logistics infrastructure supports these industrial plots near Ambala?",
+    answer:
+      "The plots benefit from the Eastern Freight Railway corridor connecting toward Kolkata, direct NH-344 highway frontage, and proximity to Ambala's local airport, giving manufacturers and logistics operators multiple ways to move cargo efficiently.",
+  },
+  {
+    question: "Is this development part of a larger industrial hub near Ambala?",
+    answer:
+      "Yes. HSIIDC has planned an industrial area of roughly 1,200 acres in the surrounding region, which is expected to further shorten lead times and reduce logistics costs for businesses located here.",
+  },
+]);
+
 export default function Page() {
   return (
     <>
+      <JsonLd data={faqSchema} />
       <ProjectHero
         image="/haryana-industral-plots/banner.jpg"
         title="Industrial Plots Near Ambala — NH-344 Freight & Logistics Corridor"
+        breadcrumbs={[{ name: "Home", url: "/" }, { name: "Industrial Plots Near Ambala" }]}
         ctaLabel="Enquire Now"
         ctaHref="/contact-us"
         zoomBg
