@@ -15,14 +15,42 @@ const projectPages = [
   "motiaz-royal-business-park",
 ];
 
+const hubPages = [
+  "residential-projects",
+  "commercial-projects",
+  "industrial-plots",
+  "delivered-projects",
+  "ongoing-projects",
+];
+
 const seoLandingPages = [
   "top-builders-in-chandigarh",
   "real-estate-company-in-chandigarh",
   "best-builders-in-mohali",
+  "real-estate-builder-zirakpur",
+  "real-estate-developer-tricity",
+  "residential-plots-zirakpur",
+  "commercial-property-zirakpur",
+  "office-space-zirakpur",
+  "commercial-shops-zirakpur",
+  "property-in-kurali",
+  "industrial-plots-panchkula",
+  "industrial-plots-near-ambala",
+  "luxury-homes-zirakpur",
+  "3-bhk-flats-zirakpur",
+  "nri-property-punjab",
+  "property-investment",
+  "real-estate-in-zirakpur",
+  "real-estate-in-mohali",
+  "real-estate-in-panchkula",
+  "real-estate-in-tricity",
 ];
 
 const companyPages = [
+  "about-us",
   "founders",
+  "why-motia-group",
+  "awards",
   "life-at-motia-group",
   "job-openings",
   "contact-us",
@@ -42,6 +70,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: now,
     changeFrequency: "monthly",
     priority: 0.9,
+  }));
+
+  const hubs: MetadataRoute.Sitemap = hubPages.map((slug) => ({
+    url: `${BASE_URL}/${slug}`,
+    lastModified: now,
+    changeFrequency: "monthly",
+    priority: 0.85,
   }));
 
   const seoPages: MetadataRoute.Sitemap = seoLandingPages.map((slug) => ({
@@ -73,5 +108,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/privacy-policy`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
   ];
 
-  return [...home, ...projects, ...seoPages, ...company, ...blogIndex, ...blogPostEntries, ...legal];
+  return [...home, ...projects, ...hubs, ...seoPages, ...company, ...blogIndex, ...blogPostEntries, ...legal];
 }
