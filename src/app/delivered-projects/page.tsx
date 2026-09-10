@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import ClientsSection from "@/components/ClientsSection";
 import ProjectHero from "@/components/ProjectHero";
+import RelatedLinks from "@/components/RelatedLinks";
 import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = {
@@ -28,7 +29,7 @@ const deliveredResidential: DeliveredProject[] = [
     image: "/motiaz-royal-citi/citi-banner-1.webp",
     category: "Residential",
     location: "Zirakpur",
-    description: "23-acre project — luxury homes & flats.",
+    description: "23-acre project, luxury homes & flats.",
   },
   {
     title: "Motia'z Gill Estate",
@@ -145,7 +146,7 @@ export default function Page() {
           </span>
           <p className="mt-4 text-gray-600">
             With 20+ years in real estate and 15 projects completed, Motia Group's track record speaks for itself.
-            The seven developments below are fully delivered and ready for possession today — five residential
+            The seven developments below are fully delivered and ready for possession today, five residential
             communities where families already live, and two commercial addresses already home to businesses. Every
             one stands as proof of our commitment to on-time, quality construction.
           </p>
@@ -193,7 +194,7 @@ export default function Page() {
           <Reveal variant="up">
             <h2 className="text-3xl font-bold text-white sm:text-4xl">Visit a Completed Motia Group Community</h2>
             <p className="mt-4 text-white/80">
-              See the quality and finish of our delivered projects for yourself — book a site visit today.
+              See the quality and finish of our delivered projects for yourself. Book a site visit today.
             </p>
             <Link
               href="/contact-us"
@@ -204,6 +205,18 @@ export default function Page() {
           </Reveal>
         </div>
       </section>
+
+      <Reveal variant="up">
+        <RelatedLinks
+          links={[
+            { label: "Ongoing Projects", href: "/ongoing-projects" },
+            { label: "Residential Projects in Zirakpur", href: "/residential-projects" },
+            { label: "Commercial Projects in Zirakpur", href: "/commercial-projects" },
+            { label: "Why Choose Motia Group", href: "/why-motia-group" },
+            { label: "About Motia Group", href: "/about-us" },
+          ]}
+        />
+      </Reveal>
 
       <Reveal variant="fade">
         <ClientsSection />

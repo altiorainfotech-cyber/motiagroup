@@ -4,6 +4,7 @@ import ClientsSection from "@/components/ClientsSection";
 import GetInTouchForm from "@/components/GetInTouchForm";
 import GoogleMap from "@/components/GoogleMap";
 import PageBanner from "@/components/PageBanner";
+import RelatedLinks from "@/components/RelatedLinks";
 import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = {
@@ -62,7 +63,7 @@ export default function Page() {
         <h2 className="mt-2 text-center text-3xl font-bold text-gray-900 sm:text-4xl">Contact Us</h2>
         <p className="mx-auto mt-4 max-w-2xl text-center text-gray-600">
           Your dream property in North India is just a conversation away. Whether you&rsquo;re exploring residential
-          or commercial opportunities, our team is here to help &mdash; reach out to{" "}
+          or commercial opportunities, our team is here to help. Reach out to{" "}
           <span className="font-semibold text-[#377f45]">Motia Group</span> below.
         </p>
 
@@ -110,6 +111,18 @@ export default function Page() {
             <GoogleMap />
           </div>
         </section>
+      </Reveal>
+
+      <Reveal variant="up">
+        <RelatedLinks
+          links={[
+            { label: "About Motia Group", href: "/about-us" },
+            { label: "Why Choose Motia Group", href: "/why-motia-group" },
+            { label: "Residential Projects in Zirakpur", href: "/residential-projects" },
+            { label: "Commercial Projects in Zirakpur", href: "/commercial-projects" },
+            { label: "NRI Property FAQ", href: "/nris" },
+          ]}
+        />
       </Reveal>
 
       <Reveal variant="fade">

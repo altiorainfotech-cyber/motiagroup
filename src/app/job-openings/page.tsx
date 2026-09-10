@@ -3,6 +3,7 @@ import { ArrowRight, Briefcase, Headset, Users } from "lucide-react";
 import Link from "next/link";
 import ClientsSection from "@/components/ClientsSection";
 import PageBanner from "@/components/PageBanner";
+import RelatedLinks from "@/components/RelatedLinks";
 import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = {
@@ -86,6 +87,18 @@ export default function Page() {
           </div>
         </Reveal>
       </section>
+
+      <Reveal variant="up">
+        <RelatedLinks
+          links={[
+            { label: "Life at Motia Group", href: "/life-at-motia-group" },
+            { label: "About Motia Group", href: "/about-us" },
+            { label: "Motia Group Founders", href: "/founders" },
+            { label: "Why Choose Motia Group", href: "/why-motia-group" },
+            { label: "Contact Motia Group", href: "/contact-us" },
+          ]}
+        />
+      </Reveal>
 
       <Reveal variant="fade">
         <ClientsSection />

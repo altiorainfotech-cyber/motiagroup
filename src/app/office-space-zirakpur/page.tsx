@@ -6,6 +6,7 @@ import ClientsSection from "@/components/ClientsSection";
 import FaqAccordion, { type FaqItem } from "@/components/FaqAccordion";
 import JsonLd from "@/components/JsonLd";
 import ProjectHero from "@/components/ProjectHero";
+import RelatedLinks from "@/components/RelatedLinks";
 import Reveal from "@/components/Reveal";
 import TestimonialSection from "@/components/TestimonialSection";
 import { faqPageJsonLd } from "@/lib/structuredData";
@@ -146,7 +147,7 @@ export default function Page() {
             <div className="mt-4 space-y-4 text-gray-600">
               <p>
                 Work has changed. Many businesses today are not choosing between a home office and a city-centre
-                tower — they are looking for a business park that offers real infrastructure, room to grow, and a
+                tower. They are looking for a business park that offers real infrastructure, room to grow, and a
                 short, predictable commute for a hybrid or partially remote team.
               </p>
               <p>
@@ -296,6 +297,18 @@ export default function Page() {
           </Reveal>
         </div>
       </section>
+
+      <Reveal variant="up">
+        <RelatedLinks
+          links={[
+            { label: "Motia'z Royal Business Park", href: "/motiaz-royal-business-park" },
+            { label: "Commercial Property in Zirakpur", href: "/commercial-property-zirakpur" },
+            { label: "Commercial Projects in Zirakpur", href: "/commercial-projects" },
+            { label: "Real Estate in Zirakpur", href: "/real-estate-in-zirakpur" },
+            { label: "Property Investment", href: "/property-investment" },
+          ]}
+        />
+      </Reveal>
 
       <Reveal variant="fade">
         <ClientsSection />

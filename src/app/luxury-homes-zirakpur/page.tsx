@@ -6,6 +6,7 @@ import ClientsSection from "@/components/ClientsSection";
 import FaqAccordion, { type FaqItem } from "@/components/FaqAccordion";
 import JsonLd from "@/components/JsonLd";
 import ProjectHero from "@/components/ProjectHero";
+import RelatedLinks from "@/components/RelatedLinks";
 import Reveal from "@/components/Reveal";
 import { faqPageJsonLd } from "@/lib/structuredData";
 
@@ -56,7 +57,7 @@ const faqs: FaqItem[] = [
     answer: (
       <p>
         Beyond finishes, our luxury developments are defined by scale of planning, dedicated green and recreational
-        space, clubhouse amenities, and gated security — the everyday lifestyle infrastructure that separates a
+        space, clubhouse amenities, and gated security, the everyday lifestyle infrastructure that separates a
         premium address from a standard one.
       </p>
     ),
@@ -103,7 +104,7 @@ const faqSchema = faqPageJsonLd([
   {
     question: "What makes a home 'luxury' at Motia Group developments?",
     answer:
-      "Beyond finishes, our luxury developments are defined by scale of planning, dedicated green and recreational space, clubhouse amenities, and gated security — the everyday lifestyle infrastructure that separates a premium address from a standard one.",
+      "Beyond finishes, our luxury developments are defined by scale of planning, dedicated green and recreational space, clubhouse amenities, and gated security, the everyday lifestyle infrastructure that separates a premium address from a standard one.",
   },
   {
     question: "Is Motia'z Royal Citi ready to move in?",
@@ -158,7 +159,7 @@ export default function Page() {
             </span>
             <div className="mt-4 space-y-4 text-gray-600">
               <p>
-                A luxury home is less about a single feature and more about how an entire day feels — the walk
+                A luxury home is less about a single feature and more about how an entire day feels, the walk
                 through a landscaped entrance, a clubhouse that is actually used, the quiet of a gated, secure
                 street. Zirakpur&apos;s two flagship premium addresses from Motia Group were both planned around that
                 lifestyle standard.
@@ -324,6 +325,18 @@ export default function Page() {
           </Reveal>
         </div>
       </section>
+
+      <Reveal variant="up">
+        <RelatedLinks
+          links={[
+            { label: "Motia'z Royal Citi", href: "/motiaz-royal-citi" },
+            { label: "Motia'z Harmony Greens", href: "/motia-harmonygreens" },
+            { label: "Real Estate in Zirakpur", href: "/real-estate-in-zirakpur" },
+            { label: "Residential Plots in Zirakpur", href: "/residential-plots-zirakpur" },
+            { label: "3 BHK Flats in Zirakpur", href: "/3-bhk-flats-zirakpur" },
+          ]}
+        />
+      </Reveal>
 
       <Reveal variant="fade">
         <ClientsSection />

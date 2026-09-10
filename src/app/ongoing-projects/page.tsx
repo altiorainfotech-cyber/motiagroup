@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import ClientsSection from "@/components/ClientsSection";
 import ProjectHero from "@/components/ProjectHero";
+import RelatedLinks from "@/components/RelatedLinks";
 import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = {
@@ -102,7 +103,7 @@ export default function Page() {
           </span>
           <p className="mt-4 text-gray-600">
             The best pricing and unit selection is almost always available before a project is complete. Motia
-            Group currently has two developments under active development — a residential address in Zirakpur's
+            Group currently has two developments under active development, a residential address in Zirakpur's
             expanding Sanauli belt, and an industrial land development along Haryana's NH-344 corridor. Both offer
             early investors the chance to enter ahead of the curve in fast-appreciating locations.
           </p>
@@ -164,6 +165,18 @@ export default function Page() {
           </Reveal>
         </div>
       </section>
+
+      <Reveal variant="up">
+        <RelatedLinks
+          links={[
+            { label: "Delivered Projects", href: "/delivered-projects" },
+            { label: "Residential Projects in Zirakpur", href: "/residential-projects" },
+            { label: "Commercial Projects in Zirakpur", href: "/commercial-projects" },
+            { label: "Property Investment", href: "/property-investment" },
+            { label: "About Motia Group", href: "/about-us" },
+          ]}
+        />
+      </Reveal>
 
       <Reveal variant="fade">
         <ClientsSection />

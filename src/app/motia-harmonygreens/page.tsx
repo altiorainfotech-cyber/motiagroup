@@ -34,6 +34,8 @@ import PhotoCarousel from "@/components/PhotoCarousel";
 import ProjectHero from "@/components/ProjectHero";
 import ProjectTabsLayout, { type ProjectTab } from "@/components/ProjectTabsLayout";
 import QuickFacts, { type QuickFact } from "@/components/QuickFacts";
+import RelatedLinks from "@/components/RelatedLinks";
+import Reveal from "@/components/Reveal";
 import SpecCard from "@/components/SpecCard";
 import TabHeading from "@/components/TabHeading";
 import YouTubeThumbnail from "@/components/YouTubeThumbnail";
@@ -141,7 +143,7 @@ const tabs: ProjectTab[] = [
         <div className="mt-8 space-y-4 text-gray-600">
           <p>
             Driven with the purpose to build a legacy of innovation, trust, and exceptional customer experience,{" "}
-            <span className="font-bold text-gray-900">Motia Group presents Harmony Greens</span> — a{" "}
+            <span className="font-bold text-gray-900">Motia Group presents Harmony Greens</span>, a{" "}
             <span className="font-bold text-[#c2185b]">premium residence</span>
             <span className="font-bold text-gray-900"> project in Zirakpur</span>. A premium residential community
             bringing you an upgraded lifestyle in the lap of nature, away from the fast-paced tempo of city life,
@@ -149,7 +151,7 @@ const tabs: ProjectTab[] = [
           </p>
           <p>
             Beautifully spaced &amp; efficient 3 / 3+1 / 5+1 BHK homes come with all modern &amp; world-class
-            amenities, offering all major necessities in the vicinity along with high connectivity — double
+            amenities, offering all major necessities in the vicinity along with high connectivity, double
             connectivity to the 200 ft. PR-7 Airport Road. Staying close to nature, observing the little significant
             elements, and appreciating them from the very core is both therapeutic and self-healing.
           </p>
@@ -300,6 +302,17 @@ export default function Page() {
         zoomBg
       />
       <ProjectTabsLayout tabs={tabs} />
+      <Reveal variant="up">
+        <RelatedLinks
+          links={[
+            { label: "Residential Projects in Zirakpur", href: "/residential-projects" },
+            { label: "Motia'z Royal Citi", href: "/motiaz-royal-citi" },
+            { label: "Motia Heights", href: "/motia-heights" },
+            { label: "Luxury Homes in Zirakpur", href: "/luxury-homes-zirakpur" },
+            { label: "Why Choose Motia Group", href: "/why-motia-group" },
+          ]}
+        />
+      </Reveal>
     </>
   );
 }

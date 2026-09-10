@@ -62,7 +62,7 @@ export const blogPosts: BlogPost[] = [
       { type: "h2", text: "Choosing a Plot: A Practical Checklist" },
       {
         type: "p",
-        text: "While Choosing Industrial Plots, Start with market access: your suppliers and customers should be reachable through more than one corridor to avoid single-point failures. Validate scalable utilities—electrical load today and upgrade paths tomorrow, alongside water and waste plans. Ensure titles and approvals are auditable and expansion-friendly. Treat digital connectivity as core production infrastructure, not an afterthought. Finally, measure the surrounding ecosystem—fabricators, logistics, maintenance, and talent pipelines—that keep uptime high and changeovers smooth.",
+        text: "While Choosing Industrial Plots, Start with market access: your suppliers and customers should be reachable through more than one corridor to avoid single-point failures. Validate scalable utilities: electrical load today and upgrade paths tomorrow, alongside water and waste plans. Ensure titles and approvals are auditable and expansion-friendly. Treat digital connectivity as core production infrastructure, not an afterthought. Finally, measure the surrounding ecosystem (fabricators, logistics, maintenance, and talent pipelines) that keep uptime high and changeovers smooth.",
       },
       { type: "h2", text: "Conclusion" },
       {
@@ -160,7 +160,7 @@ export const blogPosts: BlogPost[] = [
     slug: "best-commercial-developers-in-tricity",
     title: "Best Commercial Developers in Tricity: Giants Behind the Region’s Commercial Boom",
     image: "/blog/Best%20Commercial%20Developers%20in%20Tricity.png",
-    imageAlt: "Motia'z Royal Business Park promotional banner — Where your money works while you work",
+    imageAlt: "Motia'z Royal Business Park promotional banner: Where your money works while you work",
     excerpt:
       "The Tricity region of Chandigarh, Mohali, and Panchkula is becoming North India's leading commercial real estate destination. Previously famous mostly for its administrative status and high standard of living, Tricity has seen a dramatic change. Now, its skyline is transforming before our very",
     date: "August 4, 2025",
@@ -168,7 +168,7 @@ export const blogPosts: BlogPost[] = [
     body: [
       {
         type: "p",
-        text: "The Tricity region of Chandigarh, Mohali, and Panchkula is becoming North India’s leading commercial real estate destination. Previously famous mostly for its administrative status and high standard of living, Tricity has seen a dramatic change. Now, its skyline is transforming before our very eyes, complete with Grade-A office space, IT parks, business plazas, and retail giants—all courtesy of a small set of forward-thinking commercial developers who are redefining the economic landscape.",
+        text: "The Tricity region of Chandigarh, Mohali, and Panchkula is becoming North India’s leading commercial real estate destination. Previously famous mostly for its administrative status and high standard of living, Tricity has seen a dramatic change. Now, its skyline is transforming before our very eyes, complete with Grade-A office space, IT parks, business plazas, and retail giants, all courtesy of a small set of forward-thinking commercial developers who are redefining the economic landscape.",
       },
       {
         type: "p",
@@ -209,7 +209,7 @@ export const blogPosts: BlogPost[] = [
       { type: "p", text: "Distinguished Project: Sushma Infinium, Zirakpur" },
       {
         type: "p",
-        text: "Sushma has been a leading player in residential as well as commercial real estate. Infinium is a multi-use complex providing retail stores, office spaces, and serviced apartments—a new but successful concept for Tier-2 markets.",
+        text: "Sushma has been a leading player in residential as well as commercial real estate. Infinium is a multi-use complex providing retail stores, office spaces, and serviced apartments, a new but successful concept for Tier-2 markets.",
       },
       { type: "p", text: "Strengths:" },
       {
@@ -224,7 +224,7 @@ export const blogPosts: BlogPost[] = [
       { type: "p", text: "Landmark Project: GBP Centrum, Zirakpur" },
       {
         type: "p",
-        text: "GBP has been consistent in providing large-format projects targeted at mid- to high-level investors. Centrum is a commercial complex with retail spaces, banquet halls, food courts, and office spaces—all under one roof—an integrated commercial solution.",
+        text: "GBP has been consistent in providing large-format projects targeted at mid- to high-level investors. Centrum is a commercial complex with retail spaces, banquet halls, food courts, and office spaces, all under one roof, an integrated commercial solution.",
       },
       { type: "p", text: "What Investors Prefer in GBP:" },
       {
@@ -268,12 +268,12 @@ export const blogPosts: BlogPost[] = [
       { type: "h2", text: "Key Factors That Set Top Builders Apart" },
       {
         type: "p",
-        text: "The Tricity market’s not all about whoever does the most—it’s about whoever builds for tomorrow. Here’s what sets the best commercial builders apart:",
+        text: "The Tricity market’s not all about whoever does the most. It’s about whoever builds for tomorrow. Here’s what sets the best commercial builders apart:",
       },
       { type: "h3", text: "1. Future-Proof Design" },
       {
         type: "p",
-        text: "Bestech and Motia are focusing on energy efficiency, natural ventilation, smart lighting, and plug-and-play office layouts—positioning their developments for hybrid work culture and sustainable expansion.",
+        text: "Bestech and Motia are focusing on energy efficiency, natural ventilation, smart lighting, and plug-and-play office layouts, positioning their developments for hybrid work culture and sustainable expansion.",
       },
       { type: "h3", text: "2. Robust Leasing System" },
       {
@@ -304,7 +304,7 @@ export const blogPosts: BlogPost[] = [
       { type: "h2", text: "Final Thoughts" },
       {
         type: "p",
-        text: "Choosing the Right Builder Is Half the Investment. In a market where commercial growth is gaining momentum, selecting the right developer isn’t a matter of glancing through brochures—it’s a case of assessing vision, delivery, tenant quality, and post-sale support. The best commercial builders in Tricity are not merely offering spaces—they’re offering strategic platforms for business growth and wealth creation.",
+        text: "Choosing the Right Builder Is Half the Investment. In a market where commercial growth is gaining momentum, selecting the right developer isn’t a matter of glancing through brochures. It’s a case of assessing vision, delivery, tenant quality, and post-sale support. The best commercial builders in Tricity are not merely offering spaces. They’re offering strategic platforms for business growth and wealth creation.",
       },
       {
         type: "p",
@@ -329,7 +329,7 @@ export const blogPosts: BlogPost[] = [
       { type: "h2", text: "Conclusion" },
       {
         type: "p",
-        text: "Tricity’s Commercial Real Estate Is the Next Big Growth Engine. Tricity is no longer the quiet cousin of Delhi or Gurgaon—it’s a vibrant, fast-growing business destination in its own right. And the top commercial builders are making sure businesses and investors both can thrive here.",
+        text: "Tricity’s Commercial Real Estate Is the Next Big Growth Engine. Tricity is no longer the quiet cousin of Delhi or Gurgaon. It’s a vibrant, fast-growing business destination in its own right. And the top commercial builders are making sure businesses and investors both can thrive here.",
       },
       {
         type: "p",
@@ -352,15 +352,15 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "But today, we’re witnessing a fundamental shift—in demand patterns, tenant expectations, urban development, and asset valuation—that makes “commercial property for the future” not just a smart investment but a strategic imperative. So, what’s driving this transformation, and why should forward-thinking investors double down now?",
+        text: "But today, we’re witnessing a fundamental shift (in demand patterns, tenant expectations, urban development, and asset valuation) that makes “commercial property for the future” not just a smart investment but a strategic imperative. So, what’s driving this transformation, and why should forward-thinking investors double down now?",
       },
       { type: "p", text: "Let’s dive deep." },
       { type: "h2", text: "The Changing Face of Commercial Property" },
       {
         type: "p",
-        text: "In the past, commercial property was all about slow and steady—a “buy and hold” strategy for investors wanting to protect against inflation and collect rents. But with the COVID-19 pandemic and the subsequent digital acceleration, the game has changed.",
+        text: "In the past, commercial property was all about slow and steady, a “buy and hold” strategy for investors wanting to protect against inflation and collect rents. But with the COVID-19 pandemic and the subsequent digital acceleration, the game has changed.",
       },
-      { type: "p", text: "Now, commercial real estate isn’t so much about square footage—it’s about thoughtful function." },
+      { type: "p", text: "Now, commercial real estate isn’t so much about square footage. It’s about thoughtful function." },
       {
         type: "ul",
         items: [
@@ -381,7 +381,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "As per a report by JLL India (2024), institutional investors and private equity players invested more than $5.8 billion in India’s commercial real estate in 2023 alone—a reflection of high confidence in the sector’s potential for income.",
+        text: "As per a report by JLL India (2024), institutional investors and private equity players invested more than $5.8 billion in India’s commercial real estate in 2023 alone, a reflection of high confidence in the sector’s potential for income.",
       },
       { type: "h3", text: "2. Diversification and Capital Appreciation" },
       {
@@ -420,7 +420,7 @@ export const blogPosts: BlogPost[] = [
       { type: "h3", text: "Commercial Property for Investment" },
       {
         type: "p",
-        text: "With REITs (Real Estate Investment Trusts), syndicates, and crowdfunding sites, commercial property is becoming increasingly democratized. You don’t need ₹5 crore to invest anymore—₹5 lakh can also get you exposure through fractional ownership.",
+        text: "With REITs (Real Estate Investment Trusts), syndicates, and crowdfunding sites, commercial property is becoming increasingly democratized. You don’t need ₹5 crore to invest anymore. ₹5 lakh can also get you exposure through fractional ownership.",
       },
       { type: "h2", text: "Data-Backed Reasons Why It’s Time to Get In" },
       { type: "p", text: "Here’s what the numbers say:" },
@@ -434,12 +434,12 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "This is not a fleeting boom—it’s the outcome of sustained demographic, economic, and technological trends.",
+        text: "This is not a fleeting boom. It’s the outcome of sustained demographic, economic, and technological trends.",
       },
       { type: "h2", text: "What to Seek Out in a Commercial Property Today" },
       {
         type: "p",
-        text: "Not all commercial property is equal. If you’re investing—or expanding your business presence—look for these new-wave markers of success:",
+        text: "Not all commercial property is equal. If you’re investing, or expanding your business presence, look for these new-wave markers of success:",
       },
       { type: "h3", text: "Hybrid Design" },
       {
@@ -464,7 +464,7 @@ export const blogPosts: BlogPost[] = [
       { type: "h2", text: "Is There Risk? Yes. But It Can Be Managed." },
       {
         type: "p",
-        text: "Commercial property, like all investments, has risk—market downturns, tenant defaults, or regulatory delays. But unlike speculative investments, CRE provides real collateral and relatively stable long-term income.",
+        text: "Commercial property, like all investments, has risk: market downturns, tenant defaults, or regulatory delays. But unlike speculative investments, CRE provides real collateral and relatively stable long-term income.",
       },
       { type: "p", text: "Risk mitigation tips:" },
       {
@@ -472,7 +472,7 @@ export const blogPosts: BlogPost[] = [
         items: [
           "Always perform title and due diligence with a certified legal advisor.",
           "Look at loan-to-value ratios prior to funding.",
-          "Look at exit strategies—can you easily resell or find tenants in a hurry?",
+          "Look at exit strategies: can you easily resell or find tenants in a hurry?",
         ],
       },
       { type: "h2", text: "Who Should Look at Commercial Property in 2025 and Beyond?" },
@@ -490,7 +490,7 @@ export const blogPosts: BlogPost[] = [
       { type: "h2", text: "Last Words: The Smart Movers Will Own the Future" },
       {
         type: "p",
-        text: "Commercial real estate is no longer a static brick-and-mortar affair—it’s a data-driven, strategic, revenue-generating asset class. And in an age of economic uncertainty and AI-fueled disruption, real assets with real income are more important than ever.",
+        text: "Commercial real estate is no longer a static brick-and-mortar affair. It’s a data-driven, strategic, revenue-generating asset class. And in an age of economic uncertainty and AI-fueled disruption, real assets with real income are more important than ever.",
       },
       {
         type: "p",
@@ -504,16 +504,16 @@ export const blogPosts: BlogPost[] = [
     image: "/blog/Retail%20Leasing%20Space.jpg",
     imageAlt: "Illuminated retail storefront signage at dusk",
     excerpt:
-      "In an era where online commerce is splashed across headlines, you may be surprised to hear that retail real estate is experiencing a resounding, strategic rebound. But this comeback isn't about mall shopping or old-fashioned shopfronts—it's about experience-based retail space, strategically placed outlets,",
+      "In an era where online commerce is splashed across headlines, you may be surprised to hear that retail real estate is experiencing a resounding, strategic rebound. But this comeback isn't about mall shopping or old-fashioned shopfronts. It's about experience-based retail space, strategically placed outlets,",
     date: "August 4, 2025",
     body: [
       {
         type: "p",
-        text: "In an era where online commerce is splashed across headlines, you may be surprised to hear that retail real estate is experiencing a resounding, strategic rebound. But this comeback isn’t about mall shopping or old-fashioned shopfronts—it’s about experience-based retail space, strategically placed outlets, and flexible leasing that allows brands to succeed in both physical and virtual spaces.",
+        text: "In an era where online commerce is splashed across headlines, you may be surprised to hear that retail real estate is experiencing a resounding, strategic rebound. But this comeback isn’t about mall shopping or old-fashioned shopfronts. It’s about experience-based retail space, strategically placed outlets, and flexible leasing that allows brands to succeed in both physical and virtual spaces.",
       },
       {
         type: "p",
-        text: "No matter if you’re an experienced investor looking for stable cash flows, a business owner building out your presence, or a new entrepreneur opening your first flagship store, retail space for lease is more than just an expense account—it’s a growth plan. Here, we drill down on why retail space leasing is back in the news and how you can use it to profit in the long term.",
+        text: "No matter if you’re an experienced investor looking for stable cash flows, a business owner building out your presence, or a new entrepreneur opening your first flagship store, retail space for lease is more than just an expense account. It’s a growth plan. Here, we drill down on why retail space leasing is back in the news and how you can use it to profit in the long term.",
       },
       { type: "h2", text: "The Rebirth of Retail Real Estate" },
       {
@@ -523,7 +523,7 @@ export const blogPosts: BlogPost[] = [
       {
         type: "ul",
         items: [
-          "Omnichannel Retailing: Brands are no longer deciding whether to go physical or digital—they’re merging both. A store space now facilitates logistics, customer experience, and brand narrative.",
+          "Omnichannel Retailing: Brands are no longer deciding whether to go physical or digital. They’re merging both. A store space now facilitates logistics, customer experience, and brand narrative.",
           "Consumer Behaviour: Consumers continue to appreciate experiences in person, particularly in fashion, electronics, home furnishings, and food & beverage categories.",
           "Investor Sentiment: In the context of inflation anxiety and volatility in the stock market, retail assets with established tenants are becoming compelling, cash-generating properties.",
         ],
@@ -539,7 +539,7 @@ export const blogPosts: BlogPost[] = [
           "Reduced Capital Outlay: Leasing demands little or no initial investment relative to buying real estate. For companies with a focus on inventory, employees, or internet infrastructure, it leaves working capital untouched yet still allows for the expansion of the brand.",
           "Geography Ease: Leasing permits companies to try out markets and move locations if necessary. For instance, a clothing brand can rent a 6-month pop-up shop in a busy location to gauge local reaction before investing in a flagship store.",
           "Tax and Accounting Advantages: Rented spaces can provide deductible operating expenses, and lease arrangements can usually be negotiated in a favorable way under the terms of accounting frameworks such as IFRS 16 or ASC 842, minimizing long-term liabilities.",
-          "Quicker Occupancy and Customisation: Newer leasing arrangements—particularly in newer commercial hotspots—provide pre-fit or white-box units that lower buildout time. In addition, landlords frequently provide tenant improvement (TI) allowances to help compensate for the cost of customisation.",
+          "Quicker Occupancy and Customisation: Newer leasing arrangements, particularly in newer commercial hotspots, provide pre-fit or white-box units that lower buildout time. In addition, landlords frequently provide tenant improvement (TI) allowances to help compensate for the cost of customisation.",
         ],
       },
       { type: "h2", text: "So, What Makes a Retail Space “Lease-Worthy”?" },
@@ -614,7 +614,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "Such projects strike a balance between affordability, modern amenities, and long-term rental yield—making them ideal for both user-operators and passive investors.",
+        text: "Such projects strike a balance between affordability, modern amenities, and long-term rental yield, making them ideal for both user-operators and passive investors.",
       },
       { type: "h2", text: "Tips Before You Sign That Lease" },
       {
@@ -630,11 +630,11 @@ export const blogPosts: BlogPost[] = [
       { type: "h2", text: "Conclusion: A Leasing-Driven Future for Retail" },
       {
         type: "p",
-        text: "The narrative has shifted. Lease space for retail is no longer an afterthought—it’s a growth-orientated business and smart investor strategic advantage. The trick is to pick the right space, negotiate well, and ensure your lease supports your overall business vision.",
+        text: "The narrative has shifted. Lease space for retail is no longer an afterthought. It’s a growth-orientated business and smart investor strategic advantage. The trick is to pick the right space, negotiate well, and ensure your lease supports your overall business vision.",
       },
       {
         type: "p",
-        text: "In an era of change as its own value, leasing presents flexibility: to experiment, to shift, and to grow. For business people willing to connect with their consumers in tangible, meaningful terms—and for investors seeking yield-supported stability—retail leasing is not only pertinent; it’s essential.",
+        text: "In an era of change as its own value, leasing presents flexibility: to experiment, to shift, and to grow. For business people willing to connect with their consumers in tangible, meaningful terms, and for investors seeking yield-supported stability, retail leasing is not only pertinent; it’s essential.",
       },
       { type: "h3", text: "Sources" },
       {
@@ -652,12 +652,12 @@ export const blogPosts: BlogPost[] = [
     image: "/blog/Stilt%20Plus%203%20Floors%20Flats%20Near%20Me.jpg",
     imageAlt: "Modern bedroom interior in a low-rise residential flat",
     excerpt:
-      "In India's urbanizing cityscape, the preference for contemporary living solutions is no longer a matter of space per se — it's a question of value, privacy, structural efficiency, and investment viability. One form that has hushed-up picked up pace in Tier-1 and Tier-2",
+      "In India's urbanizing cityscape, the preference for contemporary living solutions is no longer a matter of space per se. It's a question of value, privacy, structural efficiency, and investment viability. One form that has hushed-up picked up pace in Tier-1 and Tier-2",
     date: "August 1, 2025",
     body: [
       {
         type: "p",
-        text: "In India’s urbanizing cityscape, the preference for contemporary living solutions is no longer a matter of space per se — it’s a question of value, privacy, structural efficiency, and investment viability. One form that has hushed-up picked up pace in Tier-1 and Tier-2 cities as well is the “Stilt + 3 floors flats” type.",
+        text: "In India’s urbanizing cityscape, the preference for contemporary living solutions is no longer a matter of space per se. It’s a question of value, privacy, structural efficiency, and investment viability. One form that has hushed-up picked up pace in Tier-1 and Tier-2 cities as well is the “Stilt + 3 floors flats” type.",
       },
       {
         type: "p",
@@ -676,7 +676,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "As opposed to high-rise apartments, these buildings house only 3 to 6 families and hence are semi-independent, spacious, and community-like — without losing urban convenience.",
+        text: "As opposed to high-rise apartments, these buildings house only 3 to 6 families and hence are semi-independent, spacious, and community-like, without losing urban convenience.",
       },
       { type: "h2", text: "Why the Popularity Spurt?" },
       {
@@ -700,7 +700,7 @@ export const blogPosts: BlogPost[] = [
       { type: "h3", text: "3. No High-Maintenance Fees" },
       {
         type: "p",
-        text: "Unlike massive apartment buildings with hefty CAM (Common Area Maintenance), stilt + 3 properties usually run on low maintenance fees — a popular feature for owners and renters alike.",
+        text: "Unlike massive apartment buildings with hefty CAM (Common Area Maintenance), stilt + 3 properties usually run on low maintenance fees, a popular feature for owners and renters alike.",
       },
       { type: "h2", text: "Investment Insight: Is This the New Passive Income Magnet?" },
       {
@@ -776,7 +776,7 @@ export const blogPosts: BlogPost[] = [
         items: [
           "Local regulations have a big impact. Most states such as Punjab, Haryana, and Rajasthan now formally permit Stilt + 3 structures on dwelling plots of more than 200 sq. yards.",
           "RERA registration is compulsory for projects with multiple units, even low-rise ones.",
-          "Floor-wise registration is permitted in certain states, that is, you can sell or mortgage each floor separately — a big liquidity advantage.",
+          "Floor-wise registration is permitted in certain states, that is, you can sell or mortgage each floor separately, a big liquidity advantage.",
         ],
       },
       { type: "p", text: "Always check with a legal advisor before investing." },
@@ -798,7 +798,7 @@ export const blogPosts: BlogPost[] = [
         type: "p",
         text: "If you’re an entrepreneur, a business owner, or a seasoned investor searching for “stilt plus 3 floors flats near me,” now may be the best time to act.",
       },
-      { type: "p", text: "These flats aren’t just structures — they are high-utility assets, offering:" },
+      { type: "p", text: "These flats aren’t just structures. They are high-utility assets, offering:" },
       {
         type: "ul",
         items: ["Strategic rental income", "Long-term value appreciation", "And the flexibility of living and investing on your own terms"],

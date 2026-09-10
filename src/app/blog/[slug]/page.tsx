@@ -53,7 +53,7 @@ function Block({ block }: { block: BlogBlock }) {
       return (
         <blockquote className="mt-6 border-l-4 border-[#377f45] bg-[#e8f0e9] py-4 pl-6 pr-4 italic text-gray-700">
           <p>{block.text}</p>
-          {block.attribution && <footer className="mt-2 text-sm not-italic text-gray-500">&mdash; {block.attribution}</footer>}
+          {block.attribution && <footer className="mt-2 text-sm not-italic text-gray-500">{block.attribution}</footer>}
         </blockquote>
       );
     case "table":

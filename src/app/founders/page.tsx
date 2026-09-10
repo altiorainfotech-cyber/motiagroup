@@ -3,6 +3,7 @@ import { Building2, ShieldCheck } from "lucide-react";
 import Image from "next/image";
 import ClientsSection from "@/components/ClientsSection";
 import PageBanner from "@/components/PageBanner";
+import RelatedLinks from "@/components/RelatedLinks";
 import Reveal from "@/components/Reveal";
 import VisionMissionSection from "@/components/VisionMissionSection";
 
@@ -31,13 +32,13 @@ const founders = [
         <p>
           Motia Group has redefined real estate in North India with a foundation built on customer-centricity,
           cutting-edge engineering, and absolute transparency. Their philosophy goes beyond constructing
-          buildings&mdash;they aim to build trust and nurture thriving communities. With a focus on sustainability
+          buildings. They aim to build trust and nurture thriving communities. With a focus on sustainability
           and innovation, they inspire individuals to dream bigger and live better.
         </p>
         <p className="mt-4">
           Committed to &ldquo;Creating the Difference,&rdquo; Motia Group envisions a future where every project
           becomes a canvas for growth and success, fostering connections that endure for generations. Their pledge to
-          help people &ldquo;Embrace the Difference&rdquo; reflects their role as more than developers&mdash;they are
+          help people &ldquo;Embrace the Difference&rdquo; reflects their role as more than developers. They are
           partners in shaping lives. As they venture boldly into new commercial horizons, Motia Group sets the stage
           for excellence and opportunity in every endeavor.
         </p>
@@ -92,7 +93,7 @@ export default function Page() {
               <h2 className="mt-2 text-3xl font-bold text-gray-900 sm:text-4xl">Founders</h2>
               <p className="mt-4 text-gray-600">
                 Guided by decades of combined experience, our founders have shaped Motia Group into one of North
-                India&rsquo;s most trusted names in real estate development &mdash; grounded in trust, craftsmanship,
+                India&rsquo;s most trusted names in real estate development, grounded in trust, craftsmanship,
                 and a relentless focus on the people who live and work in what they build.
               </p>
             </div>
@@ -139,8 +140,8 @@ export default function Page() {
                     <span className="font-semibold text-white">honesty, transparency, and open communication</span>.
                   </p>
                   <p>
-                    We believe that every stakeholder&mdash;whether you&rsquo;re an owner, architect, designer,
-                    engineer, tenant, broker, subcontractor, or supplier&mdash;plays a vital role in the success of
+                    We believe that every stakeholder, whether you&rsquo;re an owner, architect, designer,
+                    engineer, tenant, broker, subcontractor, or supplier, plays a vital role in the success of
                     our projects. That&rsquo;s why we treat everyone as a valued part of our team. This collaborative
                     approach not only leads to outstanding results, but more importantly, it creates{" "}
                     <span className="font-semibold text-white">lasting relationships and satisfied clients</span>.
@@ -160,7 +161,7 @@ export default function Page() {
                 </h3>
                 <div className="mt-4 space-y-4 text-sm leading-relaxed text-white/70">
                   <p>
-                    Welcome to Motia Group&mdash;where we don&rsquo;t just build properties; we craft lifestyles.
+                    Welcome to Motia Group, where we don&rsquo;t just build properties; we craft lifestyles.
                     Recognized as one of the leading real estate developers not only in{" "}
                     <span className="font-semibold text-white">Tricity</span> but across{" "}
                     <span className="font-semibold text-white">North India</span>, we offer both{" "}
@@ -216,6 +217,18 @@ export default function Page() {
           ))}
         </div>
       </section>
+
+      <Reveal variant="up">
+        <RelatedLinks
+          links={[
+            { label: "About Motia Group", href: "/about-us" },
+            { label: "Why Choose Motia Group", href: "/why-motia-group" },
+            { label: "Motia Group Awards & Recognition", href: "/awards" },
+            { label: "Life at Motia Group", href: "/life-at-motia-group" },
+            { label: "Careers at Motia Group", href: "/job-openings" },
+          ]}
+        />
+      </Reveal>
 
       <Reveal variant="fade">
         <ClientsSection />

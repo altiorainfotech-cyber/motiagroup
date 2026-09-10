@@ -21,6 +21,8 @@ import ImageCarousel from "@/components/ImageCarousel";
 import ProjectHero from "@/components/ProjectHero";
 import ProjectTabsLayout, { type ProjectTab } from "@/components/ProjectTabsLayout";
 import QuickFacts, { type QuickFact } from "@/components/QuickFacts";
+import RelatedLinks from "@/components/RelatedLinks";
+import Reveal from "@/components/Reveal";
 import TabHeading from "@/components/TabHeading";
 import YouTubeThumbnail from "@/components/YouTubeThumbnail";
 
@@ -84,7 +86,7 @@ const tabs: ProjectTab[] = [
         <QuickFacts facts={quickFacts} />
         <p className="mt-8 text-gray-600">
           <span className="font-bold text-[#c2185b]">Motiaz Royal Business</span> Park is an ongoing project, a
-          business hub with an integrated township located at Delhi-Chandigarh National Highway 22&mdash;one of
+          business hub with an integrated township located at Delhi-Chandigarh National Highway 22, one of
           Punjab&rsquo;s largest business parks. Spread over 3 acres of land, the business park is replete with
           facilities like hotels, restaurants, banquets and the necessary infrastructure to support growing
           businesses. It also has an in-house parking facility, 24&times;7 security and power back up. It is easily
@@ -211,6 +213,17 @@ export default function Page() {
         zoomBg
       />
       <ProjectTabsLayout tabs={tabs} />
+      <Reveal variant="up">
+        <RelatedLinks
+          links={[
+            { label: "Commercial Projects in Zirakpur", href: "/commercial-projects" },
+            { label: "Office Space in Zirakpur", href: "/office-space-zirakpur" },
+            { label: "Motia High Street", href: "/motia-high-street" },
+            { label: "Delivered Projects", href: "/delivered-projects" },
+            { label: "Real Estate Developer in Tricity", href: "/real-estate-developer-tricity" },
+          ]}
+        />
+      </Reveal>
     </>
   );
 }

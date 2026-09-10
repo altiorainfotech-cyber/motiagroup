@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import ClientsSection from "@/components/ClientsSection";
 import ProjectHero from "@/components/ProjectHero";
+import RelatedLinks from "@/components/RelatedLinks";
 import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = {
@@ -39,7 +40,7 @@ const deliveredProjects: ResidentialProject[] = [
     image: "/motiaz-royal-citi/citi-banner-1.webp",
     status: "Delivered",
     location: "Zirakpur",
-    description: "23-acre project — luxury homes & flats.",
+    description: "23-acre project, luxury homes & flats.",
   },
   {
     title: "Motia'z Gill Estate",
@@ -201,6 +202,18 @@ export default function Page() {
           </Reveal>
         </div>
       </section>
+
+      <Reveal variant="up">
+        <RelatedLinks
+          links={[
+            { label: "Commercial Projects in Zirakpur", href: "/commercial-projects" },
+            { label: "Industrial Plots", href: "/industrial-plots" },
+            { label: "Delivered Projects", href: "/delivered-projects" },
+            { label: "Ongoing Projects", href: "/ongoing-projects" },
+            { label: "Why Choose Motia Group", href: "/why-motia-group" },
+          ]}
+        />
+      </Reveal>
 
       <Reveal variant="fade">
         <ClientsSection />

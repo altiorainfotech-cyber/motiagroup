@@ -6,6 +6,7 @@ import ClientsSection from "@/components/ClientsSection";
 import FaqAccordion, { type FaqItem } from "@/components/FaqAccordion";
 import JsonLd from "@/components/JsonLd";
 import ProjectHero from "@/components/ProjectHero";
+import RelatedLinks from "@/components/RelatedLinks";
 import Reveal from "@/components/Reveal";
 import { faqPageJsonLd } from "@/lib/structuredData";
 
@@ -150,7 +151,7 @@ export default function Page() {
               <p>
                 Buying a commercial shop is not the same decision as buying a home. A shop&apos;s value is tied
                 directly to how visible it is, how much genuine footfall passes it, and who else is trading around
-                it — not just its square footage or finish quality.
+                it, not just its square footage or finish quality.
               </p>
               <p>
                 Motia High Street on VIP Road was planned with these retail fundamentals in mind, giving shop owners
@@ -195,7 +196,7 @@ export default function Page() {
             </span>
             <h2 className="mt-2 text-2xl font-bold text-gray-900 sm:text-3xl">A Retail Address on VIP Road</h2>
             <p className="mt-4 text-gray-600">
-              Motia High Street is a delivered commercial development of retail shops on VIP Road, Zirakpur —
+              Motia High Street is a delivered commercial development of retail shops on VIP Road, Zirakpur,
               designed around ground-level visibility, a mixed tenant plan, and a location already surrounded by an
               established residential catchment.
             </p>
@@ -305,6 +306,18 @@ export default function Page() {
           </Reveal>
         </div>
       </section>
+
+      <Reveal variant="up">
+        <RelatedLinks
+          links={[
+            { label: "Motia High Street", href: "/motia-high-street" },
+            { label: "Commercial Property in Zirakpur", href: "/commercial-property-zirakpur" },
+            { label: "Commercial Projects in Zirakpur", href: "/commercial-projects" },
+            { label: "Real Estate in Zirakpur", href: "/real-estate-in-zirakpur" },
+            { label: "Property Investment", href: "/property-investment" },
+          ]}
+        />
+      </Reveal>
 
       <Reveal variant="fade">
         <ClientsSection />

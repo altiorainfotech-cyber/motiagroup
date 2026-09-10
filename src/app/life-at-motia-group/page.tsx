@@ -2,6 +2,7 @@ import { GraduationCap, HeartPulse, Lightbulb, Users2 } from "lucide-react";
 import Image from "next/image";
 import ClientsSection from "@/components/ClientsSection";
 import PageBanner from "@/components/PageBanner";
+import RelatedLinks from "@/components/RelatedLinks";
 import Reveal from "@/components/Reveal";
 
 const values = [
@@ -103,6 +104,18 @@ export default function Page() {
           ))}
         </div>
       </section>
+
+      <Reveal variant="up">
+        <RelatedLinks
+          links={[
+            { label: "Careers at Motia Group", href: "/job-openings" },
+            { label: "About Motia Group", href: "/about-us" },
+            { label: "Motia Group Founders", href: "/founders" },
+            { label: "Why Choose Motia Group", href: "/why-motia-group" },
+            { label: "Contact Motia Group", href: "/contact-us" },
+          ]}
+        />
+      </Reveal>
 
       <Reveal variant="fade">
         <ClientsSection />

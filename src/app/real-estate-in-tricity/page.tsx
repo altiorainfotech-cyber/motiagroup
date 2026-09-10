@@ -6,6 +6,7 @@ import ClientsSection from "@/components/ClientsSection";
 import FaqAccordion, { type FaqItem } from "@/components/FaqAccordion";
 import JsonLd from "@/components/JsonLd";
 import ProjectHero from "@/components/ProjectHero";
+import RelatedLinks from "@/components/RelatedLinks";
 import Reveal from "@/components/Reveal";
 import { faqPageJsonLd } from "@/lib/structuredData";
 
@@ -284,6 +285,18 @@ export default function Page() {
           </Reveal>
         </div>
       </section>
+
+      <Reveal variant="up">
+        <RelatedLinks
+          links={[
+            { label: "Real Estate Developer in Tricity", href: "/real-estate-developer-tricity" },
+            { label: "Real Estate in Mohali", href: "/real-estate-in-mohali" },
+            { label: "Real Estate in Panchkula", href: "/real-estate-in-panchkula" },
+            { label: "Real Estate Company in Chandigarh", href: "/real-estate-company-in-chandigarh" },
+            { label: "Top Builders in Chandigarh", href: "/top-builders-in-chandigarh" },
+          ]}
+        />
+      </Reveal>
 
       <Reveal variant="fade">
         <ClientsSection />

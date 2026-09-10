@@ -6,6 +6,7 @@ import ClientsSection from "@/components/ClientsSection";
 import FaqAccordion, { type FaqItem } from "@/components/FaqAccordion";
 import JsonLd from "@/components/JsonLd";
 import ProjectHero from "@/components/ProjectHero";
+import RelatedLinks from "@/components/RelatedLinks";
 import Reveal from "@/components/Reveal";
 import { faqPageJsonLd } from "@/lib/structuredData";
 
@@ -123,7 +124,7 @@ export default function Page() {
       <JsonLd data={faqSchema} />
       <ProjectHero
         image="/motia-heights/hero%20banner.png"
-        title="3 BHK Flats in Zirakpur — Premium Apartments by Motia Group"
+        title="3 BHK Flats in Zirakpur: Premium Apartments by Motia Group"
         breadcrumbs={[{ name: "Home", url: "/" }, { name: "3 BHK Flats in Zirakpur" }]}
         ctaLabel="Book a Site Visit"
         ctaHref="/contact-us"
@@ -322,6 +323,18 @@ export default function Page() {
           </Reveal>
         </div>
       </section>
+
+      <Reveal variant="up">
+        <RelatedLinks
+          links={[
+            { label: "Motia Heights", href: "/motia-heights" },
+            { label: "Motia HUYS", href: "/motia-huys" },
+            { label: "Real Estate in Zirakpur", href: "/real-estate-in-zirakpur" },
+            { label: "Luxury Homes in Zirakpur", href: "/luxury-homes-zirakpur" },
+            { label: "Residential Projects in Zirakpur", href: "/residential-projects" },
+          ]}
+        />
+      </Reveal>
 
       <Reveal variant="fade">
         <ClientsSection />

@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import ClientsSection from "@/components/ClientsSection";
 import ProjectHero from "@/components/ProjectHero";
+import RelatedLinks from "@/components/RelatedLinks";
 import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = {
@@ -97,7 +98,7 @@ export default function Page() {
           </span>
           <p className="mt-4 text-gray-600">
             For businesses and investors seeking a footprint in one of North India's fastest-growing commercial
-            corridors, Motia Group offers two distinct commercial addresses along Zirakpur's busiest arteries — a
+            corridors, Motia Group offers two distinct commercial addresses along Zirakpur's busiest arteries, a
             dedicated office and business park, and a high-street retail destination built for footfall. Both are
             fully delivered and open for business today.
           </p>
@@ -160,6 +161,18 @@ export default function Page() {
           </Reveal>
         </div>
       </section>
+
+      <Reveal variant="up">
+        <RelatedLinks
+          links={[
+            { label: "Residential Projects in Zirakpur", href: "/residential-projects" },
+            { label: "Industrial Plots", href: "/industrial-plots" },
+            { label: "Delivered Projects", href: "/delivered-projects" },
+            { label: "Commercial Property in Zirakpur", href: "/commercial-property-zirakpur" },
+            { label: "Why Choose Motia Group", href: "/why-motia-group" },
+          ]}
+        />
+      </Reveal>
 
       <Reveal variant="fade">
         <ClientsSection />

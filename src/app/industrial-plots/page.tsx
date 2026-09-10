@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import ClientsSection from "@/components/ClientsSection";
 import ProjectHero from "@/components/ProjectHero";
+import RelatedLinks from "@/components/RelatedLinks";
 import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = {
@@ -59,7 +60,7 @@ export default function Page() {
             As manufacturing and logistics businesses look beyond saturated industrial belts, Motia Group is
             developing fully serviced industrial plots along one of North India's key highway corridors. Built for
             factories, warehouses and logistics parks alike, our industrial developments combine strategic
-            connectivity with transparent, plot-level ownership — a category distinct from our residential and
+            connectivity with transparent, plot-level ownership, a category distinct from our residential and
             commercial portfolios.
           </p>
         </Reveal>
@@ -160,6 +161,18 @@ export default function Page() {
           </Reveal>
         </div>
       </section>
+
+      <Reveal variant="up">
+        <RelatedLinks
+          links={[
+            { label: "Haryana Industrial Plots", href: "/haryana-industrial-plots" },
+            { label: "Industrial Plots in Panchkula", href: "/industrial-plots-panchkula" },
+            { label: "Industrial Plots Near Ambala", href: "/industrial-plots-near-ambala" },
+            { label: "Ongoing Projects", href: "/ongoing-projects" },
+            { label: "Property Investment", href: "/property-investment" },
+          ]}
+        />
+      </Reveal>
 
       <Reveal variant="fade">
         <ClientsSection />

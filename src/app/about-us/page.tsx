@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import ClientsSection from "@/components/ClientsSection";
 import ProjectHero from "@/components/ProjectHero";
+import RelatedLinks from "@/components/RelatedLinks";
 import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = {
@@ -66,7 +67,7 @@ export default function Page() {
     <>
       <ProjectHero
         image="/aboutus.jpg"
-        title="About Motia Group — Real Estate Developer in Zirakpur & Tricity"
+        title="About Motia Group: Real Estate Developer in Zirakpur & Tricity"
         subtitle="20+ years of building homes, workspaces, and industrial land across North India"
         breadcrumbs={[
           { name: "Home", url: "/" },
@@ -247,6 +248,18 @@ export default function Page() {
           </Reveal>
         </div>
       </section>
+
+      <Reveal variant="up">
+        <RelatedLinks
+          links={[
+            { label: "Why Choose Motia Group", href: "/why-motia-group" },
+            { label: "Motia Group Founders", href: "/founders" },
+            { label: "Motia Group Awards & Recognition", href: "/awards" },
+            { label: "Residential Projects in Zirakpur", href: "/residential-projects" },
+            { label: "Commercial Projects in Zirakpur", href: "/commercial-projects" },
+          ]}
+        />
+      </Reveal>
 
       <Reveal variant="fade">
         <ClientsSection />

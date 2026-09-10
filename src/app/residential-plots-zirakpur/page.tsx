@@ -6,6 +6,7 @@ import ClientsSection from "@/components/ClientsSection";
 import FaqAccordion, { type FaqItem } from "@/components/FaqAccordion";
 import JsonLd from "@/components/JsonLd";
 import ProjectHero from "@/components/ProjectHero";
+import RelatedLinks from "@/components/RelatedLinks";
 import Reveal from "@/components/Reveal";
 import { faqPageJsonLd } from "@/lib/structuredData";
 
@@ -168,11 +169,11 @@ export default function Page() {
                 A residential plot is a different kind of investment from a ready flat: you are buying land, timing
                 and paperwork as much as location. Zirakpur&apos;s rapid growth along the Chandigarh-Ambala Highway and
                 PR-7 corridor has made plotted developments here especially attractive, but it also means more
-                developers competing for buyer attention — not all with the same standards.
+                developers competing for buyer attention, not all with the same standards.
               </p>
               <p>
                 This guide covers what to actually check before signing anything, and where Motia Group&apos;s own
-                plotted developments — Motia Citi and Motia&apos;z Gill Estate — fit into that picture.
+                plotted developments, Motia Citi and Motia&apos;z Gill Estate, fit into that picture.
               </p>
             </div>
           </Reveal>
@@ -331,6 +332,18 @@ export default function Page() {
           </Reveal>
         </div>
       </section>
+
+      <Reveal variant="up">
+        <RelatedLinks
+          links={[
+            { label: "Motia Citi", href: "/motia-citi" },
+            { label: "Motia'z Gill Estate", href: "/motia-gill-estate" },
+            { label: "Real Estate in Zirakpur", href: "/real-estate-in-zirakpur" },
+            { label: "Residential Projects in Zirakpur", href: "/residential-projects" },
+            { label: "Luxury Homes in Zirakpur", href: "/luxury-homes-zirakpur" },
+          ]}
+        />
+      </Reveal>
 
       <Reveal variant="fade">
         <ClientsSection />

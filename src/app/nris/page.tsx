@@ -3,6 +3,7 @@ import ClientsSection from "@/components/ClientsSection";
 import FaqAccordion, { type FaqItem } from "@/components/FaqAccordion";
 import JsonLd from "@/components/JsonLd";
 import PageBanner from "@/components/PageBanner";
+import RelatedLinks from "@/components/RelatedLinks";
 import Reveal from "@/components/Reveal";
 import { faqPageJsonLd } from "@/lib/structuredData";
 
@@ -254,6 +255,18 @@ export default function Page() {
           </Reveal>
         </div>
       </section>
+
+      <Reveal variant="up">
+        <RelatedLinks
+          links={[
+            { label: "NRI Property in Punjab", href: "/nri-property-punjab" },
+            { label: "Indian Citizens FAQ", href: "/indian-citizens" },
+            { label: "Property Investment", href: "/property-investment" },
+            { label: "Contact Motia Group", href: "/contact-us" },
+            { label: "About Motia Group", href: "/about-us" },
+          ]}
+        />
+      </Reveal>
 
       <Reveal variant="fade">
         <ClientsSection />
