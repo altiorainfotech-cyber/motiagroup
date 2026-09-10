@@ -6,6 +6,8 @@ import AmenityGroups, { type AmenityGroup } from "@/components/AmenityGroups";
 import ProjectHero from "@/components/ProjectHero";
 import ProjectTabsLayout, { type ProjectTab } from "@/components/ProjectTabsLayout";
 import QuickFacts, { type QuickFact } from "@/components/QuickFacts";
+import RelatedLinks from "@/components/RelatedLinks";
+import Reveal from "@/components/Reveal";
 import TabHeading from "@/components/TabHeading";
 
 const quickFacts: QuickFact[] = [
@@ -191,6 +193,18 @@ export default function Page() {
           </Link>
         </div>
       </section>
+
+      <Reveal variant="up">
+        <RelatedLinks
+          links={[
+            { label: "Industrial Plots", href: "/industrial-plots" },
+            { label: "Industrial Plots in Panchkula", href: "/industrial-plots-panchkula" },
+            { label: "Industrial Plots Near Ambala", href: "/industrial-plots-near-ambala" },
+            { label: "Ongoing Projects", href: "/ongoing-projects" },
+            { label: "Property Investment", href: "/property-investment" },
+          ]}
+        />
+      </Reveal>
     </>
   );
 }

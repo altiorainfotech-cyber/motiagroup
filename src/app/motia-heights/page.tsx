@@ -22,6 +22,8 @@ import AmenityGroups, { type AmenityGroup } from "@/components/AmenityGroups";
 import ProjectHero from "@/components/ProjectHero";
 import ProjectTabsLayout, { type ProjectTab } from "@/components/ProjectTabsLayout";
 import QuickFacts, { type QuickFact } from "@/components/QuickFacts";
+import RelatedLinks from "@/components/RelatedLinks";
+import Reveal from "@/components/Reveal";
 import TabHeading from "@/components/TabHeading";
 
 const quickFacts: QuickFact[] = [
@@ -182,6 +184,17 @@ export default function Page() {
         zoomBg
       />
       <ProjectTabsLayout tabs={tabs} />
+      <Reveal variant="up">
+        <RelatedLinks
+          links={[
+            { label: "Residential Projects in Zirakpur", href: "/residential-projects" },
+            { label: "3 BHK Flats in Zirakpur", href: "/3-bhk-flats-zirakpur" },
+            { label: "Motia'z Harmony Greens", href: "/motia-harmonygreens" },
+            { label: "Delivered Projects", href: "/delivered-projects" },
+            { label: "Why Choose Motia Group", href: "/why-motia-group" },
+          ]}
+        />
+      </Reveal>
     </>
   );
 }

@@ -3,6 +3,7 @@ import { Building2, ShieldCheck } from "lucide-react";
 import Image from "next/image";
 import ClientsSection from "@/components/ClientsSection";
 import PageBanner from "@/components/PageBanner";
+import RelatedLinks from "@/components/RelatedLinks";
 import Reveal from "@/components/Reveal";
 import VisionMissionSection from "@/components/VisionMissionSection";
 
@@ -216,6 +217,18 @@ export default function Page() {
           ))}
         </div>
       </section>
+
+      <Reveal variant="up">
+        <RelatedLinks
+          links={[
+            { label: "About Motia Group", href: "/about-us" },
+            { label: "Why Choose Motia Group", href: "/why-motia-group" },
+            { label: "Motia Group Awards & Recognition", href: "/awards" },
+            { label: "Life at Motia Group", href: "/life-at-motia-group" },
+            { label: "Careers at Motia Group", href: "/job-openings" },
+          ]}
+        />
+      </Reveal>
 
       <Reveal variant="fade">
         <ClientsSection />

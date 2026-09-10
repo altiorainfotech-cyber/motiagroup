@@ -3,6 +3,7 @@ import { Award, Building2, CalendarCheck, KeyRound, Newspaper, Quote } from "luc
 import Image from "next/image";
 import Link from "next/link";
 import PageBanner from "@/components/PageBanner";
+import RelatedLinks from "@/components/RelatedLinks";
 import Reveal from "@/components/Reveal";
 import TestimonialSection from "@/components/TestimonialSection";
 
@@ -153,6 +154,18 @@ export default function Page() {
           </Reveal>
         </div>
       </section>
+
+      <Reveal variant="up">
+        <RelatedLinks
+          links={[
+            { label: "Why Choose Motia Group", href: "/why-motia-group" },
+            { label: "About Motia Group", href: "/about-us" },
+            { label: "Motia Group Founders", href: "/founders" },
+            { label: "Top Builders in Chandigarh", href: "/top-builders-in-chandigarh" },
+            { label: "Residential Projects in Zirakpur", href: "/residential-projects" },
+          ]}
+        />
+      </Reveal>
     </>
   );
 }

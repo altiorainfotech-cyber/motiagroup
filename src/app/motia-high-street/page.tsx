@@ -6,6 +6,8 @@ import DownloadCard from "@/components/DownloadCard";
 import ProjectHero from "@/components/ProjectHero";
 import ProjectTabsLayout, { type ProjectTab } from "@/components/ProjectTabsLayout";
 import QuickFacts, { type QuickFact } from "@/components/QuickFacts";
+import RelatedLinks from "@/components/RelatedLinks";
+import Reveal from "@/components/Reveal";
 import TabHeading from "@/components/TabHeading";
 
 const quickFacts: QuickFact[] = [
@@ -149,6 +151,17 @@ export default function Page() {
         zoomBg
       />
       <ProjectTabsLayout tabs={tabs} />
+      <Reveal variant="up">
+        <RelatedLinks
+          links={[
+            { label: "Commercial Projects in Zirakpur", href: "/commercial-projects" },
+            { label: "Commercial Shops in Zirakpur", href: "/commercial-shops-zirakpur" },
+            { label: "Motia'z Royal Business Park", href: "/motiaz-royal-business-park" },
+            { label: "Delivered Projects", href: "/delivered-projects" },
+            { label: "Real Estate in Zirakpur", href: "/real-estate-in-zirakpur" },
+          ]}
+        />
+      </Reveal>
     </>
   );
 }

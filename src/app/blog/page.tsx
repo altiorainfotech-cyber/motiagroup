@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import PageBanner from "@/components/PageBanner";
+import RelatedLinks from "@/components/RelatedLinks";
 import Reveal from "@/components/Reveal";
 import { blogPosts } from "@/data/blogPosts";
 
@@ -54,6 +55,18 @@ export default function Page() {
           ))}
         </div>
       </section>
+
+      <Reveal variant="up">
+        <RelatedLinks
+          links={[
+            { label: "About Motia Group", href: "/about-us" },
+            { label: "Why Choose Motia Group", href: "/why-motia-group" },
+            { label: "Residential Projects in Zirakpur", href: "/residential-projects" },
+            { label: "Commercial Projects in Zirakpur", href: "/commercial-projects" },
+            { label: "Industrial Plots", href: "/industrial-plots" },
+          ]}
+        />
+      </Reveal>
     </>
   );
 }

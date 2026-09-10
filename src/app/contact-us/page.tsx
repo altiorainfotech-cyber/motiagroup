@@ -4,6 +4,7 @@ import ClientsSection from "@/components/ClientsSection";
 import GetInTouchForm from "@/components/GetInTouchForm";
 import GoogleMap from "@/components/GoogleMap";
 import PageBanner from "@/components/PageBanner";
+import RelatedLinks from "@/components/RelatedLinks";
 import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = {
@@ -110,6 +111,18 @@ export default function Page() {
             <GoogleMap />
           </div>
         </section>
+      </Reveal>
+
+      <Reveal variant="up">
+        <RelatedLinks
+          links={[
+            { label: "About Motia Group", href: "/about-us" },
+            { label: "Why Choose Motia Group", href: "/why-motia-group" },
+            { label: "Residential Projects in Zirakpur", href: "/residential-projects" },
+            { label: "Commercial Projects in Zirakpur", href: "/commercial-projects" },
+            { label: "NRI Property FAQ", href: "/nris" },
+          ]}
+        />
       </Reveal>
 
       <Reveal variant="fade">

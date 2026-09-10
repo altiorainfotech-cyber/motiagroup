@@ -26,6 +26,8 @@ import DownloadCard from "@/components/DownloadCard";
 import ProjectHero from "@/components/ProjectHero";
 import ProjectTabsLayout, { type ProjectTab } from "@/components/ProjectTabsLayout";
 import QuickFacts, { type QuickFact } from "@/components/QuickFacts";
+import RelatedLinks from "@/components/RelatedLinks";
+import Reveal from "@/components/Reveal";
 import SpecCard from "@/components/SpecCard";
 import TabHeading from "@/components/TabHeading";
 
@@ -226,6 +228,17 @@ export default function Page() {
         zoomBg
       />
       <ProjectTabsLayout tabs={tabs} />
+      <Reveal variant="up">
+        <RelatedLinks
+          links={[
+            { label: "Residential Projects in Zirakpur", href: "/residential-projects" },
+            { label: "Property in Kurali", href: "/property-in-kurali" },
+            { label: "Residential Plots in Zirakpur", href: "/residential-plots-zirakpur" },
+            { label: "Real Estate in Mohali", href: "/real-estate-in-mohali" },
+            { label: "Delivered Projects", href: "/delivered-projects" },
+          ]}
+        />
+      </Reveal>
     </>
   );
 }

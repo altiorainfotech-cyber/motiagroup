@@ -5,6 +5,8 @@ import ComingSoon from "@/components/ComingSoon";
 import ProjectHero from "@/components/ProjectHero";
 import ProjectTabsLayout, { type ProjectTab } from "@/components/ProjectTabsLayout";
 import QuickFacts, { type QuickFact } from "@/components/QuickFacts";
+import RelatedLinks from "@/components/RelatedLinks";
+import Reveal from "@/components/Reveal";
 import SpecCard from "@/components/SpecCard";
 import TabHeading from "@/components/TabHeading";
 
@@ -119,6 +121,17 @@ export default function Page() {
         zoomBg
       />
       <ProjectTabsLayout tabs={tabs} />
+      <Reveal variant="up">
+        <RelatedLinks
+          links={[
+            { label: "Residential Projects in Zirakpur", href: "/residential-projects" },
+            { label: "Residential Plots in Zirakpur", href: "/residential-plots-zirakpur" },
+            { label: "Motia'z Gill Estate", href: "/motia-gill-estate" },
+            { label: "Delivered Projects", href: "/delivered-projects" },
+            { label: "Real Estate in Zirakpur", href: "/real-estate-in-zirakpur" },
+          ]}
+        />
+      </Reveal>
     </>
   );
 }

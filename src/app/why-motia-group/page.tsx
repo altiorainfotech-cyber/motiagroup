@@ -5,6 +5,7 @@ import Link from "next/link";
 import FaqAccordion, { type FaqItem } from "@/components/FaqAccordion";
 import JsonLd from "@/components/JsonLd";
 import PageBanner from "@/components/PageBanner";
+import RelatedLinks from "@/components/RelatedLinks";
 import Reveal from "@/components/Reveal";
 import TestimonialSection from "@/components/TestimonialSection";
 import { faqPageJsonLd } from "@/lib/structuredData";
@@ -238,6 +239,18 @@ export default function Page() {
           </Reveal>
         </div>
       </section>
+
+      <Reveal variant="up">
+        <RelatedLinks
+          links={[
+            { label: "About Motia Group", href: "/about-us" },
+            { label: "Motia Group Founders", href: "/founders" },
+            { label: "Motia Group Awards & Recognition", href: "/awards" },
+            { label: "Residential Projects in Zirakpur", href: "/residential-projects" },
+            { label: "Commercial Projects in Zirakpur", href: "/commercial-projects" },
+          ]}
+        />
+      </Reveal>
     </>
   );
 }
