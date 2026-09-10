@@ -63,7 +63,7 @@ export default function Page() {
         <h2 className="mt-2 text-center text-3xl font-bold text-gray-900 sm:text-4xl">Contact Us</h2>
         <p className="mx-auto mt-4 max-w-2xl text-center text-gray-600">
           Your dream property in North India is just a conversation away. Whether you&rsquo;re exploring residential
-          or commercial opportunities, our team is here to help &mdash; reach out to{" "}
+          or commercial opportunities, our team is here to help. Reach out to{" "}
           <span className="font-semibold text-[#377f45]">Motia Group</span> below.
         </p>
 

@@ -97,7 +97,7 @@ const tabs: ProjectTab[] = [
         <div className="mt-8 space-y-4 text-gray-600">
           <p>
             At <span className="font-bold text-gray-900">Motia Group</span>, we believe in building more than just
-            spaces &mdash; we build <span className="font-bold text-gray-900">trust, comfort, and lasting relationships</span>.
+            spaces. We build <span className="font-bold text-gray-900">trust, comfort, and lasting relationships</span>.
             With decades of excellence in real estate development, our name stands for{" "}
             <span className="font-bold text-gray-900">quality construction, modern design, and a customer-first approach</span>.
           </p>

@@ -143,7 +143,7 @@ const tabs: ProjectTab[] = [
         <div className="mt-8 space-y-4 text-gray-600">
           <p>
             Driven with the purpose to build a legacy of innovation, trust, and exceptional customer experience,{" "}
-            <span className="font-bold text-gray-900">Motia Group presents Harmony Greens</span> — a{" "}
+            <span className="font-bold text-gray-900">Motia Group presents Harmony Greens</span>, a{" "}
             <span className="font-bold text-[#c2185b]">premium residence</span>
             <span className="font-bold text-gray-900"> project in Zirakpur</span>. A premium residential community
             bringing you an upgraded lifestyle in the lap of nature, away from the fast-paced tempo of city life,
@@ -151,7 +151,7 @@ const tabs: ProjectTab[] = [
           </p>
           <p>
             Beautifully spaced &amp; efficient 3 / 3+1 / 5+1 BHK homes come with all modern &amp; world-class
-            amenities, offering all major necessities in the vicinity along with high connectivity — double
+            amenities, offering all major necessities in the vicinity along with high connectivity, double
             connectivity to the 200 ft. PR-7 Airport Road. Staying close to nature, observing the little significant
             elements, and appreciating them from the very core is both therapeutic and self-healing.
           </p>

@@ -63,8 +63,8 @@ const tabs: ProjectTab[] = [
           <p>
             Backed by the trusted legacy of Motia Group, the development reflects a deep understanding of customer
             lifestyles. By blending affordable luxury with a strong &lsquo;customer-first&rsquo; approach, it has
-            carved out a unique identity on the retail map. The space isn&rsquo;t just about shopping &mdash;
-            it&rsquo;s about creating experiences.
+            carved out a unique identity on the retail map. The space isn&rsquo;t just about shopping.
+            It&rsquo;s about creating experiences.
           </p>
           <p>
             Thoughtfully designed with international architectural flair, the High Street Commercial Units exude
@@ -73,7 +73,7 @@ const tabs: ProjectTab[] = [
           </p>
           <p>
             Whether you&rsquo;re looking to set up shop or spend a leisurely day out, the Motia Group&rsquo;s High
-            Street Commercial Units deliver a complete and elevated experience &mdash; right in the heart of
+            Street Commercial Units deliver a complete and elevated experience, right in the heart of
             Zirakpur.
           </p>
         </div>
@@ -133,7 +133,7 @@ const tabs: ProjectTab[] = [
 export const metadata: Metadata = {
   title: "Motia High Street | Commercial Shops & Property in Zirakpur",
   description:
-    "Explore Motia High Street on VIP Road, Zirakpur — premium commercial shops designed for retail, food and lifestyle businesses in a high-demand location.",
+    "Explore Motia High Street on VIP Road, Zirakpur, premium commercial shops designed for retail, food and lifestyle businesses in a high-demand location.",
 };
 
 export default function Page() {

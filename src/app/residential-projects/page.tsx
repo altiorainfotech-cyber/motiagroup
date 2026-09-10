@@ -40,7 +40,7 @@ const deliveredProjects: ResidentialProject[] = [
     image: "/motiaz-royal-citi/citi-banner-1.webp",
     status: "Delivered",
     location: "Zirakpur",
-    description: "23-acre project — luxury homes & flats.",
+    description: "23-acre project, luxury homes & flats.",
   },
   {
     title: "Motia'z Gill Estate",

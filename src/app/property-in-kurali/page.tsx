@@ -125,7 +125,7 @@ export default function Page() {
       <JsonLd data={faqSchema} />
       <ProjectHero
         image="/motia-gill-estate/bannergillestate-1.webp"
-        title="Property in Kurali — Residential Plots & Township Living Near Mohali"
+        title="Property in Kurali: Residential Plots & Township Living Near Mohali"
         breadcrumbs={[{ name: "Home", url: "/" }, { name: "Property in Kurali" }]}
         ctaLabel="Enquire About Kurali"
         ctaHref="/contact-us"

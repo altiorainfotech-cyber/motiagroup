@@ -172,7 +172,7 @@ export default function Page() {
         <span className="block text-center text-sm font-semibold uppercase tracking-widest text-[#377f45]">FAQ</span>
         <h2 className="mt-2 text-center text-3xl font-bold text-gray-900 sm:text-4xl">Generally Asked Questions</h2>
         <p className="mx-auto mt-4 max-w-2xl text-center text-gray-600">
-          Everything Indian citizens and property buyers need to know about purchasing with Motia Group &mdash; from
+          Everything Indian citizens and property buyers need to know about purchasing with Motia Group, from
           home loans and RERA to area terminology and tax considerations.
         </p>
 

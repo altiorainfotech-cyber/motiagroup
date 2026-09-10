@@ -147,7 +147,7 @@ export default function Page() {
             <div className="mt-4 space-y-4 text-gray-600">
               <p>
                 Work has changed. Many businesses today are not choosing between a home office and a city-centre
-                tower — they are looking for a business park that offers real infrastructure, room to grow, and a
+                tower. They are looking for a business park that offers real infrastructure, room to grow, and a
                 short, predictable commute for a hybrid or partially remote team.
               </p>
               <p>

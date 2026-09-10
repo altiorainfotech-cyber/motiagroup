@@ -67,7 +67,7 @@ export default function Page() {
     <>
       <ProjectHero
         image="/aboutus.jpg"
-        title="About Motia Group — Real Estate Developer in Zirakpur & Tricity"
+        title="About Motia Group: Real Estate Developer in Zirakpur & Tricity"
         subtitle="20+ years of building homes, workspaces, and industrial land across North India"
         breadcrumbs={[
           { name: "Home", url: "/" },

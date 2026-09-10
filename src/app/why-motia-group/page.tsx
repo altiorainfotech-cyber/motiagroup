@@ -117,7 +117,7 @@ export default function Page() {
   return (
     <>
       <PageBanner
-        title="Why Choose Motia Group — Trusted Real Estate Developer in Zirakpur"
+        title="Why Choose Motia Group: Trusted Real Estate Developer in Zirakpur"
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Why Motia Group" }]}
         image="/shap/abstract-architectural-drawing-sketch.jpg"
         overlayColor="#1c2230"

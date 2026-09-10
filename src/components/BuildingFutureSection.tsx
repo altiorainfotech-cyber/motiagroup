@@ -4,7 +4,7 @@ export default function BuildingFutureSection() {
       <h2 className="text-3xl font-medium text-[#377f45] sm:text-4xl">Building the Future, Together</h2>
       <div className="mt-6 space-y-4 text-justify text-gray-700">
         <p>
-          We believe every building is more than just a structure — it&rsquo;s a reflection of vision, dedication, and
+          We believe every building is more than just a structure, it&rsquo;s a reflection of vision, dedication, and
           trust. We are a major real estate development corporation and one of the most trusted{" "}
           <span className="text-[#377f45]">Real Estate constructors</span> and therefore our mission is to create
           landmarks that could withstand the test of time.

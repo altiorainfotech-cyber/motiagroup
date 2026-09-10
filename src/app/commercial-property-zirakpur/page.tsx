@@ -179,8 +179,8 @@ export default function Page() {
             <div className="mt-4 space-y-4 text-gray-600">
               <p>
                 Not every commercial property in Zirakpur serves the same purpose. Before comparing projects, it
-                helps to understand the three broad formats on offer here — office space, retail shops, and SCO
-                plots — since each suits a different kind of buyer, tenant and business plan.
+                helps to understand the three broad formats on offer here, office space, retail shops, and SCO
+                plots, since each suits a different kind of buyer, tenant and business plan.
               </p>
               <p>
                 Motia Group has delivered commercial developments across two of these formats: office space at

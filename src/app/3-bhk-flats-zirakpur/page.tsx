@@ -124,7 +124,7 @@ export default function Page() {
       <JsonLd data={faqSchema} />
       <ProjectHero
         image="/motia-heights/hero%20banner.png"
-        title="3 BHK Flats in Zirakpur — Premium Apartments by Motia Group"
+        title="3 BHK Flats in Zirakpur: Premium Apartments by Motia Group"
         breadcrumbs={[{ name: "Home", url: "/" }, { name: "3 BHK Flats in Zirakpur" }]}
         ctaLabel="Book a Site Visit"
         ctaHref="/contact-us"

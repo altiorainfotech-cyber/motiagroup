@@ -98,7 +98,7 @@ export default function Page() {
           </span>
           <p className="mt-4 text-gray-600">
             For businesses and investors seeking a footprint in one of North India's fastest-growing commercial
-            corridors, Motia Group offers two distinct commercial addresses along Zirakpur's busiest arteries — a
+            corridors, Motia Group offers two distinct commercial addresses along Zirakpur's busiest arteries, a
             dedicated office and business park, and a high-street retail destination built for footfall. Both are
             fully delivered and open for business today.
           </p>

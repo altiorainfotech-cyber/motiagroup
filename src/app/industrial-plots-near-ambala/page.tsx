@@ -119,7 +119,7 @@ export default function Page() {
       <JsonLd data={faqSchema} />
       <ProjectHero
         image="/haryana-industral-plots/banner.jpg"
-        title="Industrial Plots Near Ambala — NH-344 Freight & Logistics Corridor"
+        title="Industrial Plots Near Ambala: NH-344 Freight & Logistics Corridor"
         breadcrumbs={[{ name: "Home", url: "/" }, { name: "Industrial Plots Near Ambala" }]}
         ctaLabel="Enquire Now"
         ctaHref="/contact-us"

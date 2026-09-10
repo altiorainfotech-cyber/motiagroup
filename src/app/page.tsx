@@ -20,7 +20,7 @@ export default function Home() {
   return (
     <>
       <h1 className="sr-only">
-        Real Estate Builder in Zirakpur &mdash; Residential, Commercial &amp; Industrial Properties
+        Real Estate Builder in Zirakpur: Residential, Commercial &amp; Industrial Properties
       </h1>
       <HeroSlider />
       <Reveal variant="left">

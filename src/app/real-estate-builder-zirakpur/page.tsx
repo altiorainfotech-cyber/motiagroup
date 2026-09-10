@@ -171,7 +171,7 @@ export default function Page() {
               <p>
                 Zirakpur has dozens of names on hoardings promising the next big project. Very few of those builders
                 actually live here. Motia Group was established in 2005 with its roots in Zirakpur, and our corporate
-                office still stands on the Chandigarh-Ambala Highway today — not a satellite branch, but the place
+                office still stands on the Chandigarh-Ambala Highway today, not a satellite branch, but the place
                 where every project on this page was actually planned, approved and delivered.
               </p>
               <p>
@@ -245,7 +245,7 @@ export default function Page() {
             The Motia Group Portfolio in Zirakpur &amp; Beyond
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-center text-gray-600">
-            One builder, every property type — residential, commercial, plotted and delivered.
+            One builder, every property type, residential, commercial, plotted and delivered.
           </p>
         </Reveal>
 
@@ -298,7 +298,7 @@ export default function Page() {
                 <div>
                   <h3 className="font-bold text-gray-900">Real, Verifiable Delivery Numbers</h3>
                   <p className="mt-1 text-sm text-gray-600">
-                    15 completed projects and over 4,500 homes and offices handed over — figures you can verify
+                    15 completed projects and over 4,500 homes and offices handed over, figures you can verify
                     against our delivered developments across the region, not just projected sales targets.
                   </p>
                 </div>
