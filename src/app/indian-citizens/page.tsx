@@ -1,7 +1,9 @@
 import ClientsSection from "@/components/ClientsSection";
 import FaqAccordion, { type FaqItem } from "@/components/FaqAccordion";
+import JsonLd from "@/components/JsonLd";
 import PageBanner from "@/components/PageBanner";
 import Reveal from "@/components/Reveal";
+import { faqPageJsonLd } from "@/lib/structuredData";
 
 const leftFaqs: FaqItem[] = [
   {
@@ -111,6 +113,48 @@ const rightFaqs: FaqItem[] = [
   },
 ];
 
+const faqSchema = faqPageJsonLd([
+  {
+    question: "What number of properties would I be able to purchase?",
+    answer: "You can possess as many properties as you want.",
+  },
+  {
+    question: "Do I need to pay stamp duty if the property is transferred or is a gift?",
+    answer:
+      "Yes. Generally, the stamp duty on the gift deed ranges from 5% to 12% in all states. Whereas, in states like Haryana, Rajasthan and Delhi, a concession of 1 to 2 per cent is given to female transferors.",
+  },
+  {
+    question: "What is the time required for home loan disbursement?",
+    answer:
+      "Generally, loans are disbursed within 2 weeks after the full documentation and submission of required procedures.",
+  },
+  {
+    question: "What are the documents needed to apply for a home loan?",
+    answer:
+      "You have to submit the following documents: proof of income (pay stub, bank statements for personal and business); for salaried applicants, the latest 3 months' salary slips showing all deductions and Form 16 for the last three years; for self-employed applicants, IT returns for the past 2 years and computation of income for the last 2 years as certified by a CA; bank statements for the past 6 months; and a guarantor form (optional).",
+  },
+  {
+    question: "What is RERA?",
+    answer:
+      "RERA is the acronym (short-form) for Real Estate (Regulation and Development) Act, 2016. Its salient features include: bringing transparency and efficiency in the process of buying and selling of real estate; providing legal cover and protecting consumers' interests and rights in the real estate sector; ensuring a defined process and efficient handling of disputes; defining and standardizing terms and measures so as to bring all concerned parties to the same level of understanding, lending standardization across builders and projects and helping consumers compare diverse projects and developers with ease; defining duties, liabilities and penalties for builders/developers and brokers/intermediaries; setting up timelines for registration processes and dispute resolution; and mandating all developers/builders to upload all relevant information regarding a project, such as details of land titles, approvals, construction progress, and names of brokers, on their website.",
+  },
+  {
+    question: "What do the terms: Carpet area, Built up area and Super built up area mean?",
+    answer:
+      "Built up area is the whole region of the floor, including the carpet area, walls, balconies, corridors, chamber zones and basement. Carpet area is the usable area inside the walls, that is, the area in which you can actually lay a carpet. Super built up area refers to the entire area, which includes the carpet area, halls and passageways, walls, lifts, staircases, basements, and other chamber and utility areas.",
+  },
+  {
+    question: "Are there any income tax considerations while transferring newly acquired property?",
+    answer:
+      "If the transfer happens within three years of procurement, the income tax exemption under Section 54F of the Income Tax Act does not hold good.",
+  },
+  {
+    question: "What is the maximum amount of housing loan available?",
+    answer:
+      "The maximum amount is 85% of the cost of the property, which includes the cost of land, subject to a maximum amount of INR 1 crore.",
+  },
+]);
+
 export default function Page() {
   return (
     <>
@@ -121,6 +165,7 @@ export default function Page() {
         overlayColor="#377F45"
         overlayOpacity={0.82}
       />
+      <JsonLd data={faqSchema} />
 
       <section className="mx-auto max-w-7xl px-6 py-16 sm:py-20 lg:px-8">
         <span className="block text-center text-sm font-semibold uppercase tracking-widest text-[#377f45]">FAQ</span>

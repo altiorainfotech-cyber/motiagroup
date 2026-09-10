@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import AboutSection from "@/components/AboutSection";
 import BuildingFutureSection from "@/components/BuildingFutureSection";
 import ClientsSection from "@/components/ClientsSection";
@@ -9,9 +10,18 @@ import Reveal from "@/components/Reveal";
 import TestimonialSection from "@/components/TestimonialSection";
 import VisionMissionSection from "@/components/VisionMissionSection";
 
+export const metadata: Metadata = {
+  title: "Real Estate Builder in Zirakpur | Residential, Commercial & Industrial | Motia Group",
+  description:
+    "Discover residential, commercial and industrial properties by Motia Group, a trusted real estate developer in Zirakpur and the Tricity region.",
+};
+
 export default function Home() {
   return (
     <>
+      <h1 className="sr-only">
+        Real Estate Builder in Zirakpur &mdash; Residential, Commercial &amp; Industrial Properties
+      </h1>
       <HeroSlider />
       <Reveal variant="left">
         <AboutSection />

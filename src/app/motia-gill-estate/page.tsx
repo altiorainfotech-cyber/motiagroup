@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import {
   Bell,
   Car,
@@ -204,13 +205,24 @@ const tabs: ProjectTab[] = [
   },
 ];
 
+export const metadata: Metadata = {
+  title: "Motia'z Gill Estate | Residential Plots in Kurali, Mohali",
+  description:
+    "Discover Motia'z Gill Estate in Kurali, featuring residential plots, commercial units, wide roads, green spaces and modern township infrastructure near Mohali.",
+};
+
 export default function Page() {
   return (
     <>
       <ProjectHero
         image="/motia-gill-estate/bannergillestate-1.webp"
-        title="Motiaz Gill Estate"
+        title="Motia'z Gill Estate – Residential Plots in Kurali, Mohali"
         subtitle="Gill Estate offers a truly royal experience with round the clock amenities and exemplary services"
+        breadcrumbs={[
+          { name: "Home", url: "/" },
+          { name: "Residential Projects", url: "/residential-projects" },
+          { name: "Motia'z Gill Estate" },
+        ]}
         zoomBg
       />
       <ProjectTabsLayout tabs={tabs} />

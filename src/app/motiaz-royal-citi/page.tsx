@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import {
   AlertTriangle,
   Bell,
@@ -246,13 +247,24 @@ const tabs: ProjectTab[] = [
   },
 ];
 
+export const metadata: Metadata = {
+  title: "Motia'z Royal Citi | Luxury Homes & Flats in Zirakpur",
+  description:
+    "Explore Motia'z Royal Citi, a 23-acre residential and commercial project in Zirakpur featuring spacious homes, landscaped spaces, amenities and excellent connectivity.",
+};
+
 export default function Page() {
   return (
     <>
       <ProjectHero
         image="/motiaz-royal-citi/citi-banner-1.webp"
-        title="Motia'z Royal Citi - Your Dream Luxury House"
+        title="Motia'z Royal Citi – Luxury Homes & Flats in Zirakpur"
         subtitle="We have the homes that you'll love to live in, with the luxury and comfort which makes life much easier"
+        breadcrumbs={[
+          { name: "Home", url: "/" },
+          { name: "Residential Projects", url: "/residential-projects" },
+          { name: "Motia'z Royal Citi" },
+        ]}
         zoomBg
       />
       <ProjectTabsLayout tabs={tabs} />

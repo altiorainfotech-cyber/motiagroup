@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { Building2, Car, Grid3x3, Layers, Leaf, MapPin, Navigation, PartyPopper, Route, Sparkles, Store } from "lucide-react";
 import Image from "next/image";
 import AmenityGroups, { type AmenityGroup } from "@/components/AmenityGroups";
@@ -127,13 +128,24 @@ const tabs: ProjectTab[] = [
   },
 ];
 
+export const metadata: Metadata = {
+  title: "Motia High Street | Commercial Shops & Property in Zirakpur",
+  description:
+    "Explore Motia High Street on VIP Road, Zirakpur — premium commercial shops designed for retail, food and lifestyle businesses in a high-demand location.",
+};
+
 export default function Page() {
   return (
     <>
       <ProjectHero
         image="/high-street/banner.jpg"
-        title="Motia High Street - Commercial Space"
+        title="Motia High Street – Commercial Shops & Property in Zirakpur"
         subtitle="The only commercial place, in and around the huge residential area on VIP Road, Zirakpur"
+        breadcrumbs={[
+          { name: "Home", url: "/" },
+          { name: "Commercial Projects", url: "/commercial-projects" },
+          { name: "Motia High Street" },
+        ]}
         zoomBg
       />
       <ProjectTabsLayout tabs={tabs} />

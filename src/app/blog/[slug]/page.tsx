@@ -1,11 +1,36 @@
+import type { Metadata } from "next";
 import { ArrowLeft } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import JsonLd from "@/components/JsonLd";
 import { blogPosts, type BlogBlock } from "@/data/blogPosts";
+import { breadcrumbJsonLd, SITE_URL } from "@/lib/structuredData";
 
 export function generateStaticParams() {
   return blogPosts.map((post) => ({ slug: post.slug }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const post = blogPosts.find((p) => p.slug === slug);
+
+  if (!post) return {};
+
+  return {
+    title: `${post.title} | Motia Group`,
+    description: post.excerpt,
+    openGraph: {
+      title: post.title,
+      description: post.excerpt,
+      type: "article",
+      images: [{ url: post.image }],
+    },
+  };
 }
 
 function Block({ block }: { block: BlogBlock }) {
@@ -69,8 +94,28 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
 
   if (!post) notFound();
 
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.excerpt,
+    image: `${SITE_URL}${post.image}`,
+    datePublished: new Date(post.date).toISOString(),
+    author: { "@type": "Organization", name: "Motia Group" },
+    publisher: { "@type": "Organization", name: "Motia Group" },
+  };
+
   return (
     <article>
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: "Home", url: "/" },
+          { name: "Blog", url: "/blog" },
+          { name: post.title },
+        ])}
+      />
+      <JsonLd data={articleJsonLd} />
+
       <div className="relative h-[280px] w-full sm:h-[380px] lg:h-[460px]">
         <Image src={post.image} alt={post.imageAlt} fill priority sizes="100vw" className="object-cover" />
       </div>

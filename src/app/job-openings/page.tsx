@@ -1,8 +1,15 @@
+import type { Metadata } from "next";
 import { ArrowRight, Briefcase, Headset, Users } from "lucide-react";
 import Link from "next/link";
 import ClientsSection from "@/components/ClientsSection";
 import PageBanner from "@/components/PageBanner";
 import Reveal from "@/components/Reveal";
+
+export const metadata: Metadata = {
+  title: "Careers at Motia Group | Real Estate Jobs in Zirakpur",
+  description:
+    "Explore career opportunities at Motia Group. View current real estate jobs in sales, management and telemarketing and join our growing team.",
+};
 
 const jobs = [
   {
@@ -26,7 +33,7 @@ export default function Page() {
   return (
     <>
       <PageBanner
-        title="Job Openings"
+        title="Careers at Motia Group"
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Career" }, { label: "Job Openings" }]}
         image="/career.jpg"
         overlayColor="#377F45"

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import {
   Car,
   CloudRain,
@@ -213,10 +214,26 @@ const tabs: ProjectTab[] = [
   },
 ];
 
+export const metadata: Metadata = {
+  title: "Motia HUYS | 2 & 3 BHK Independent Floors in Zirakpur",
+  description:
+    "Discover Motia HUYS on Peer Muchalla Road, Zirakpur, offering independent 2 and 3 BHK floors with green spaces, security, parking and modern amenities.",
+};
+
 export default function Page() {
   return (
     <>
-      <ProjectHero image="/motiahuys/banner.png" title="Motia Huys" subtitle="Affordable independent housing" zoomBg />
+      <ProjectHero
+        image="/motiahuys/banner.png"
+        title="Motia HUYS – 2 & 3 BHK Independent Floors in Zirakpur"
+        subtitle="Affordable independent housing"
+        breadcrumbs={[
+          { name: "Home", url: "/" },
+          { name: "Residential Projects", url: "/residential-projects" },
+          { name: "Motia HUYS" },
+        ]}
+        zoomBg
+      />
       <ProjectTabsLayout tabs={tabs} />
     </>
   );

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import {
   Building2,
   ConciergeBell,
@@ -189,13 +190,24 @@ const tabs: ProjectTab[] = [
   },
 ];
 
+export const metadata: Metadata = {
+  title: "Motia'z Royal Business Park | Office Space in Zirakpur",
+  description:
+    "Explore Motia'z Royal Business Park on NH-22, Zirakpur, offering premium office spaces, co-working facilities, business amenities, security and easy connectivity.",
+};
+
 export default function Page() {
   return (
     <>
       <ProjectHero
         image="/motiaz-royal-business-park/banner.jpeg"
-        title="Motiaz Royal Business Park"
+        title="Motia'z Royal Business Park – Office Space in Zirakpur"
         subtitle="A business landmark that your clients can find easily"
+        breadcrumbs={[
+          { name: "Home", url: "/" },
+          { name: "Commercial Projects", url: "/commercial-projects" },
+          { name: "Motia'z Royal Business Park" },
+        ]}
         zoomBg
       />
       <ProjectTabsLayout tabs={tabs} />

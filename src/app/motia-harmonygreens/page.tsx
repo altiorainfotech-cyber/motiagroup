@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import {
   ArrowLeftRight,
   Building2,
@@ -278,13 +279,24 @@ const tabs: ProjectTab[] = [
   },
 ];
 
+export const metadata: Metadata = {
+  title: "Motia'z Harmony Greens | Premium Homes in Zirakpur",
+  description:
+    "Explore Motia'z Harmony Greens, premium residences in Sanauli, Zirakpur near PR-7 Airport Road, with spacious layouts, green surroundings and modern amenities.",
+};
+
 export default function Page() {
   return (
     <>
       <ProjectHero
         image="/home-page-hero-section/harmonygreens-banner-01.webp"
-        title="Motia'z Harmony Greens - Premium Residences"
+        title="Motia'z Harmony Greens – Premium Homes in Zirakpur"
         subtitle="We offers premium residences that blend modern design with natural beauty. With spacious layouts, lush landscapes, and world-class amenities, it's the perfect choice for families seeking luxury and tranquility in a vibrant community"
+        breadcrumbs={[
+          { name: "Home", url: "/" },
+          { name: "Residential Projects", url: "/residential-projects" },
+          { name: "Motia'z Harmony Greens" },
+        ]}
         zoomBg
       />
       <ProjectTabsLayout tabs={tabs} />

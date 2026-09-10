@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { Car, FileText, MapPin, Route, Shield, Store, Train, TreePine, Truck } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -149,10 +150,25 @@ const tabs: ProjectTab[] = [
   },
 ];
 
+export const metadata: Metadata = {
+  title: "Industrial Plots in Haryana | NH-344 Industrial Property | Motia Group",
+  description:
+    "Explore fully developed industrial plots at Saha on NH-344, Haryana, with highway, rail and airport connectivity for manufacturing, warehousing and logistics.",
+};
+
 export default function Page() {
   return (
     <>
-      <ProjectHero image="/haryana-industral-plots/banner.jpg" title="Haryana Industrial Plots – Motia Group" zoomBg />
+      <ProjectHero
+        image="/haryana-industral-plots/banner.jpg"
+        title="Industrial Plots in Haryana – NH-344 Industrial Property"
+        breadcrumbs={[
+          { name: "Home", url: "/" },
+          { name: "Industrial Plots", url: "/industrial-plots" },
+          { name: "Haryana Industrial Plots" },
+        ]}
+        zoomBg
+      />
 
       <ProjectTabsLayout tabs={tabs} />
 

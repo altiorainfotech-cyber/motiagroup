@@ -4,8 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 import ClientsSection from "@/components/ClientsSection";
 import FaqAccordion, { type FaqItem } from "@/components/FaqAccordion";
+import JsonLd from "@/components/JsonLd";
 import ProjectHero from "@/components/ProjectHero";
 import Reveal from "@/components/Reveal";
+import { faqPageJsonLd } from "@/lib/structuredData";
 
 export const metadata: Metadata = {
   title: "Top Builders in Chandigarh | Motia Group",
@@ -98,12 +100,27 @@ const contactInfo: { icon: typeof Phone; label: string; value: string; href?: st
   { icon: MapPin, label: "Corporate Office", value: "Tricity Region, Punjab / Chandigarh" },
 ];
 
+const faqSchema = faqPageJsonLd([
+  {
+    question: "What makes Motia Group one of the top builders in the Chandigarh Tricity region?",
+    answer:
+      "Motia Group stands out due to its commitment to timely project delivery, superior construction quality, prime location choices, and customer-centric policies that protect buyer investments.",
+  },
+  {
+    question: "Are Motia Group residential and commercial projects RERA approved?",
+    answer:
+      "Yes, all ongoing and newly launched developments by Motia Group are fully compliant with RERA guidelines and possess clear legal approvals.",
+  },
+]);
+
 export default function Page() {
   return (
     <>
+      <JsonLd data={faqSchema} />
       <ProjectHero
         image="/motia-citi/hero%20banner.png"
         title="Reshaping Urban Living: Recognized Among the Top Builders in Chandigarh"
+        breadcrumbs={[{ name: "Home", url: "/" }, { name: "Top Builders in Chandigarh" }]}
         ctaLabel="Book a Site Visit"
         ctaHref="/contact-us"
         zoomBg
