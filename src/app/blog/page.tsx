@@ -1,14 +1,21 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import PageBanner from "@/components/PageBanner";
 import Reveal from "@/components/Reveal";
 import { blogPosts } from "@/data/blogPosts";
 
+export const metadata: Metadata = {
+  title: "Real Estate Blog | Zirakpur Property & Investment Insights | Motia Group",
+  description:
+    "Read Motia Group's real estate insights on Zirakpur property, commercial real estate, industrial plots, investment opportunities, Tricity development and more.",
+};
+
 export default function Page() {
   return (
     <>
       <PageBanner
-        title="Motia Group Blogs"
+        title="Real Estate Blog – Zirakpur Property & Investment Insights"
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Blog" }]}
         image="/blog/blog.jpg"
         overlayColor="#377F45"

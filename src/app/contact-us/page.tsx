@@ -1,9 +1,16 @@
+import type { Metadata } from "next";
 import { Headset, Mail, MapPin, Phone, PhoneCall } from "lucide-react";
 import ClientsSection from "@/components/ClientsSection";
 import GetInTouchForm from "@/components/GetInTouchForm";
 import GoogleMap from "@/components/GoogleMap";
 import PageBanner from "@/components/PageBanner";
 import Reveal from "@/components/Reveal";
+
+export const metadata: Metadata = {
+  title: "Contact Motia Group | Real Estate Builder in Zirakpur",
+  description:
+    "Contact Motia Group for residential, commercial and industrial property opportunities in Zirakpur and North India. Visit our Zirakpur office or enquire online.",
+};
 
 const contactInfo = [
   {
@@ -41,7 +48,7 @@ export default function Page() {
   return (
     <>
       <PageBanner
-        title="Contact us"
+        title="Contact Motia Group"
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Contact us" }]}
         image="/contactus.png"
         overlayColor="#377F45"

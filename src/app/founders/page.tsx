@@ -1,9 +1,16 @@
+import type { Metadata } from "next";
 import { Building2, ShieldCheck } from "lucide-react";
 import Image from "next/image";
 import ClientsSection from "@/components/ClientsSection";
 import PageBanner from "@/components/PageBanner";
 import Reveal from "@/components/Reveal";
 import VisionMissionSection from "@/components/VisionMissionSection";
+
+export const metadata: Metadata = {
+  title: "Motia Group Founders | Leadership & Real Estate Vision",
+  description:
+    "Meet the founders and leadership behind Motia Group and discover the vision, values and experience shaping residential and commercial real estate in North India.",
+};
 
 const founders = [
   {
@@ -52,7 +59,7 @@ export default function Page() {
   return (
     <>
       <PageBanner
-        title="Founders"
+        title="Motia Group Founders"
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "About Us" }, { label: "Founders" }]}
       />
 

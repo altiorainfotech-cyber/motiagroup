@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { Home, MapPin, Maximize2, Route } from "lucide-react";
 import Image from "next/image";
 import ComingSoon from "@/components/ComingSoon";
@@ -97,12 +98,18 @@ const tabs: ProjectTab[] = [
   { id: "download", label: "Download", content: <ComingSoon eyebrow="Take It With You" title="Download" /> },
 ];
 
+export const metadata: Metadata = {
+  title: "Motia Citi | Residential Plots on Chandigarh-Ambala Highway",
+  description:
+    "Explore Motia Citi, a delivered residential project offering 215 independent plots on Chandigarh-Ambala Highway with wide internal roads and convenient connectivity.",
+};
+
 export default function Page() {
   return (
     <>
       <ProjectHero
         image="/motia-citi/hero%20banner.png"
-        title="Motia Citi"
+        title="Motia Citi – Residential Plots on Chandigarh-Ambala Highway"
         subtitle="Premium apartments and homes crafted with a sense to reconnect with nature."
         zoomBg
       />

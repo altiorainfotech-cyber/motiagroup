@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import {
   Bell,
   Building2,
@@ -160,12 +161,18 @@ const tabs: ProjectTab[] = [
   },
 ];
 
+export const metadata: Metadata = {
+  title: "Motia Heights | 3 BHK Apartments in Dhakoli, Zirakpur",
+  description:
+    "Explore Motia Heights, premium 3 BHK apartments in Dhakoli, Zirakpur with landscaped spaces, modern amenities, security and convenient city connectivity.",
+};
+
 export default function Page() {
   return (
     <>
       <ProjectHero
         image="/motia-heights/hero%20banner.png"
-        title="Motia Heights"
+        title="Motia Heights – 3 BHK Apartments in Dhakoli, Zirakpur"
         subtitle="Surround yourself in comfort and enjoy lavish style whilst soaking up in the panoramic view"
         zoomBg
       />

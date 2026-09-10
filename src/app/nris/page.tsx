@@ -1,7 +1,14 @@
+import type { Metadata } from "next";
 import ClientsSection from "@/components/ClientsSection";
 import FaqAccordion, { type FaqItem } from "@/components/FaqAccordion";
 import PageBanner from "@/components/PageBanner";
 import Reveal from "@/components/Reveal";
+
+export const metadata: Metadata = {
+  title: "NRI Property Investment in India | NRI Property FAQ | Motia Group",
+  description:
+    "Get answers to common NRI property investment questions, including buying property in India, home loans, RBI rules, taxes, documentation and repatriation.",
+};
 
 const leftFaqs: FaqItem[] = [
   {
@@ -154,7 +161,7 @@ export default function Page() {
   return (
     <>
       <PageBanner
-        title="NRIs Property FAQ"
+        title="NRI Property Investment in India – FAQ"
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "FAQ" }, { label: "NRIs" }]}
         image="/faq.jpg"
         overlayColor="#377F45"
