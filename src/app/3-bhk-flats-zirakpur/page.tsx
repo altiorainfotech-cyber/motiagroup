@@ -235,7 +235,7 @@ export default function Page() {
         <div className="mx-auto max-w-5xl px-6 lg:px-8">
           <Reveal variant="up">
             <h2 className="text-center text-3xl font-bold text-gray-900 sm:text-4xl">
-              Compare Motia Group's 3 BHK Homes in Zirakpur
+              Compare Motia Group&rsquo;s 3 BHK Homes in Zirakpur
             </h2>
           </Reveal>
 

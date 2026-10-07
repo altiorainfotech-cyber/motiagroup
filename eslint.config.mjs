@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Nested git worktrees checked out inside the project directory.
+    ".kilo/**",
   ]),
 ]);
 
