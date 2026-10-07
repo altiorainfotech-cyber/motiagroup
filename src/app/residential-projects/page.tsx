@@ -140,7 +140,7 @@ export default function Page() {
           </span>
           <p className="mt-4 text-gray-600">
             Whether you are looking to book early into an upcoming address or move straight into a ready home,
-            Motia Group's residential portfolio spans premium apartments, independent floors and plotted
+            Motia Group&rsquo;s residential portfolio spans premium apartments, independent floors and plotted
             developments. Browse our ongoing launch below, or explore our five already-delivered residential
             communities where families are already living.
           </p>

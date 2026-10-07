@@ -58,7 +58,7 @@ export default function Page() {
           </span>
           <p className="mt-4 text-gray-600">
             As manufacturing and logistics businesses look beyond saturated industrial belts, Motia Group is
-            developing fully serviced industrial plots along one of North India's key highway corridors. Built for
+            developing fully serviced industrial plots along one of North India&rsquo;s key highway corridors. Built for
             factories, warehouses and logistics parks alike, our industrial developments combine strategic
             connectivity with transparent, plot-level ownership, a category distinct from our residential and
             commercial portfolios.

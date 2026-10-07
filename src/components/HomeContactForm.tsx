@@ -13,6 +13,7 @@ export default function HomeContactForm() {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (submitting) return;
     setError(null);
     setSubmitting(true);
 
@@ -22,6 +23,7 @@ export default function HomeContactForm() {
       phone: formData.get("phone"),
       email: formData.get("email"),
       message: formData.get("message"),
+      website: formData.get("website"),
     };
 
     try {
@@ -31,7 +33,15 @@ export default function HomeContactForm() {
         body: JSON.stringify(payload),
       });
 
-      if (!res.ok) throw new Error("Request failed");
+      if (!res.ok) {
+        try {
+          await res.json();
+        } catch {
+          // Response body wasn't JSON or is unavailable; nothing to read.
+        }
+        throw new Error("Request failed");
+      }
+
       setSubmitted(true);
     } catch {
       setError("Something went wrong. Please try again.");
@@ -72,6 +82,10 @@ export default function HomeContactForm() {
                   required
                   className="w-full rounded-2xl border border-[#377f45]/40 bg-white px-6 py-4 text-sm text-gray-700 placeholder:text-gray-400 focus:border-[#377f45] focus:outline-none sm:col-span-2"
                 />
+                {/* Honeypot: invisible to real users and assistive tech; a filled-in value marks the submission as spam. */}
+                <div aria-hidden="true" className="absolute h-0 w-0 overflow-hidden opacity-0">
+                  <input type="text" name="website" tabIndex={-1} autoComplete="off" />
+                </div>
                 {error && (
                   <p className="text-center text-sm text-red-600 sm:col-span-2">{error}</p>
                 )}

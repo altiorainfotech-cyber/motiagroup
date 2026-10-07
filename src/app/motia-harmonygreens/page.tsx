@@ -25,7 +25,6 @@ import {
   TreePine,
   Users,
   Zap,
-  type LucideIcon,
 } from "lucide-react";
 import AmenityGroups, { type AmenityGroup } from "@/components/AmenityGroups";
 import DownloadCard from "@/components/DownloadCard";

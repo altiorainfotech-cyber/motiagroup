@@ -145,7 +145,7 @@ export default function Page() {
             Possession-Ready, Proven & Trusted
           </span>
           <p className="mt-4 text-gray-600">
-            With 20+ years in real estate and 15 projects completed, Motia Group's track record speaks for itself.
+            With 20+ years in real estate and 15 projects completed, Motia Group&rsquo;s track record speaks for itself.
             The seven developments below are fully delivered and ready for possession today, five residential
             communities where families already live, and two commercial addresses already home to businesses. Every
             one stands as proof of our commitment to on-time, quality construction.

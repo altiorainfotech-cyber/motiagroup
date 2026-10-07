@@ -99,12 +99,12 @@ export default function Page() {
       <section className="mx-auto max-w-4xl px-6 py-16 text-center sm:py-20 lg:px-8">
         <Reveal variant="up">
           <span className="text-sm font-semibold uppercase tracking-widest text-[#377f45]">
-            Get In Early on Tomorrow's Growth Corridors
+            Get In Early on Tomorrow&rsquo;s Growth Corridors
           </span>
           <p className="mt-4 text-gray-600">
             The best pricing and unit selection is almost always available before a project is complete. Motia
-            Group currently has two developments under active development, a residential address in Zirakpur's
-            expanding Sanauli belt, and an industrial land development along Haryana's NH-344 corridor. Both offer
+            Group currently has two developments under active development, a residential address in Zirakpur&rsquo;s
+            expanding Sanauli belt, and an industrial land development along Haryana&rsquo;s NH-344 corridor. Both offer
             early investors the chance to enter ahead of the curve in fast-appreciating locations.
           </p>
         </Reveal>
